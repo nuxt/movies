@@ -12,7 +12,9 @@ useHead({
 </script>
 
 <template>
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>
@@ -23,7 +25,7 @@ html, body , #__nuxt{
 }
 
 html.dark {
-  background: #222;
+  background: #111;
   color: white;
 }
 </style>
