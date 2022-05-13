@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const popular = await rpc.getMovies('popular')
+const popular = await functions.get.getMovies('popular')
 </script>
 
 <template>
