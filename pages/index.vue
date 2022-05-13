@@ -1,19 +1,17 @@
 <script setup lang="ts">
-const popular = await functions.get.getMovies('popular')
+const { data: popular } = await useAsyncData('popular', () => functions.get.getMovies('popular'))
+const { data: topRated } = await useAsyncData('top_rated', () => functions.get.getMovies('top_rated'))
+const { data: upcoming } = await useAsyncData('upcoming', () => functions.get.getMovies('upcoming'))
+const { data: nowPlaying } = await useAsyncData('now_playing', () => functions.get.getMovies('now_playing'))
+const featured = $computed(() => upcoming.value.results[0])
 </script>
 
 <template>
   <div>
-    <div overflow-y-auto>
-      <div row gap-2 w-max p-2>
-        <RouterLink
-          v-for="i of popular.results"
-          :key="i.id"
-          :to="`/movie/${i.id}`"
-        >
-          <MovieItem :item="i" flex-1 w-50 />
-        </RouterLink>
-      </div>
-    </div>
+    <Hero :item="featured" />
+    <ListingCarousel :items="popular.results" />
+    <ListingCarousel :items="topRated.results" />
+    <ListingCarousel :items="upcoming.results" />
+    <ListingCarousel :items="nowPlaying.results" />
   </div>
 </template>
