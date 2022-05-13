@@ -1,4 +1,6 @@
 <script setup>
+import '@unocss/reset/antfu.css'
+
 useHead({
   title: 'Nuxt 3 Movies',
   link: [
@@ -10,9 +12,7 @@ useHead({
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <NuxtPage />
 </template>
 
 <style>
