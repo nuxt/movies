@@ -3,7 +3,7 @@ const { data: popular } = await useAsyncData('popular', () => functions.get.getM
 const { data: topRated } = await useAsyncData('top_rated', () => functions.get.getMovies('top_rated'))
 const { data: upcoming } = await useAsyncData('upcoming', () => functions.get.getMovies('upcoming'))
 const { data: nowPlaying } = await useAsyncData('now_playing', () => functions.get.getMovies('now_playing'))
-const featured = $computed(() => upcoming.value.results[0])
+const featured = $computed(() => upcoming.value?.results[0])
 </script>
 
 <template>

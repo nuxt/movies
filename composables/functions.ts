@@ -33,5 +33,4 @@ export const functions = {
       }
     },
   }) as typeof fn,
-
 }

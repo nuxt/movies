@@ -3,7 +3,7 @@ import type { Movie, PageResult } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
 import LISTS from '~/constants/lists'
 
-export function fetchTMD(url: string, params: Record<string, string | number | undefined> = {}) {
+export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
   return $fetch(url, {
     baseURL: TMDB_API_URL,
     params: {
@@ -28,14 +28,14 @@ export function getListItem(type: 'movie' | 'tv', query: string) {
  * Get movies (listing)
  */
 export function getMovies(query: string, page = 1): Promise<PageResult<Movie>> {
-  return fetchTMD(`movie/${query}`, { page })
+  return fetchTMDB(`movie/${query}`, { page })
 }
 
 /**
  * Get movie (single)
  */
 export function getMovie(id: string): Promise<Movie> {
-  return fetchTMD(`movie/${id}`, {
+  return fetchTMDB(`movie/${id}`, {
     append_to_response: 'videos,credits,images,external_ids,release_dates',
     include_image_language: 'en',
   })
@@ -46,14 +46,14 @@ export function getMovie(id: string): Promise<Movie> {
  */
 
 export function getMovieRecommended(id: string, page = 1) {
-  return fetchTMD(`movie/${id}/recommendations`, { page })
+  return fetchTMDB(`movie/${id}/recommendations`, { page })
 }
 
 /**
  * Get TV shows (listing)
  */
 export function getTvShows(query: string, page = 1) {
-  return fetchTMD(`tv/${query}`, { page })
+  return fetchTMDB(`tv/${query}`, { page })
 }
 
 /**
@@ -61,7 +61,7 @@ export function getTvShows(query: string, page = 1) {
  */
 
 export function getTvShow(id: string) {
-  return fetchTMD(`tv/${id}`, {
+  return fetchTMDB(`tv/${id}`, {
     append_to_response: 'videos,credits,images,external_ids,content_ratings',
     include_image_language: 'en',
   })
@@ -71,28 +71,28 @@ export function getTvShow(id: string) {
  * Get TV show recommended (single)
  */
 export function getTvShowRecommended(id: string, page = 1) {
-  return fetchTMD(`tv/${id}/recommendations`, { page })
+  return fetchTMDB(`tv/${id}/recommendations`, { page })
 }
 
 /**
  * Get TV show episodes from season (single)
  */
 export function getTvShowEpisodes(id: string, season: string) {
-  return fetchTMD(`tv/${id}/season/${season}`)
+  return fetchTMDB(`tv/${id}/season/${season}`)
 }
 
 /**
  * Get trending
  */
 export function getTrending(media: string, page = 1) {
-  return fetchTMD(`trending/${media}/week`, { page })
+  return fetchTMDB(`trending/${media}/week`, { page })
 }
 
 /**
  * Discover media by genre
  */
 export function getMediaByGenre(media: string, genre: string, page = 1) {
-  return fetchTMD(`discover/${media}`, {
+  return fetchTMDB(`discover/${media}`, {
     with_genres: genre,
     page,
   })
@@ -102,14 +102,14 @@ export function getMediaByGenre(media: string, genre: string, page = 1) {
 * Get credits
 */
 export function getCredits(id: string, type: string) {
-  return fetchTMD(`person/${id}/${type}`)
+  return fetchTMDB(`person/${id}/${type}`)
 }
 
 /**
  * Get genre list
  */
 export function getGenreList(media: string) {
-  return fetchTMD(`genre/${media}/list`, { language: undefined }).then(res => res.genres)
+  return fetchTMDB(`genre/${media}/list`, { language: undefined }).then(res => res.genres)
 }
 
 /**
@@ -117,7 +117,7 @@ export function getGenreList(media: string) {
  */
 
 export function getPerson(id: string) {
-  return fetchTMD(`person/${id}`, {
+  return fetchTMDB(`person/${id}`, {
     append_to_response: 'images,combined_credits,external_ids',
     include_image_language: 'en',
   })
@@ -128,7 +128,7 @@ export function getPerson(id: string) {
  */
 
 export function search(query: string, page = 1) {
-  return fetchTMD('search/multi', { query, page })
+  return fetchTMDB('search/multi', { query, page })
 }
 
 /**
