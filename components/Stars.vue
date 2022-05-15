@@ -1,0 +1,16 @@
+<script setup lang="ts">
+const props = defineProps<{
+  value: number
+}>()
+
+const style = $computed(() => ({
+  'clip-path': `inset(0 ${(10 - props.value) * 10}% 0 0)`,
+}))
+</script>
+
+<template>
+  <div relative aspect="11/2">
+    <img src="/img/stars.png" absolute inset-0>
+    <img src="/img/stars-filled.png" absolute inset-0 :style="style">
+  </div>
+</template>

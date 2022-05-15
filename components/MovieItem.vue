@@ -19,8 +19,9 @@ const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500'
     <h3 mt-2>
       {{ item.title }}
     </h3>
-    <div text-sm op80>
-      {{ item.vote_average }} / 10
+    <div text-sm op80 row gap-2 items-center>
+      <Stars w-20 :value="item.vote_average" />
+      {{ item.vote_average }}
     </div>
   </div>
 </template>
