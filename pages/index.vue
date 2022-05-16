@@ -1,9 +1,10 @@
 <script setup lang="ts">
-const { data: popular } = await useAsyncData('popular', () => functions.get.getMovies('popular'))
-const { data: topRated } = await useAsyncData('top_rated', () => functions.get.getMovies('top_rated'))
-const { data: upcoming } = await useAsyncData('upcoming', () => functions.get.getMovies('upcoming'))
-const { data: nowPlaying } = await useAsyncData('now_playing', () => functions.get.getMovies('now_playing'))
-const featured = $computed(() => upcoming.value?.results[0])
+const fn = useServerFn()
+const popular = await fn.getMovies('popular', 1)
+const topRated = await fn.getMovies('top_rated', 1)
+const upcoming = await fn.getMovies('upcoming', 1)
+const nowPlaying = await fn.getMovies('now_playing', 1)
+const featured = $computed(() => upcoming.results[0])
 </script>
 
 <template>

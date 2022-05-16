@@ -5,8 +5,6 @@ const route = useRoute()
 const type = route.params.type as string
 const tailEl = ref<HTMLDivElement>()
 
-const store = useStore()
-
 let page = $ref(0)
 const items: Movie[] = reactive([])
 
@@ -22,12 +20,13 @@ useEventListener('scroll', () => {
     loadingNext()
 })
 
+const fn = useServerFn()
+
 async function loadingNext() {
   if (isLoading)
     return
   isLoading = true
-  console.log(`fetch page ${page + 1}`)
-  items.push(...(await store.getPage('movie', type, page + 1)))
+  items.push(...(await fn.getMovies(type, page + 1)).results)
   page += 1
   isLoading = false
 }
@@ -37,7 +36,7 @@ await loadingNext()
 
 <template>
   <div>
-    <div grid="~ cols-3" gap-4 p4>
+    <div grid="~ cols-3 md:cols-5 lg:cols-7" gap-4 p4>
       <MovieItem
         v-for="item of items"
         :key="item.id"

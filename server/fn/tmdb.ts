@@ -1,9 +1,17 @@
 import { $fetch } from 'ohmyfetch'
+import LRU from 'lru-cache'
+import { hash as ohash } from 'ohash'
 import type { Movie, PageResult } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
 import LISTS from '~/constants/lists'
 
-export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+const cache = new LRU({
+  max: 500,
+  ttl: 2000 * 60 * 60, // 2 hour
+})
+
+function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+  console.log('fetching', url, params)
   return $fetch(url, {
     baseURL: TMDB_API_URL,
     params: {
@@ -11,6 +19,21 @@ export function fetchTMDB(url: string, params: Record<string, string | number | 
       ...params,
     },
   })
+}
+
+export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}): Promise<any> {
+  const hash = ohash([url, params])
+  if (!cache.has(hash)) {
+    cache.set(
+      hash,
+      _fetchTMDB(url, params)
+        .catch((e) => {
+          cache.delete(hash)
+          throw e
+        }),
+    )
+  }
+  return cache.get(hash)!
 }
 
 /**
@@ -27,7 +50,7 @@ export function getListItem(type: 'movie' | 'tv', query: string) {
 /**
  * Get movies (listing)
  */
-export function getMovies(query: string, page = 1): Promise<PageResult<Movie>> {
+export function getMovies(query: string, page: number): Promise<PageResult<Movie>> {
   return fetchTMDB(`movie/${query}`, { page })
 }
 

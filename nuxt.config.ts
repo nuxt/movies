@@ -6,10 +6,15 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
+    'nuxt-server-fn',
   ],
   experimental: {
     reactivityTransform: true,
-    // viteNode: true,
+  },
+  build: {
+    transpile: [
+      'nuxt-server-fn/client',
+    ],
   },
   colorMode: {
     classSuffix: '',

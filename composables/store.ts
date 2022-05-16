@@ -22,6 +22,8 @@ export const useStore = defineStore('store', () => {
     },
   })
 
+  const fn = useServerFn()
+
   async function getPage(cate: Category, filter: FilterType, page: number) {
     if (!(cate in store.pages))
       store.pages[cate] = {}
@@ -38,7 +40,7 @@ export const useStore = defineStore('store', () => {
     if (info.pages[page])
       return info.pages[page]
 
-    const data = await functions.get.getMovies(filter, page)
+    const data = await fn.getMovies(filter, page)
 
     info.total_pages = data.total_pages
     info.total_results = data.total_results
