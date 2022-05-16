@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div h-full w-full col md:flex-row>
     <NavBar />
-    <slot />
+    <div of-auto>
+      <slot />
+    </div>
   </div>
 </template>

@@ -7,7 +7,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <div p5 row>
+  <div p5 justify-evenly items-center border="r base">
     <RouterLink v-slot="{ isActive }" to="/">
       <div
         text-3xl

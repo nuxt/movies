@@ -9,7 +9,7 @@ const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500'
 </script>
 
 <template>
-  <div>
+  <NuxtLink :to="`/movie/${item.id}`">
     <img
       :src="TMDB_IMAGE_BASE + item.poster_path"
       block border="2 gray4/10"
@@ -23,5 +23,5 @@ const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500'
       <Stars w-20 :value="item.vote_average" />
       {{ item.vote_average }}
     </div>
-  </div>
+  </NuxtLink>
 </template>
