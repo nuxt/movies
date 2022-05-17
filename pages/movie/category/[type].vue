@@ -20,7 +20,7 @@ useEventListener('scroll', () => {
     loadingNext()
 })
 
-const fn = useServerFn()
+const fn = useServerStateFn()
 
 async function loadingNext() {
   if (isLoading)

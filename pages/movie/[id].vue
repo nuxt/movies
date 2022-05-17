@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const id = $computed(() => route.params.id as string)
-const fn = useServerFn()
+const fn = useServerStateFn()
 
 const item = await fn.getMovie(id)
 </script>

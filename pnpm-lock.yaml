@@ -13,7 +13,7 @@ specifiers:
   eslint: ^8.15.0
   lru-cache: ^7.10.1
   nuxt: ^3.0.0-rc.3
-  nuxt-server-fn: ^0.0.3
+  nuxt-server-fn: ^0.1.1
   ohash: ^0.1.0
   pinia: ^2.0.14
   typescript: ^4.6.4
@@ -31,7 +31,7 @@ devDependencies:
   eslint: 8.15.0
   lru-cache: 7.10.1
   nuxt: 3.0.0-rc.3
-  nuxt-server-fn: 0.0.3
+  nuxt-server-fn: 0.1.1
   ohash: 0.1.0
   pinia: 2.0.14_typescript@4.6.4
   typescript: 4.6.4
@@ -594,11 +594,11 @@ packages:
     resolution: {integrity: sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==}
     dev: true
 
-  /@nuxt/kit-edge/3.0.0-rc.3-27540667.2886dfd:
-    resolution: {integrity: sha512-zATunvj3gHFsGIdj8SF/9gJvrKMDvafi7ZZcKMI9Y3bD7ULwe39mLH8FPKnsuV1MZiqhN41Cbpesv7DK+TsBkA==}
+  /@nuxt/kit-edge/3.0.0-rc.3-27545866.cd37a21:
+    resolution: {integrity: sha512-iBU1wEwj2peSN/sS4QIuZfUQluplh7YCarvz+MCUcybdOw17kXALPQjUY6q5ISXmNsTiY/fLqHvYz3k6UjkS5w==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.3-27540667.2886dfd
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.3-27545866.cd37a21
       c12: 0.2.7
       consola: 2.15.3
       defu: 6.0.0
@@ -744,8 +744,8 @@ packages:
       - webpack
     dev: true
 
-  /@nuxt/schema-edge/3.0.0-rc.3-27540667.2886dfd:
-    resolution: {integrity: sha512-UbkbqhNap1Urxq+gGp9cm3+pb6h6xKB2k654bPtH3L5PuWohJFwIzMRJnyzpKN9xak3OoBue8HYK3ugk1geI1w==}
+  /@nuxt/schema-edge/3.0.0-rc.3-27545866.cd37a21:
+    resolution: {integrity: sha512-7EOInYwj96i688RLlYKy1CIOM3Lo1GQkYNPfbNcD1k74QeQorUqn0/Tr5Cyce3/SqZ77c8PcQ4bc3p7PNPu9XA==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     dependencies:
       c12: 0.2.7
@@ -910,7 +910,7 @@ packages:
   /@nuxtjs/color-mode/3.0.3:
     resolution: {integrity: sha512-FQVyLgRQ4C4C5NmTBrFRNm+LNjgT4cPFqyqfoRxD6hfVZhLxWJfKPGUaT8H/BCeBzkZZ29583MG9GqyDX7rnNg==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.3-27540667.2886dfd
+      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.3-27545866.cd37a21
       defu: 5.0.1
       lodash.template: 4.5.0
       pathe: 0.2.0
@@ -4762,8 +4762,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /nuxt-server-fn/0.0.3:
-    resolution: {integrity: sha512-7KNJWuaD/KmBYNeLNyif6rDksXd+q8Gd9PSUWAx3CLcvPeOXlw53iUc8ujoXqfwcLeoaz0Zja1HuTbyYUp0VGg==}
+  /nuxt-server-fn/0.1.1:
+    resolution: {integrity: sha512-IWURXYOB0WgHy/3iDGw2IJjrT0mAxyhxZ/D5oivmkZT7Gketawu08jfmE6uANpKQVndt/gzyXENZHOVSBQudDQ==}
     dependencies:
       '@nuxt/kit': 3.0.0-rc.3
       fs-extra: 10.1.0
