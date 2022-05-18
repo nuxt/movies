@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const fn = useServerStateFn()
+const fn = useServerFunctions()
 const [popular, topRated, upcoming, nowPlaying] = await Promise.all([
   fn.getMovies('popular', 1),
   fn.getMovies('top_rated', 1),
