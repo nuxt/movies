@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import type { Movie } from '~/types'
+import type { ItemType, Movie } from '~/types'
 
 defineProps<{
+  type: ItemType
   items: Movie[]
 }>()
 
@@ -29,7 +30,8 @@ function scrollRight() {
           v-for="i of items"
           :key="i.id"
           :item="i"
-          flex-1 w-50
+          :type="type"
+          flex-1 w-60
         />
       </div>
     </div>

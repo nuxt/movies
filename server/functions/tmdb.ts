@@ -1,9 +1,8 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import type { Movie, PageResult } from '../../types'
+import type { ItemType, Movie, PageResult } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
-import LISTS from '~/constants/lists'
 
 const cache = new LRU({
   max: 500,
@@ -11,6 +10,7 @@ const cache = new LRU({
 })
 
 function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+  // eslint-disable-next-line no-console
   console.log('fetching', url, params)
   return $fetch(url, {
     baseURL: TMDB_API_URL,
@@ -37,14 +37,20 @@ export function fetchTMDB(url: string, params: Record<string, string | number | 
 }
 
 /**
- * Get list item
+ * Get items (listing)
  */
-export function getListItem(type: 'movie' | 'tv', query: string) {
-  if (type === 'movie')
-    return LISTS.MOVIE.find(list => list.QUERY === query)
+export function getItems(type: ItemType, query: string, page: number): Promise<PageResult<Movie>> {
+  return fetchTMDB(`${type}/${query}`, { page })
+}
 
-  else if (type === 'tv')
-    return LISTS.TV.find(list => list.QUERY === query)
+/**
+ * Get item
+ */
+export function getItem(type: ItemType, id: string): Promise<Movie> {
+  return fetchTMDB(`${type}/${id}`, {
+    append_to_response: 'videos,credits,images,external_ids,release_dates',
+    include_image_language: 'en',
+  })
 }
 
 /**

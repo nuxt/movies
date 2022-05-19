@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Movie } from '~/types'
+import type { ItemType, Movie } from '~/types'
 
 const route = useRoute()
-const type = route.params.type as string
+const query = $computed(() => route.params.query as string)
+const type = $computed(() => route.params.type as ItemType || 'movie')
 const tailEl = ref<HTMLDivElement>()
 
 let page = $ref(0)
@@ -26,7 +27,7 @@ async function loadingNext() {
   if (isLoading)
     return
   isLoading = true
-  items.push(...(await fn.getMovies(type, page + 1)).results)
+  items.push(...(await fn.getItems(type, query, page + 1)).results)
   page += 1
   isLoading = false
 }
@@ -40,6 +41,7 @@ await loadingNext()
       <MovieItem
         v-for="item of items"
         :key="item.id"
+        :type="type"
         :item="item"
       />
     </div>

@@ -1,19 +1,17 @@
-/**
- * Different types of lists
- */
-export default {
-  MOVIE: [
-    { TITLE: 'Trending Movies', QUERY: 'trending' },
-    { TITLE: 'Popular Movies', QUERY: 'popular' },
-    { TITLE: 'Top Rated Movies', QUERY: 'top_rated' },
-    { TITLE: 'Upcoming Movies', QUERY: 'upcoming' },
-    { TITLE: 'Now Playing Movies', QUERY: 'now_playing' },
-  ],
-  TV: [
-    { TITLE: 'Trending TV Shows', QUERY: 'trending' },
-    { TITLE: 'Popular TV Shows', QUERY: 'popular' },
-    { TITLE: 'Top Rated TV Shows', QUERY: 'top_rated' },
-    { TITLE: 'Currently Airing TV Shows', QUERY: 'on_the_air' },
-    { TITLE: 'TV Shows Airing Today', QUERY: 'airing_today' },
-  ],
+import type { QueryItem } from '~/types'
+
+export const QUERY_LIST = {
+  movie: <QueryItem[]>([
+    // { type: 'movie', title: 'Trending Movies', query: 'trending' },
+    { type: 'movie', title: 'Popular Movies', query: 'popular' },
+    { type: 'movie', title: 'Top Rated Movies', query: 'top_rated' },
+    { type: 'movie', title: 'Upcoming Movies', query: 'upcoming' },
+    { type: 'movie', title: 'Now Playing Movies', query: 'now_playing' },
+  ]),
+  tv: <QueryItem[]>([
+    { type: 'tv', title: 'Popular TV Shows', query: 'popular' },
+    { type: 'tv', title: 'Top Rated TV Shows', query: 'top_rated' },
+    { type: 'tv', title: 'Currently Airing TV Shows', query: 'on_the_air' },
+    { type: 'tv', title: 'TV Shows Airing Today', query: 'airing_today' },
+  ]),
 }

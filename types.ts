@@ -1,3 +1,5 @@
+export type ItemType = 'movie' | 'tv'
+
 export interface Movie {
   adult: boolean
   backdrop_path: string
@@ -10,6 +12,7 @@ export interface Movie {
   poster_path: string
   release_date: string
   title: string
+  name?: string
   video: boolean
   vote_average: number
   vote_count: number
@@ -21,3 +24,10 @@ export interface PageResult<T> {
   total_pages: number
   total_results: number
 }
+
+export interface QueryItem {
+  type: ItemType
+  title: string
+  query: string
+}
+
