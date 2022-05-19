@@ -1,12 +1,13 @@
-import type { Item } from '~/types'
+import type { Item } from '~~/types'
 
-export function getDirectors(item: Item) {
-  const people = item.credits?.crew
+export function getTrailer(item: Item) {
+  const trailer = item.videos?.results?.find(video => video.type === 'Trailer')
 
-  if (people) {
-    return people
-      .filter(person => person.job === 'Director')
-      .map(person => `<a href="/person/${person.id}">${person.name}</a>`)
-      .join(', ')
+  if (!trailer)
+    return null
+
+  return {
+    name: trailer.name,
+    src: `https://www.youtube.com/embed/${trailer.key}?rel=0&showinfo=0&autoplay=1`,
   }
 }

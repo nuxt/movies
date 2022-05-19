@@ -17,6 +17,7 @@ export interface Item {
   vote_average: number
   vote_count: number
   // details
+  homepage?: string
   runtime?: number
   budget?: number
   revenue?: number

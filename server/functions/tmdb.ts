@@ -1,7 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import type { Item, ItemType, PageResult } from '../../types'
+import type { Item, ItemType, PageResult, Person } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
 
 const cache = new LRU({
@@ -109,7 +109,7 @@ export function getGenreList(media: string) {
  * Get person (single)
  */
 
-export function getPerson(id: string) {
+export function getPerson(id: string): Promise<Person> {
   return fetchTMDB(`person/${id}`, {
     append_to_response: 'images,combined_credits,external_ids',
     include_image_language: 'en',

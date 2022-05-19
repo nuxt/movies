@@ -2,12 +2,15 @@
 import type { Item } from '~/types'
 import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
 
-defineProps<{
+const { item } = defineProps<{
   item: Item
 }>()
 
+let showModal = $ref(false)
+const trailer = $computed(() => getTrailer(item))
+
 function playTrailer() {
-  // TODO:
+  showModal = true
 }
 </script>
 
@@ -36,7 +39,7 @@ function playTrailer() {
         <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5>
           {{ item.overview }}
         </p>
-        <div py5 hidden lg:block>
+        <div v-if="trailer" py5 display-none lg:block>
           <button
             flex="~ gap2" items-center p="x6 y3"
             bg="gray/15 hover:gray/20" transition
@@ -47,7 +50,7 @@ function playTrailer() {
           </button>
         </div>
       </div>
-      <div absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
+      <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
         <button
           items-center p10 text-5xl op20 hover:op80 transition
           @click="playTrailer()"
@@ -56,5 +59,11 @@ function playTrailer() {
         </button>
       </div>
     </div>
+  </div>
+  <div v-if="trailer && showModal" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90>
+    <button absolute top-1 right-1 p5 text-xl @click="showModal = false">
+      <div i-carbon-close />
+    </button>
+    <iframe :src="trailer.src" h-full m20 border-none />
   </div>
 </template>

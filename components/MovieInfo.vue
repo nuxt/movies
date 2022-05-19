@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import type { Genre, Item } from '~/types'
+import type { Item } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
 
 const { item } = defineProps<{
   item: Item
 }>()
 
-const directors = $computed(() => getDirectors(item))
+const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.homepage }))
+const directors = $computed(() => item.credits?.crew.filter(person => person.job === 'Director'))
 </script>
 
 <template>
@@ -38,13 +39,22 @@ const directors = $computed(() => getDirectors(item))
             {{ formatTime(item.runtime) }}
           </div>
         </template>
-        <template v-if="directors">
+        <template v-if="directors?.length">
           <div>
             Director
           </div>
 
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="directors" />
+          <div flex="~ row wrap gap1">
+            <NuxtLink
+              v-for="person of directors"
+              :key="person.id"
+              :to="`/person/${person.id}`"
+              bg="gray/10 hover:gray/20" p="x2 y1"
+              rounded text-xs
+            >
+              {{ person.name }}
+            </NuxtLink>
+          </div>
         </template>
         <template v-if="item.budget">
           <div>
@@ -110,8 +120,8 @@ const directors = $computed(() => getDirectors(item))
       </ul>
     </div>
 
-    <div v-if="item.external_ids">
-      <ExternalLinks :links="item.external_ids" />
+    <div>
+      <ExternalLinks :links="externalIds" />
     </div>
   </div>
 </template>
