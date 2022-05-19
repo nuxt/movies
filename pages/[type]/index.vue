@@ -21,6 +21,5 @@ const featured = $computed(() => upcoming.results[0])
       :key="query.type + query.query"
       :query="query"
     />
-    <TheFooter />
   </div>
 </template>
