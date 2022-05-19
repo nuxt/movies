@@ -1,7 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import type { ItemType, Movie, PageResult } from '../../types'
+import type { Item, ItemType, PageResult } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
 
 const cache = new LRU({
@@ -39,32 +39,15 @@ export function fetchTMDB(url: string, params: Record<string, string | number | 
 /**
  * Get items (listing)
  */
-export function getItems(type: ItemType, query: string, page: number): Promise<PageResult<Movie>> {
+export function getItems(type: ItemType, query: string, page: number): Promise<PageResult<Item>> {
   return fetchTMDB(`${type}/${query}`, { page })
 }
 
 /**
  * Get item
  */
-export function getItem(type: ItemType, id: string): Promise<Movie> {
+export function getItem(type: ItemType, id: string): Promise<Item> {
   return fetchTMDB(`${type}/${id}`, {
-    append_to_response: 'videos,credits,images,external_ids,release_dates',
-    include_image_language: 'en',
-  })
-}
-
-/**
- * Get movies (listing)
- */
-export function getMovies(query: string, page: number): Promise<PageResult<Movie>> {
-  return fetchTMDB(`movie/${query}`, { page })
-}
-
-/**
- * Get movie (single)
- */
-export function getMovie(id: string): Promise<Movie> {
-  return fetchTMDB(`movie/${id}`, {
     append_to_response: 'videos,credits,images,external_ids,release_dates',
     include_image_language: 'en',
   })
@@ -73,27 +56,8 @@ export function getMovie(id: string): Promise<Movie> {
 /**
  * Get movie recommended (single)
  */
-
 export function getMovieRecommended(id: string, page = 1) {
   return fetchTMDB(`movie/${id}/recommendations`, { page })
-}
-
-/**
- * Get TV shows (listing)
- */
-export function getTvShows(query: string, page = 1) {
-  return fetchTMDB(`tv/${query}`, { page })
-}
-
-/**
- * Get TV show (single)
- */
-
-export function getTvShow(id: string) {
-  return fetchTMDB(`tv/${id}`, {
-    append_to_response: 'videos,credits,images,external_ids,content_ratings',
-    include_image_language: 'en',
-  })
 }
 
 /**

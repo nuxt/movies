@@ -13,6 +13,7 @@ const item = await fn.getItem(type, id)
   <div>
     <Hero :item="item" />
 
+    <MovieOverview :item="item" :type="type" />
     <pre>
       {{ item }}
     </pre>

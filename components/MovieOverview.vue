@@ -9,19 +9,12 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="`/${type}/${item.id}`">
+  <div p4 grid="~ cols-[max-content_1fr]" gap-8 items-center>
     <img
       :src="TMDB_IMAGE_BASE_THUMBNAIL + item.poster_path"
-      block border="4 gray4/10"
+      block border="4 gray4/10" w-79
       transition duration-400 object-cover aspect="10/16"
-      hover="scale-105 z10"
     >
-    <h3 mt-2>
-      {{ item.title || item.name }}
-    </h3>
-    <div text-sm op80 row gap-2 items-center>
-      <Stars w-20 :value="item.vote_average" />
-      {{ item.vote_average }}
-    </div>
-  </NuxtLink>
+    <MovieInfo :item="item" />
+  </div>
 </template>

@@ -14,45 +14,12 @@
       </a>
     </p>
 
-    <!-- TODO: should change the owner's social links -->
-    <div flex="~ row gap5" text-lg mt-5>
-      <a
-        href="https://twitter.com/jasonujmaalvis"
-        target="_blank"
-        aria-label="Link to Twitter account"
-        rel="noopener"
-        op50 hover:op100
-      >
-        <div i-simple-icons:twitter />
-      </a>
-      <a
-        href="https://github.com/addyosmani/nuxt-movies"
-        target="_blank"
-        aria-label="Link to GitHub account"
-        rel="noopener"
-        op50 hover:op100
-      >
-        <div i-simple-icons:github />
-      </a>
-
-      <a
-        href="https://www.linkedin.com/in/jason-ujma-alvis"
-        target="_blank"
-        aria-label="Link to LinkedIn account"
-        rel="noopener"
-        op50 hover:op100
-      >
-        <div i-simple-icons:linkedin />
-      </a>
-
-      <a
-        href="mailto:hello@jason.codes"
-        aria-label="Link to Email"
-        rel="noopener"
-        op50 hover:op100
-      >
-        <div i-fluent:mail-24-regular />
-      </a>
-    </div>
+    <ExternalLinks
+      :links="{
+        twitter_id: 'nuxt_js',
+        github_id: 'nuxt/nuxt3-movies',
+        homepage: 'https://v3.nuxtjs.org/',
+      }"
+    />
   </footer>
 </template>
