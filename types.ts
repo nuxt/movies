@@ -63,6 +63,9 @@ export interface Person {
   combined_credits?: {
     cast?: Media[]
   }
+  images?: {
+    profiles: Image[]
+  }
 }
 
 export interface Video {

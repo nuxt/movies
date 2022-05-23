@@ -16,7 +16,7 @@ const item = await fn.getItems(query.type, query.query, 1)
       {{ query.title }}
     </template>
     <template #more>
-      <NuxtLink :to="`/${query.type}/category/${query.query}`">
+      <NuxtLink :to="`/${query.type}/category/${query.query}`" n-link>
         Explore more
       </NuxtLink>
     </template>

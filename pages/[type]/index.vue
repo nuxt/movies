@@ -7,15 +7,23 @@ const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')
 
 const queries = $computed(() => QUERY_LIST[type as MediaType])
-const upcoming = await fn.getItems(type, queries[0].query, 1)
-const featured = $computed(() => upcoming.results[0])
+
+const AsyncWrapper = defineComponent(async (_, ctx) => {
+  const upcoming = await fn.getItems(type, queries[0].query, 1)
+  const item = upcoming.results[0]
+  return () => ctx.slots?.default?.({ item })
+})
 </script>
 
 <template>
   <div>
-    <NuxtLink :to="`/${type}/${featured.id}`">
-      <MediaHero :item="featured" />
-    </NuxtLink>
+    <AsyncWrapper>
+      <template #default="{ item }">
+        <NuxtLink :to="`/${type}/${item.id}`">
+          <MediaHero :item="item" />
+        </NuxtLink>
+      </template>
+    </AsyncWrapper>
     <CarouselAutoQuery
       v-for="query of queries"
       :key="query.type + query.query"

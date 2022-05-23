@@ -11,16 +11,6 @@ const items: Media[] = reactive([])
 
 let isLoading = $ref(false)
 
-useEventListener('scroll', () => {
-  if (!tailEl.value)
-    return
-
-  const { top } = tailEl.value.getBoundingClientRect()
-  const delta = top - window.innerHeight
-  if (delta < 300)
-    loadingNext()
-})
-
 const fn = useServerFunctions()
 
 async function loadingNext() {
@@ -33,10 +23,23 @@ async function loadingNext() {
 }
 
 await loadingNext()
+
+if (process.client) {
+  const { top } = useElementBounding(tailEl)
+  watch(top, () => {
+    const delta = top.value - window.innerHeight
+    if (delta < 300)
+      loadingNext()
+  })
+}
 </script>
 
 <template>
   <div>
+    <h1 flex="~" px8 pt8 gap2 text-3xl>
+      <span case-capital>{{ query }}</span>
+      <span>{{ type === 'tv' ? 'TV' : 'Movies' }}</span>
+    </h1>
     <MediaGrid>
       <MediaCard
         v-for="item of items"
