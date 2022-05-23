@@ -12,10 +12,6 @@ const item = await fn.getItem(type, id)
 <template>
   <div>
     <MediaHero :item="item" />
-
     <MediaDetails :item="item" :type="type" />
-    <pre>
-      {{ item }}
-    </pre>
   </div>
 </template>

@@ -32,6 +32,10 @@ export interface Media {
     cast: Person[]
     crew: Person[]
   }
+  images?: {
+    backdrops: Image[]
+    posters: Image[]
+  }
   external_ids?: ExternalIds
 }
 
@@ -72,6 +76,16 @@ export interface Video {
   official: boolean
   published_at: string
   id: string
+}
+
+export interface Image {
+  aspect_ratio: number
+  height: number
+  iso_639_1: string
+  file_path: string
+  vote_average: number
+  vote_count: number
+  width: number
 }
 
 export interface ExternalIds {

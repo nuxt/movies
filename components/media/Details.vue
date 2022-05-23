@@ -21,4 +21,6 @@ const tab = $ref<'overview' | 'videos' | 'photos'>('overview')
     </button>
   </div>
   <MediaOverview v-if="tab === 'overview'" :item="item" />
+  <MediaVideos v-if="tab === 'videos'" :item="item" />
+  <MediaPhotos v-if="tab === 'photos'" :item="item" />
 </template>

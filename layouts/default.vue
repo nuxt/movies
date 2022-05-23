@@ -5,5 +5,6 @@
       <TheFooter />
     </div>
     <NavBar lg:order-first />
+    <IframeModal />
   </div>
 </template>

@@ -6,11 +6,12 @@ const { item } = defineProps<{
   item: Media
 }>()
 
-let showModal = $ref(false)
 const trailer = $computed(() => getTrailer(item))
 
+const showModal = useIframeModal()
 function playTrailer() {
-  showModal = true
+  if (trailer)
+    showModal(trailer)
 }
 </script>
 
@@ -59,11 +60,5 @@ function playTrailer() {
         </button>
       </div>
     </div>
-  </div>
-  <div v-if="trailer && showModal" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90>
-    <button absolute top-1 right-1 p5 text-xl @click="showModal = false">
-      <div i-carbon-close />
-    </button>
-    <iframe :src="trailer.src" h-full m20 border-none />
   </div>
 </template>
