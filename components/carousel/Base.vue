@@ -33,13 +33,13 @@ function scrollRight() {
       absolute top-0 left-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       @click="scrollLeft()"
     >
-      <div i-fluent:chevron-left-24-regular text-3xl text-white />
+      <div i-ph-caret-left-light text-3xl text-white />
     </button>
     <button
       absolute top-0 right-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       @click="scrollRight()"
     >
-      <div i-fluent:chevron-right-24-regular text-3xl text-white />
+      <div i-ph-caret-right-light text-3xl text-white />
     </button>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <template>
   <footer p="y15 x15" flex="~ col gap1">
-    <p op50 text-sm>
+    <p text-true-gray:70 text-sm>
       <!-- TODO: should change the copyright name -->
       &copy; {{ new Date().getFullYear() }} The Nuxt Movies authors. All rights reserved.&nbsp;
-      <a target="_blank" href="https://jason.codes/cookie-policy" rel="noopener" underline op80 hover:op100>
+      <a target="_blank" href="https://jason.codes/cookie-policy" rel="noopener" n-link-text>
         Cookie Policy
       </a>
     </p>
-    <p op50 text-sm>
+    <p text-true-gray:70 text-sm>
       Designed and built by the Nuxt Movies authors, data provided by&nbsp;
-      <a target="_blank" href="https://www.themoviedb.org/" rel="noopener" underline op80 hover:op100>
+      <a target="_blank" href="https://www.themoviedb.org/" rel="noopener" n-link-text>
         TMDB
       </a>
     </p>

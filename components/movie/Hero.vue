@@ -45,7 +45,7 @@ function playTrailer() {
             bg="gray/15 hover:gray/20" transition
             @click="playTrailer()"
           >
-            <div i-fluent:play-24-filled />
+            <div i-ph-play />
             Watch Trailer
           </button>
         </div>
@@ -55,7 +55,7 @@ function playTrailer() {
           items-center p10 text-5xl op20 hover:op80 transition
           @click="playTrailer()"
         >
-          <div i-fluent:play-circle-24-regular />
+          <div i-ph-play-circle-light />
         </button>
       </div>
     </div>

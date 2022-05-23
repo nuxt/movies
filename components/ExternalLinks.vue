@@ -14,7 +14,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to Twitter account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-simple-icons:twitter />
     </a>
@@ -24,7 +24,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to Facebook account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-simple-icons:facebook />
     </a>
@@ -34,7 +34,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to Instagram account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-simple-icons:instagram />
     </a>
@@ -44,7 +44,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to IMDb account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-cib:imdb />
     </a>
@@ -54,7 +54,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to GitHub account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-simple-icons:github />
     </a>
@@ -64,7 +64,7 @@ defineProps<{
       target="_blank"
       aria-label="Link to LinkedIn account"
       rel="noopener"
-      op50 hover:op100
+      n-link
     >
       <div i-simple-icons:linkedin />
     </a>
@@ -72,19 +72,19 @@ defineProps<{
       v-if="links.email"
       :href="links.email"
       aria-label="Link to Email"
-      rel="noopener"
-      op50 hover:op100
+      rel="noopener" scale-120
+      n-link
     >
-      <div i-fluent:mail-24-regular />
+      <div i-ph-envelope-simple />
     </a>
     <a
       v-if="links.homepage"
       :href="links.homepage"
       aria-label="Link to Homepage"
-      rel="noopener"
-      op50 hover:op100
+      rel="noopener" scale-120
+      n-link
     >
-      <div i-fluent:globe-24-regular />
+      <div i-ph-globe />
     </a>
   </div>
 </template>
