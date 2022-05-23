@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Item } from '~/types'
+import type { Media } from '~/types'
 import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
 
 const { item } = defineProps<{
-  item: Item
+  item: Media
 }>()
 
 let showModal = $ref(false)

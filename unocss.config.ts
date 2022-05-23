@@ -15,6 +15,11 @@ export default defineConfig({
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
     ['border-base', 'border-gray-400/10'],
   ],
+  theme: {
+    colors: {
+      primary: '#40c1ad',
+    },
+  },
   presets: [
     presetUno(),
     presetAttributify(),

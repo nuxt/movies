@@ -5,7 +5,9 @@ const person = await useServerFunctions().getPerson(id)
 
 <template>
   <div>
-    {{ id }}
-    {{ person }}
+    <PersonDetails :item="person" />
+    <pre>
+      {{ person }}
+    </pre>
   </div>
 </template>

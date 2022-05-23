@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ItemType } from '~/types'
+import type { MediaType } from '~/types'
 
 const route = useRoute()
-const type = $computed(() => route.params.type as ItemType || 'movie')
+const type = $computed(() => route.params.type as MediaType || 'movie')
 const id = $computed(() => route.params.id as string)
 const fn = useServerFunctions()
 
@@ -11,9 +11,9 @@ const item = await fn.getItem(type, id)
 
 <template>
   <div>
-    <Hero :item="item" />
+    <MovieHero :item="item" />
 
-    <MovieOverview :item="item" :type="type" />
+    <MovieDetails :item="item" :type="type" />
     <pre>
       {{ item }}
     </pre>

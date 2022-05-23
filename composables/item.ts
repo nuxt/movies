@@ -1,6 +1,6 @@
-import type { Item } from '~~/types'
+import type { Media } from '~~/types'
 
-export function getTrailer(item: Item) {
+export function getTrailer(item: Media) {
   const trailer = item.videos?.results?.find(video => video.type === 'Trailer')
 
   if (!trailer)

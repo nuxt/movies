@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { ItemType, Movie } from '~/types'
+import type { Media, MediaType } from '~/types'
 
 const route = useRoute()
 const query = $computed(() => route.params.query as string)
-const type = $computed(() => route.params.type as ItemType || 'movie')
+const type = $computed(() => route.params.type as MediaType || 'movie')
 const tailEl = ref<HTMLDivElement>()
 
 let page = $ref(0)
-const items: Movie[] = reactive([])
+const items: Media[] = reactive([])
 
 let isLoading = $ref(false)
 
@@ -37,14 +37,14 @@ await loadingNext()
 
 <template>
   <div>
-    <div grid="~ cols-3 md:cols-5 lg:cols-7" gap-4 p4>
-      <MovieItem
+    <CardGrid>
+      <CardMovie
         v-for="item of items"
         :key="item.id"
         :type="type"
         :item="item"
       />
-    </div>
+    </CardGrid>
     <div ref="tailEl" />
     <div v-if="isLoading" p10 animate-pulse>
       <div i-carbon:circle-dash text-4xl ma animate-spin />

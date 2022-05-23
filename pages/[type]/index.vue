@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ItemType } from '~/types'
+import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
 
 const fn = useServerFunctions()
 const route = useRoute()
-const type = $computed(() => route.params.type as ItemType || 'movie')
+const type = $computed(() => route.params.type as MediaType || 'movie')
 
-const queries = $computed(() => QUERY_LIST[type as ItemType])
+const queries = $computed(() => QUERY_LIST[type as MediaType])
 const upcoming = await fn.getItems(type, queries[0].query, 1)
 const featured = $computed(() => upcoming.results[0])
 </script>
@@ -14,9 +14,9 @@ const featured = $computed(() => upcoming.results[0])
 <template>
   <div>
     <NuxtLink :to="`/${type}/${featured.id}`">
-      <Hero :item="featured" />
+      <MovieHero :item="featured" />
     </NuxtLink>
-    <QueryCarousel
+    <CarouselAutoQuery
       v-for="query of queries"
       :key="query.type + query.query"
       :query="query"

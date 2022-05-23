@@ -1,6 +1,6 @@
-export type ItemType = 'movie' | 'tv'
+export type MediaType = 'movie' | 'tv'
 
-export interface Item {
+export interface Media {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
@@ -16,6 +16,7 @@ export interface Item {
   video: boolean
   vote_average: number
   vote_count: number
+  media_type?: MediaType
   // details
   homepage?: string
   runtime?: number
@@ -41,12 +42,23 @@ export interface Person {
   known_for_department: string
   name: string
   original_name: string
+  profile_path: string
   popularity: number
   cast_id?: number
   job?: string
   character?: string
   credit_id: string
   order: number
+  // details
+  also_known_as?: string[]
+  birthday?: string
+  place_of_birth?: string
+  homepage?: string
+  biography?: string
+  external_ids?: ExternalIds
+  combined_credits?: {
+    cast?: Media[]
+  }
 }
 
 export interface Video {
@@ -86,7 +98,7 @@ export interface Genre {
 }
 
 export interface QueryItem {
-  type: ItemType
+  type: MediaType
   title: string
   query: string
 }

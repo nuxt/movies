@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import type { ItemType, Movie } from '~/types'
-
-defineProps<{
-  type: ItemType
-  items: Movie[]
-}>()
-
 const scrollEl = $ref<HTMLDivElement>()
 
 function scrollLeft() {
@@ -23,16 +16,17 @@ function scrollRight() {
 </script>
 
 <template>
+  <div row py3 px10 items-center mt5>
+    <h3 text-2xl>
+      <slot name="title" />
+    </h3>
+    <div flex-auto />
+    <slot name="more" />
+  </div>
   <div relative>
     <div ref="scrollEl" overflow-y-auto>
       <div row gap-2 w-max p-2 px-10>
-        <MovieItem
-          v-for="i of items"
-          :key="i.id"
-          :item="i"
-          :type="type"
-          flex-1 w-60
-        />
+        <slot />
       </div>
     </div>
     <button
