@@ -14,7 +14,7 @@ const featured = $computed(() => upcoming.results[0])
 <template>
   <div>
     <NuxtLink :to="`/${type}/${featured.id}`">
-      <MovieHero :item="featured" />
+      <MediaHero :item="featured" />
     </NuxtLink>
     <CarouselAutoQuery
       v-for="query of queries"

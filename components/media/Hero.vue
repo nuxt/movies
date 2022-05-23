@@ -31,7 +31,7 @@ function playTrailer() {
           {{ item.title || item.name }}
         </h1>
         <div row gap3 items-center mt4>
-          <Stars w-25 :value="item.vote_average" />
+          <StarsRate w-25 :value="item.vote_average" />
           <div op80>
             {{ item.vote_count }} Reviews
           </div>

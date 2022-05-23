@@ -11,9 +11,9 @@ const item = await fn.getItem(type, id)
 
 <template>
   <div>
-    <MovieHero :item="item" />
+    <MediaHero :item="item" />
 
-    <MovieDetails :item="item" :type="type" />
+    <MediaDetails :item="item" :type="type" />
     <pre>
       {{ item }}
     </pre>

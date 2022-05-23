@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import type { Media, MediaType } from '~/types'
+import type { Media } from '~/types'
 
 defineProps<{
-  type: MediaType
   item: Media
 }>()
 </script>
 
 <template>
-  <MovieInfo :item="item" />
+  <MediaInfo :item="item" />
   <CarouselBase>
     <template #title>
       Cast
     </template>
-    <CardPerson
+    <PersonCard
       v-for="i of item.credits?.cast"
       :key="i.id"
       :item="i"

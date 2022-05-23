@@ -84,7 +84,7 @@ defineProps<{
       rel="noopener" scale-120
       n-link
     >
-      <div i-ph-globe />
+      <div i-ph-link-simple />
     </a>
   </div>
 </template>

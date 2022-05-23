@@ -20,7 +20,7 @@ const item = await fn.getItems(query.type, query.query, 1)
         Explore more
       </NuxtLink>
     </template>
-    <CardMovie
+    <MediaCard
       v-for="i of item.results"
       :key="i.id"
       :item="i"

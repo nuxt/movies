@@ -8,16 +8,16 @@ defineProps<{
 
 <template>
   <PersonInfo :item="item" />
-  <CardGrid>
+  <MediaGrid>
     <template
       v-for="i of item.combined_credits?.cast"
       :key="i.id"
     >
-      <CardMovie
+      <MediaCard
         v-if="i.release_date"
         :item="i"
         type="movie"
       />
     </template>
-  </CardGrid>
+  </MediaGrid>
 </template>

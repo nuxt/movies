@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <CarouselBase>
-    <CardMovie
+    <MediaCard
       v-for="i of items"
       :key="i.id"
       :item="i"

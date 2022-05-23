@@ -30,7 +30,7 @@ defineProps<{
       {{ item.title || item.name }}
     </h3>
     <div text-sm row gap-2 items-center>
-      <Stars w-20 :value="item.vote_average" />
+      <StarsRate w-20 :value="item.vote_average" />
       <div op60>
         {{ item.vote_average }}
       </div>

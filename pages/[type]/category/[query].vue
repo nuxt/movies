@@ -37,14 +37,14 @@ await loadingNext()
 
 <template>
   <div>
-    <CardGrid>
-      <CardMovie
+    <MediaGrid>
+      <MediaCard
         v-for="item of items"
         :key="item.id"
         :type="type"
         :item="item"
       />
-    </CardGrid>
+    </MediaGrid>
     <div ref="tailEl" />
     <div v-if="isLoading" p10 animate-pulse>
       <div i-carbon:circle-dash text-4xl ma animate-spin />
