@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import type { Media } from '~/types'
+import type { Media, MediaType } from '~/types'
 
 defineProps<{
   item: Media
+  type: MediaType
 }>()
 </script>
 
 <template>
-  <MediaInfo :item="item" />
+  <MediaInfo :item="item" :type="type" />
   <CarouselBase>
     <template #title>
       Cast

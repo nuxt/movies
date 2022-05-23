@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Media } from '~/types'
+import type { Media, MediaType } from '~/types'
 
 defineProps<{
   item: Media
+  type: MediaType
 }>()
 
 const tab = $ref<'overview' | 'videos' | 'photos'>('overview')
@@ -20,7 +21,7 @@ const tab = $ref<'overview' | 'videos' | 'photos'>('overview')
       Photos
     </button>
   </div>
-  <MediaOverview v-if="tab === 'overview'" :item="item" />
+  <MediaOverview v-if="tab === 'overview'" :item="item" :type="type" />
   <MediaVideos v-if="tab === 'videos'" :item="item" />
   <MediaPhotos v-if="tab === 'photos'" :item="item" />
 </template>

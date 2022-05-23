@@ -9,8 +9,8 @@ const type = $computed(() => route.params.type as MediaType || 'movie')
 const queries = $computed(() => QUERY_LIST[type as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
-  const upcoming = await fn.getItems(type, queries[0].query, 1)
-  const item = upcoming.results[0]
+  const list = await fn.listMedia(type, queries[0].query, 1)
+  const item = await fn.getMedia(type, list.results[0].id)
   return () => ctx.slots?.default?.({ item })
 })
 </script>

@@ -6,7 +6,7 @@ const type = $computed(() => route.params.type as MediaType || 'movie')
 const id = $computed(() => route.params.id as string)
 const fn = useServerFunctions()
 
-const item = await fn.getItem(type, id)
+const item = await fn.getMedia(type, id)
 </script>
 
 <template>

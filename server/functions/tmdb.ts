@@ -1,7 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import type { MediaType, Media, PageResult, Person } from '../../types'
+import type { Media, MediaType, PageResult, Person } from '../../types'
 import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
 
 const cache = new LRU({
@@ -36,17 +36,11 @@ export function fetchTMDB(url: string, params: Record<string, string | number | 
   return cache.get(hash)!
 }
 
-/**
- * Get items (listing)
- */
-export function getItems(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
+export function listMedia(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
   return fetchTMDB(`${type}/${query}`, { page })
 }
 
-/**
- * Get item
- */
-export function getItem(type: MediaType, id: string): Promise<Media> {
+export function getMedia(type: MediaType, id: string): Promise<Media> {
   return fetchTMDB(`${type}/${id}`, {
     append_to_response: 'videos,credits,images,external_ids,release_dates',
     include_image_language: 'en',
@@ -84,7 +78,7 @@ export function getTrending(media: string, page = 1) {
 /**
  * Discover media by genre
  */
-export function getMediaByGenre(media: string, genre: string, page = 1) {
+export function getMediaByGenre(media: string, genre: string, page = 1): Promise<PageResult<Media>> {
   return fetchTMDB(`discover/${media}`, {
     with_genres: genre,
     page,
@@ -101,7 +95,7 @@ export function getCredits(id: string, type: string) {
 /**
  * Get genre list
  */
-export function getGenreList(media: string) {
+export function getGenreList(media: string): Promise<{ name: string; id: number }[]> {
   return fetchTMDB(`genre/${media}/list`, { language: undefined }).then(res => res.genres)
 }
 

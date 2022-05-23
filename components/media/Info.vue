@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { Media } from '~/types'
+import type { Media, MediaType } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
 import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
 const { item } = defineProps<{
   item: Media
+  type: MediaType
 }>()
 
 const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.homepage }))
@@ -89,7 +90,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
             <div flex="~ row wrap gap1">
               <NuxtLink
                 v-for="genre of item.genres" :key="genre.id"
-                :to="`/genre/${genre.id}/movie`"
+                :to="`/genre/${genre.id}/${type}`"
                 bg="gray/10 hover:gray/20" p="x2 y1"
                 rounded text-xs
               >

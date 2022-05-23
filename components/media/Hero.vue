@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Media } from '~/types'
 import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
+import { formatTime } from '~/composables/utils'
 
 const { item } = defineProps<{
   item: Media
@@ -18,8 +19,15 @@ function playTrailer() {
 <template>
   <div>
     <div relative class="aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
-      <div absolute lt-lg:left-0 lg:bottom-0 top-0 right-0>
-        <img :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path" h-full>
+      <div
+        absolute top-0 right-0
+        lt-lg="left-0"
+        lg="bottom-0 left-1/3"
+      >
+        <img
+          :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
+          h-full w-full object-cover
+        >
       </div>
       <Transition appear name="hero">
         <div
@@ -33,8 +41,17 @@ function playTrailer() {
           </h1>
           <div row gap3 items-center mt4>
             <StarsRate w-25 :value="item.vote_average" />
-            <div op80>
+            <div op50>
+              {{ item.vote_average }}
+            </div>
+            <div op50>
               {{ item.vote_count }} Reviews
+            </div>
+            <div v-if="item.release_date" op50>
+              {{ item.release_date.slice(0, 4) }}
+            </div>
+            <div v-if="item.runtime" op50>
+              {{ formatTime(item.runtime) }}
             </div>
           </div>
           <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5>
