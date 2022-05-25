@@ -9,7 +9,7 @@ const style = $computed(() => ({
 </script>
 
 <template>
-  <div relative aspect="11/2">
+  <div relative aspect="11/2" filter-hue-rotate-320deg>
     <img src="/img/stars.png" absolute inset-0>
     <img src="/img/stars-filled.png" absolute inset-0 :style="style">
   </div>

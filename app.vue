@@ -2,10 +2,10 @@
 import '@unocss/reset/antfu.css'
 
 useHead({
-  title: 'Nuxt 3 Movies',
+  title: 'Nuxt3 Movies',
   link: [
     {
-      rel: 'icon', type: 'image/png', href: '/nuxt.png',
+      rel: 'icon', type: 'image/png', href: '/favicon.png',
     },
   ],
 })
@@ -23,10 +23,8 @@ html, body , #__nuxt{
   height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-html.dark {
   background: #111;
   color: white;
+  color-scheme: dark;
 }
 </style>

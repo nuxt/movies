@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     'nuxt-server-fn',
   ],
   experimental: {
@@ -15,8 +14,5 @@ export default defineNuxtConfig({
     transpile: [
       'nuxt-server-fn/client',
     ],
-  },
-  colorMode: {
-    classSuffix: '',
   },
 })
