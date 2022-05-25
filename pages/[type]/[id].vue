@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { MediaType } from '~/types'
 
+definePageMeta({
+  key: route => route.fullPath,
+})
+
 const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')
 const id = $computed(() => route.params.id as string)

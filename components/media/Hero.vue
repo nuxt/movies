@@ -14,28 +14,30 @@ function playTrailer() {
   if (trailer)
     showModal(trailer)
 }
+
+const mounted = useMounted()
 </script>
 
 <template>
-  <div>
-    <div relative class="aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
-      <div
-        absolute top-0 right-0
-        lt-lg="left-0"
-        lg="bottom-0 left-1/3"
+  <div :key="item.id" relative class="aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
+    <div
+      absolute top-0 right-0
+      lt-lg="left-0"
+      lg="bottom-0 left-1/3"
+    >
+      <img
+        :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
+        h-full w-full object-cover
       >
-        <img
-          :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
-          h-full w-full object-cover
-        >
-      </div>
+    </div>
+    <div
+      absolute bottom-0 left-0 px-10 justify-center
+      lt-lg="bg-gradient-to-t right-0 p10"
+      lg="top-0 px25 w-2/3 bg-gradient-to-r"
+      from-black via-black to-transparent
+    >
       <Transition appear name="hero">
-        <div
-          absolute bottom-0 left-0 px-10 justify-center
-          lt-lg="bg-gradient-to-t right-0 p10"
-          lg="top-0 px25 w-2/3 bg-gradient-to-r"
-          from-black via-black to-transparent
-        >
+        <div v-show="mounted">
           <h1 mt-2 text-4xl lg:text-5xl>
             {{ item.title || item.name }}
           </h1>
@@ -69,14 +71,14 @@ function playTrailer() {
           </div>
         </div>
       </Transition>
-      <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
-        <button
-          items-center p10 text-5xl op20 hover:op80 transition
-          @click="playTrailer()"
-        >
-          <div i-ph-play-circle-light />
-        </button>
-      </div>
+    </div>
+    <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
+      <button
+        items-center p10 text-5xl op20 hover:op80 transition
+        @click="playTrailer()"
+      >
+        <div i-ph-play-circle-light />
+      </button>
     </div>
   </div>
 </template>
@@ -87,14 +89,14 @@ function playTrailer() {
   transition: transform .75s cubic-bezier(.4, .25, .3, 1), opacity .3s cubic-bezier(.4, .25, .3, 1);
 }
 
-.hero-enter,
+.hero-enter-from,
 .hero-leave-to {
   opacity: 0;
   transform: translate3d(0, 2rem, 0);
 }
 
 .hero-enter-to,
-.hero-leave {
+.hero-leave-from {
   opacity: 1;
   transform: translateZ(0);
 }
