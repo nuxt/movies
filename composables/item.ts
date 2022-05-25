@@ -1,4 +1,5 @@
-import type { Media, Video } from '~/types'
+import { useSingleton } from './utils'
+import type { Image, Media, Video } from '~/types'
 
 export function getTrailer(item: Media) {
   const trailer = item.videos?.results?.find(video => video.type === 'Trailer')
@@ -11,7 +12,19 @@ export function getVideoLink(item?: Video) {
   return `https://www.youtube.com/embed/${item.key}?rel=0&showinfo=0&autoplay=1`
 }
 
-export function useIframeModal() {
-  const fn = inject<any>('iframe-modal')!
-  return fn as (url: string) => void
+const [
+  provideIframeModal,
+  useIframeModal,
+] = useSingleton<(url: string) => void>()
+
+const [
+  provideImageModal,
+  useImageModal,
+] = useSingleton<(photos: Image[], index: number) => void>()
+
+export {
+  useIframeModal,
+  provideIframeModal,
+  useImageModal,
+  provideImageModal,
 }

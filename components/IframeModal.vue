@@ -7,8 +7,7 @@ function showModal(link: string) {
   src = link
 }
 
-const vm = getCurrentInstance()
-vm?.appContext.app.provide('iframe-modal', showModal)
+provideIframeModal(showModal)
 
 onKeyDown('Escape', () => {
   if (src)

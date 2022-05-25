@@ -6,5 +6,6 @@
     </div>
     <NavBar lg:order-first />
     <IframeModal />
+    <PhotoModal />
   </div>
 </template>

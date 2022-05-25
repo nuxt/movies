@@ -4,6 +4,8 @@ import type { Media } from '~/types'
 defineProps<{
   item: Media
 }>()
+
+const show = useImageModal()
 </script>
 
 <template>
@@ -18,11 +20,12 @@ defineProps<{
     </div>
     <div grid="~ cols-minmax-20rem" gap4>
       <PhotoCard
-        v-for="i of item.images?.backdrops"
+        v-for="i, idx of item.images?.backdrops"
         :key="i.file_path"
         :item="i"
         class="aspect-16/9"
         w-full
+        @click="show(item.images!.backdrops, idx)"
       />
     </div>
     <div mt-10 row gap-2 items-baseline>
@@ -35,10 +38,11 @@ defineProps<{
     </div>
     <div grid="~ cols-minmax-15rem" gap4>
       <PhotoCard
-        v-for="i of item.images?.posters"
+        v-for="i, idx of item.images?.posters"
         :key="i.file_path"
         :item="i"
         class="aspect-9/16"
+        @click="show(item.images!.posters, idx)"
       />
     </div>
   </div>
