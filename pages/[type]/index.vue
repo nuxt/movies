@@ -2,6 +2,10 @@
 import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
 
+definePageMeta({
+  key: route => route.fullPath,
+})
+
 const fn = useServerFunctions()
 const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')

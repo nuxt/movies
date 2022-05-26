@@ -11,7 +11,6 @@ export const QUERY_LIST = {
   tv: <QueryItem[]>([
     { type: 'tv', title: 'Popular TV Shows', query: 'popular' },
     { type: 'tv', title: 'Top Rated TV Shows', query: 'top_rated' },
-    { type: 'tv', title: 'Currently Airing TV Shows', query: 'on_the_air' },
     { type: 'tv', title: 'TV Shows Airing Today', query: 'airing_today' },
   ]),
 }

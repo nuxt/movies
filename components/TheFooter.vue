@@ -1,5 +1,17 @@
 <template>
   <footer p="y15 x15" flex="~ col gap1">
+    <div row items-center gap2 my2>
+      <img src="/favicon.png" w6 h6>
+      <div text-lg>
+        Nuxt Movies
+      </div>
+      <div op50 ml2 text-sm>
+        powered by
+      </div>
+      <a href="https://v3.nuxtjs.org/" target="_blank">
+        <NuxtIcon h6 />
+      </a>
+    </div>
     <p text-true-gray:70 text-sm>
       <!-- TODO: should change the copyright name -->
       &copy; {{ new Date().getFullYear() }} The Nuxt Movies authors. All rights reserved.&nbsp;
