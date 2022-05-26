@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const props = defineProps<{
-  value: number
+const { value = 0 } = defineProps<{
+  value?: number
 }>()
 
 const style = $computed(() => ({
-  'clip-path': `inset(0 ${(10 - props.value) * 10}% 0 0)`,
+  'clip-path': `inset(0 ${(10 - value) * 10}% 0 0)`,
 }))
 </script>
 

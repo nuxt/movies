@@ -5,6 +5,7 @@ const props = defineProps<{
   items: Media[]
   type: MediaType
   fetch: (page: number) => Promise<void>
+  count?: number
 }>()
 
 const tailEl = ref<HTMLDivElement>()
@@ -25,17 +26,21 @@ async function loadingNext() {
   }
 }
 
-await loadingNext()
-
 if (process.client) {
+  loadingNext()
   useIntervalFn(() => {
     if (!tailEl.value || isLoading)
+      return
+    if (props.count != null && props.items.length >= props.count)
       return
     const { top } = tailEl.value.getBoundingClientRect()
     const delta = top - window.innerHeight
     if (delta < 400)
       loadingNext()
   }, 500)
+}
+else {
+  await loadingNext()
 }
 </script>
 
@@ -44,6 +49,9 @@ if (process.client) {
     <h1 flex="~" px8 pt8 gap2 text-3xl>
       <slot />
     </h1>
+    <div v-if="count != null" px8 op50>
+      {{ count }} items
+    </div>
     <MediaGrid>
       <MediaCard
         v-for="item of items"
