@@ -48,17 +48,10 @@ export function getMedia(type: MediaType, id: string): Promise<Media> {
 }
 
 /**
- * Get movie recommended (single)
+ * Get recommended
  */
-export function getMovieRecommended(id: string, page = 1) {
-  return fetchTMDB(`movie/${id}/recommendations`, { page })
-}
-
-/**
- * Get TV show recommended (single)
- */
-export function getTvShowRecommended(id: string, page = 1) {
-  return fetchTMDB(`tv/${id}/recommendations`, { page })
+export function getRecommendations(type: MediaType, id: string, page = 1): Promise<PageResult<Media>> {
+  return fetchTMDB(`${type}/${id}/recommendations`, { page })
 }
 
 /**
