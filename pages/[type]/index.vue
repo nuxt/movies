@@ -10,6 +10,10 @@ const fn = useServerFunctions()
 const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')
 
+useHead({
+  title: type === 'movie' ? 'Movies' : 'TV Shows',
+})
+
 const queries = $computed(() => QUERY_LIST[type as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {

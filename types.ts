@@ -10,7 +10,8 @@ export interface Media {
   overview: string
   popularity: number
   poster_path: string
-  release_date: string
+  release_date?: string
+  first_air_date?: string
   title: string
   name?: string
   video: boolean
@@ -37,6 +38,8 @@ export interface Media {
     posters: Image[]
   }
   external_ids?: ExternalIds
+  // cast
+  character?: string
 }
 
 export interface Person {
@@ -62,6 +65,7 @@ export interface Person {
   external_ids?: ExternalIds
   combined_credits?: {
     cast?: Media[]
+    crew?: Media[]
   }
   images?: {
     profiles: Image[]
@@ -118,4 +122,8 @@ export interface QueryItem {
   type: MediaType
   title: string
   query: string
+}
+
+export interface Credits {
+  cast: Media[]
 }

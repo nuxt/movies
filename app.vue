@@ -2,7 +2,8 @@
 import '@unocss/reset/antfu.css'
 
 useHead({
-  title: 'Nuxt3 Movies',
+  title: 'Movies',
+  titleTemplate: '%s - Nuxt3 Movies',
   link: [
     {
       rel: 'icon', type: 'image/png', href: '/favicon.png',

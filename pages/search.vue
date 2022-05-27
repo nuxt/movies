@@ -33,6 +33,10 @@ const vFocus = {
   mounted: (el: HTMLElement) => el.focus(),
 }
 
+useHead({
+  title: computed(() => `Search: ${currentSearch}`),
+})
+
 watch(
   () => input,
   () => throttledSearch(),

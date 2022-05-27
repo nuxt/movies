@@ -14,6 +14,10 @@ const [item, recommendations] = await Promise.all([
   fn.getMedia(type, id),
   fn.getRecommendations(type, id),
 ])
+
+useHead({
+  title: item.name || item.title,
+})
 </script>
 
 <template>
