@@ -17,7 +17,11 @@ onKeyDown('Escape', () => {
 
 <template>
   <div v-if="src" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90>
-    <button absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full @click="src = null">
+    <button
+      absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full
+      title="Close"
+      @click="src = null"
+    >
       <div i-carbon-close />
     </button>
     <iframe

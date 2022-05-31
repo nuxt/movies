@@ -19,7 +19,7 @@ const mounted = useMounted()
 </script>
 
 <template>
-  <div :key="item.id" relative class="aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
+  <div :key="item.id" relative class="aspect-ratio-1/1 md:aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
     <div
       absolute top-0 right-0
       lt-lg="left-0"
@@ -27,6 +27,7 @@ const mounted = useMounted()
     >
       <img
         :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
+        :alt="item.title || item.name"
         h-full w-full object-cover
       >
     </div>
@@ -38,15 +39,15 @@ const mounted = useMounted()
     >
       <Transition appear name="hero">
         <div v-show="mounted">
-          <h1 mt-2 text-4xl lg:text-5xl>
+          <h1 mt-2 text-4xl lg:text-5xl line-clamp-2>
             {{ item.title || item.name }}
           </h1>
-          <div row gap3 items-center mt4>
+          <div flex="~ row wrap" gap3 items-center mt4>
             <StarsRate w-25 :value="item.vote_average" />
-            <div op50>
+            <div op50 hidden md:block>
               {{ item.vote_average }}
             </div>
-            <div op50>
+            <div op50 hidden md:block>
               {{ item.vote_count }} Reviews
             </div>
             <div v-if="item.release_date" op50>
@@ -56,13 +57,14 @@ const mounted = useMounted()
               {{ formatTime(item.runtime) }}
             </div>
           </div>
-          <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5>
+          <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5 text-xs md:text-base>
             {{ item.overview }}
           </p>
           <div v-if="trailer" py5 display-none lg:block>
             <button
               flex="~ gap2" items-center p="x6 y3"
               bg="gray/15 hover:gray/20" transition
+              title="Watch Trailer"
               @click="playTrailer()"
             >
               <div i-ph-play />
@@ -75,6 +77,7 @@ const mounted = useMounted()
     <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
       <button
         items-center p10 text-5xl op20 hover:op80 transition
+        title="Watch Trailer"
         @click="playTrailer()"
       >
         <div i-ph-play-circle-light />

@@ -2,8 +2,16 @@
 import '@unocss/reset/antfu.css'
 
 useHead({
+  lang: 'en',
+  charset: 'utf-8',
   title: 'Movies',
   titleTemplate: '%s - Nuxt3 Movies',
+  meta: [
+    { name: 'description', content: 'Nuxt Movies - a TMDB client for demonstraction' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@nuxt_js' },
+    { name: 'twitter:creator', content: '@nuxt_js' },
+  ],
   link: [
     {
       rel: 'icon', type: 'image/png', href: '/favicon.png',

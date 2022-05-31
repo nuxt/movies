@@ -45,6 +45,7 @@ useEventListener('keydown', (e) => {
     <img
       :key="current.file_path"
       :src="TMDB_IMAGE_BASE_ORIGINAL + current.file_path"
+      aria-hidden="true"
       max-w-full max-h-full object-contain
     >
     <div absolute left-0 top="1/2">

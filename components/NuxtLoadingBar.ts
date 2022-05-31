@@ -79,7 +79,6 @@ export default defineComponent({
         right: 0,
         left: 0,
         pointerEvents: 'none',
-        width: `${percent.value}%`,
         height: `${props.height}px`,
         opacity: show.value ? 1 : 0,
         background: props.color,

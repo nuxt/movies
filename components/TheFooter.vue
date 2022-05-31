@@ -1,7 +1,7 @@
 <template>
   <footer p="y15 x15" flex="~ col gap1">
     <div row items-center gap2 my2>
-      <img src="/favicon.png" w6 h6>
+      <img src="/favicon.png" w6 h6 alt="Logo">
       <div text-lg>
         Nuxt Movies
       </div>

@@ -16,6 +16,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
   <div p4 grid="~ cols-[max-content_1fr]" gap-8 items-center ma max-w-300>
     <img
       :src="TMDB_IMAGE_BASE_THUMBNAIL + item.poster_path"
+      :alt="item.title || item.name"
       block border="4 gray4/10" w-79 lt-md:hidden
       transition duration-400 object-cover aspect="10/16"
     >
