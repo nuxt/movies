@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { routerKey } from 'vue-router'
 import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
 
@@ -18,7 +19,9 @@ const queries = $computed(() => QUERY_LIST[type as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
   const list = await fn.listMedia(type, queries[0].query, 1)
-  const item = await fn.getMedia(type, list.results[0].id)
+  if (!list)
+    return () => {}
+  const item = await fn.getMedia(type, list.results?.[0].id)
   return () => ctx.slots?.default?.({ item })
 })
 </script>
