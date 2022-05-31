@@ -1,32 +1,24 @@
-<script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean
-}>()
-
-const route = useRoute()
-</script>
-
 <template>
   <div py5 lg:px5 justify-evenly items-center border="t lg:r base" flex="row lg:col" bg-black>
-    <RouterLink v-slot="{ isActive }" to="/">
+    <RouterLink v-slot="{ isActive }" to="/" title="Home">
       <div
         text-2xl
         :class="isActive ? 'i-ph-house-fill text-primary' : 'i-ph-house'"
       />
     </RouterLink>
-    <RouterLink v-slot="{ isActive }" to="/movie">
+    <RouterLink v-slot="{ isActive }" to="/movie" title="Movies">
       <div
         text-2xl
         :class="isActive ? 'i-ph-film-strip-fill text-primary' : 'i-ph-film-strip'"
       />
     </RouterLink>
-    <RouterLink v-slot="{ isActive }" to="/tv">
+    <RouterLink v-slot="{ isActive }" to="/tv" title="TV Shows">
       <div
         text-2xl
         :class="isActive ? 'i-ph-television-simple-fill text-primary' : 'i-ph-television-simple'"
       />
     </RouterLink>
-    <RouterLink v-slot="{ isActive }" to="/search">
+    <RouterLink v-slot="{ isActive }" to="/search" title="Search">
       <div
         text-2xl
         :class="isActive ? 'i-ph-magnifying-glass-fill text-primary' : 'i-ph-magnifying-glass'"

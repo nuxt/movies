@@ -17,9 +17,9 @@ function scrollRight() {
 
 <template>
   <div row py3 px10 items-center mt5>
-    <h3 text-2xl>
+    <div text-2xl>
       <slot name="title" />
-    </h3>
+    </div>
     <div flex-auto />
     <slot name="more" />
   </div>

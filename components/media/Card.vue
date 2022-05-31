@@ -26,9 +26,9 @@ defineProps<{
         <div i-ph:question ma text-4xl />
       </div>
     </div>
-    <h3 mt-2>
+    <div mt-2>
       {{ item.title || item.name }}
-    </h3>
+    </div>
     <div text-sm row gap-2 items-center>
       <StarsRate w-20 :value="item.vote_average" />
       <div op60>

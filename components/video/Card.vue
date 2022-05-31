@@ -26,9 +26,9 @@ const play = () => showModal(getVideoLink(item)!)
         <div i-ph-play ma text-3xl />
       </div>
     </div>
-    <h3 mt-2>
+    <div mt-2>
       {{ item.name }}
-    </h3>
+    </div>
     <div op60 text-sm>
       {{ item.type }}
     </div>

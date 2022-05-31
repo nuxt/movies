@@ -2,7 +2,9 @@
 import '@unocss/reset/antfu.css'
 
 useHead({
-  lang: 'en',
+  htmlAttrs: {
+    lang: 'en',
+  },
   charset: 'utf-8',
   title: 'Movies',
   titleTemplate: '%s - Nuxt3 Movies',

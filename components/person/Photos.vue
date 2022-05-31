@@ -9,9 +9,9 @@ defineProps<{
 <template>
   <div px16 gap6>
     <div mt-10 row gap-2 items-baseline>
-      <h3 text-2xl>
+      <div text-2xl>
         Photos
-      </h3>
+      </div>
       <div text-sm op50>
         {{ item.images?.profiles.length }} images
       </div>
