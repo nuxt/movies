@@ -5,6 +5,7 @@ import { QUERY_LIST } from '~/constants/lists'
 
 definePageMeta({
   key: route => route.fullPath,
+  middleware: 'type',
 })
 
 const fn = useServerFunctions()
@@ -18,7 +19,10 @@ useHead({
 const queries = $computed(() => QUERY_LIST[type as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
-  const list = await fn.listMedia(type, queries[0].query, 1)
+  if (!queries)
+    return throwError('404')
+
+  const list = await fn.listMedia(type, queries?.[0].query, 1)
   if (!list)
     return () => {}
   const item = await fn.getMedia(type, list.results?.[0].id)
@@ -40,5 +44,6 @@ const AsyncWrapper = defineComponent(async (_, ctx) => {
       :key="query.type + query.query"
       :query="query"
     />
+    <TheFooter />
   </div>
 </template>

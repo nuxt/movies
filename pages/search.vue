@@ -66,7 +66,7 @@ watch(
     >
       <div>Search result for: {{ currentSearch }}</div>
     </MediaAutoLoadGrid>
-    <div v-else text-4xl p10 italic op50 text-center>
+    <div v-else text-4xl p10 font-100 op50 text-center>
       Type something to search...
     </div>
   </div>

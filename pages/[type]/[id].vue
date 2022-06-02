@@ -3,6 +3,7 @@ import type { MediaType } from '~/types'
 
 definePageMeta({
   key: route => route.fullPath,
+  middleware: 'type',
 })
 
 const route = useRoute()
@@ -36,5 +37,6 @@ useHead({
         flex-1 w-60
       />
     </CarouselBase>
+    <TheFooter />
   </div>
 </template>

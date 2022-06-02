@@ -8,5 +8,8 @@ useHead({
 </script>
 
 <template>
-  <PersonDetails :item="person" />
+  <div>
+    <PersonDetails :item="person" />
+    <TheFooter />
+  </div>
 </template>
