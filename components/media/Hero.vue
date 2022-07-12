@@ -25,11 +25,11 @@ const mounted = useMounted()
       lt-lg="left-0"
       lg="bottom-0 left-1/3"
     >
-      <img
+      <NuxtImg
         :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
         :alt="item.title || item.name"
         h-full w-full object-cover
-      >
+      />
     </div>
     <div
       absolute bottom-0 left-0 px-10 justify-center

@@ -16,12 +16,12 @@ defineProps<{
       transition duration-400
       hover="scale-105 z10"
     >
-      <img
+      <NuxtImg
         v-if="item.poster_path"
         :src="TMDB_IMAGE_BASE_THUMBNAIL + item.poster_path"
         :alt="item.title || item.name"
         w-full h-full object-cover
-      >
+      />
       <div v-else h-full op10>
         <div i-ph:question ma text-4xl />
       </div>

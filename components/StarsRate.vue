@@ -10,7 +10,7 @@ const style = $computed(() => ({
 
 <template>
   <div relative aspect="11/2" filter-hue-rotate-320deg>
-    <img src="/img/stars.png" absolute inset-0 aria-hidden="true">
-    <img src="/img/stars-filled.png" absolute inset-0 aria-hidden="true" :style="style">
+    <NuxtImg src="/img/stars.png" absolute inset-0 aria-hidden="true" />
+    <NuxtImg src="/img/stars-filled.png" absolute inset-0 aria-hidden="true" :style="style" />
   </div>
 </template>

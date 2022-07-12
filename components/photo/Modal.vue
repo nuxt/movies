@@ -42,12 +42,12 @@ useEventListener('keydown', (e) => {
     <button absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full @click="images = null">
       <div i-carbon-close />
     </button>
-    <img
+    <NuxtImg
       :key="current.file_path"
       :src="TMDB_IMAGE_BASE_ORIGINAL + current.file_path"
       aria-hidden="true"
       max-w-full max-h-full object-contain
-    >
+    />
     <div absolute left-0 top="1/2">
       <button py10 px4 bg-black:30 op10 hover:op100 @click="prev()">
         <div i-ph-caret-left-light text-3xl text-white />

@@ -14,10 +14,10 @@ const { item } = defineProps<{
     duration-400 relative hover="scale-102 z10"
     title="View photo"
   >
-    <img
+    <NuxtImg
       :src="TMDB_IMAGE_BASE_THUMBNAIL + item.file_path"
       alt="Photo"
       w-full h-full object-cover
-    >
+    />
   </button>
 </template>

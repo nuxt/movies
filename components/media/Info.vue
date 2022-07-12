@@ -14,12 +14,12 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
 
 <template>
   <div p4 grid="~ cols-[max-content_1fr]" gap-8 items-center ma max-w-300>
-    <img
+    <NuxtImg
       :src="TMDB_IMAGE_BASE_THUMBNAIL + item.poster_path"
       :alt="item.title || item.name"
       block border="4 gray4/10" w-79 lt-md:hidden
       transition duration-400 object-cover aspect="10/16"
-    >
+    />
     <div p4 gap6>
       <div v-if="item.overview">
         <h2 text-3xl mb4>

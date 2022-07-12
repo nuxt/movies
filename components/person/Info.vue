@@ -12,13 +12,13 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
 
 <template>
   <div p4 grid="~ md:cols-[max-content_1fr]" gap-8 items-center ma max-w-300>
-    <img
+    <NuxtImg
       v-if="item.profile_path"
       :src="TMDB_IMAGE_BASE_THUMBNAIL + item.profile_path"
       :alt="item.name"
       block border="4 gray4/10" w-70 md:90 self-start mt-5 mx-auto
       transition duration-400 object-cover aspect="3/4"
-    >
+    />
     <div p4 gap8>
       <div>
         <h2 text-3xl mb4>
