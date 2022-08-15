@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   ],
   experimental: {
     reactivityTransform: true,
+    viteNode: true,
   },
   build: {
     transpile: [
