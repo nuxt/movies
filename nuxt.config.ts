@@ -14,7 +14,8 @@ export default defineNuxtConfig({
       proxy: {
         provider: 'ipx',
         options: {
-          baseURL: 'http://localhost:3001/ipx',
+          // baseURL: 'http://localhost:3001/ipx',
+          baseURL: 'https://movies-proxy.vercel.app/ipx',
         },
       },
     },
