@@ -5,11 +5,9 @@
 <h1 align="center">Nuxt Movies</h1>
 <br>
 
-A Nuxt Movies application for demonstration using [The Movie Database (TMDB)](https://developers.themoviedb.org/3) API. Built using [Vue 3](https://github.com/vuejs/core) and [Nuxt 3](https://github.com/nuxt/framework) with [UnoCSS](https://github.com/unocss/unocss) and [TypeScript](https://github.com/microsoft/TypeScript).
+> A Nuxt Movies application for demonstration using [The Movie Database (TMDB)](https://developers.themoviedb.org/3) API. Built using [Vue 3](https://github.com/vuejs/core) and [Nuxt 3](https://github.com/nuxt/framework) with [UnoCSS](https://github.com/unocss/unocss) and [TypeScript](https://github.com/microsoft/TypeScript). This is a rewrite based on [jasonujmaalvis/vue-movies](https://github.com/jasonujmaalvis/vue-movies) and [`nuxt-movies`](https://github.com/tastejs/nuxt-movies) by the Nuxt and chrome teams.
 
-Rewrote based on [`nuxt-movies`](https://github.com/tastejs/nuxt-movies) by the Nuxt and chrome teams.
-
-Live preview: https://nuxt3-movies-five.vercel.app/
+Live preview: https://movies.nuxt.space/
 
 ## Screenshots
 
