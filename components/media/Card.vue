@@ -18,7 +18,7 @@ defineProps<{
     >
       <NuxtImg
         v-if="item.poster_path"
-
+        format="webp"
         width="400"
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"

@@ -17,6 +17,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
     <NuxtImg
 
       width="400"
+      format="webp"
       :src="`/tmdb${item.poster_path}`"
       :alt="item.title || item.name"
       block border="4 gray4/10" w-79 lt-md:hidden

@@ -15,7 +15,7 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
     <NuxtImg
       v-if="item.profile_path"
       width="400"
-
+      format="webp"
       :src="`/tmdb${item.profile_path}`"
       :alt="item.name"
       block border="4 gray4/10" w-70 md:90 self-start mt-5 mx-auto

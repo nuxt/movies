@@ -16,7 +16,7 @@ const { item } = defineProps<{
   >
     <NuxtImg
       width="400"
-
+      format="webp"
       :src="`/tmdb${item.file_path}`"
       alt="Photo"
       w-full h-full object-cover

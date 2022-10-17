@@ -19,6 +19,7 @@ const play = () => showModal(getVideoLink(item)!)
     >
       <NuxtImg
         :src="`https://img.youtube.com/vi/${item.key}/maxresdefault.jpg`"
+        format="webp"
         :alt="item.name"
         w-full h-full object-cover
       />
