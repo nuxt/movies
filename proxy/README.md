@@ -1,11 +1,11 @@
 # Nuxt Movies Proxy
 
-Proxy is a lightweight proxy server for the tmdb api and deployed standalone.
+Proxy hosts is a lightweight proxy server for the tmdb api.
 
 - Speeds up API responses by leveraging SWR cache.
 - Speeds up the development by removing requiredment of having a local token set up.
-- Speeds up the peformances by optimizing images using [unjs/ipx](https://github.com/unjs/ipx)
-- Allows easily deployng the main project to any hosting platform, yet leveraging caching and image optimization
+- Speeds up the peformances by optimizing images using [unjs/ipx](https://github.com/unjs/ipx).
+- Allows easily deployng the main project to any hosting platform, yet leveraging caching and image optimization.
 
 ## Setup
 
