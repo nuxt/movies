@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
@@ -7,6 +9,11 @@ export default defineNuxtConfig({
   ],
   experimental: {
     reactivityTransform: true,
+  },
+  nitro: {
+    routes: {
+      '/**': { swr: isDev ? 0 : 3600 },
+    },
   },
   image: {
     provider: 'proxy',
