@@ -5,7 +5,7 @@
 <h1 align="center">Nuxt Movies</h1>
 <br>
 
-> A Nuxt Movies application for demonstration using [The Movie Database (TMDB)](https://developers.themoviedb.org/3) API. Built using [Vue 3](https://github.com/vuejs/core) and [Nuxt 3](https://github.com/nuxt/framework) with [UnoCSS](https://github.com/unocss/unocss) and [TypeScript](https://github.com/microsoft/TypeScript). This is a rewrite based on [jasonujmaalvis/vue-movies](https://github.com/jasonujmaalvis/vue-movies) and [`nuxt-movies`](https://github.com/tastejs/nuxt-movies) by the Nuxt and chrome teams.
+> A Nuxt Movies application for demonstration using [The Movie Database (TMDB)](https://developers.themoviedb.org/3) API. Built using [Vue 3](https://github.com/vuejs/core) and [Nuxt 3](https://github.com/nuxt/framework) with [UnoCSS](https://github.com/unocss/unocss), [Image Module](Image module)(https://v1.image.nuxtjs.org) and [TypeScript](https://github.com/microsoft/TypeScript).
 
 **🍿 Live preview:** https://movies.nuxt.space
 
@@ -32,3 +32,7 @@ $ pnpm install
 # Start dev server with hot reload at localhost:3000
 $ pnpm dev
 ```
+
+## Credits
+
+Based on [jasonujmaalvis/vue-movies](https://github.com/jasonujmaalvis/vue-movies) and [`tastejs/nuxt-movies`](https://github.com/tastejs/nuxt-movies).
