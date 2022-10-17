@@ -8,4 +8,15 @@ export default defineNuxtConfig({
   experimental: {
     reactivityTransform: true,
   },
+  image: {
+    provider: 'proxy',
+    providers: {
+      proxy: {
+        provider: 'ipx',
+        options: {
+          baseURL: 'http://localhost:3001/ipx',
+        },
+      },
+    },
+  },
 })

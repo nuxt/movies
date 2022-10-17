@@ -2,7 +2,7 @@ import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
   routes: {
-    '/tmdb/**': { swr: 3000 },
+    '/tmdb**': { swr: 3000 },
   },
   runtimeConfig: {
     tmdb: {

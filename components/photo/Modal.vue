@@ -44,7 +44,9 @@ useEventListener('keydown', (e) => {
     </button>
     <NuxtImg
       :key="current.file_path"
-      :src="TMDB_IMAGE_BASE_ORIGINAL + current.file_path"
+      width="400"
+
+      :src="`/tmdb${current.file_path}`"
       aria-hidden="true"
       max-w-full max-h-full object-contain
     />

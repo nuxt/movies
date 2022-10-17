@@ -2,7 +2,7 @@ import { createIPX, createIPXMiddleware } from 'ipx'
 
 const ipx = createIPX({
   alias: {
-    '/tmdb/': 'https://image.tmdb.org',
+    '/tmdb': 'https://image.tmdb.org/t/p/original/',
   },
   domains: [
     'image.tmdb.org',
