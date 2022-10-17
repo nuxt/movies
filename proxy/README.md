@@ -1,6 +1,6 @@
 # Nuxt Movies Proxy
 
-Proxy hosts is a lightweight proxy server for the tmdb api.
+Proxy hosts is a lightweight proxy server for the tmdb api and youtube images.
 
 - Speeds up API responses by leveraging SWR cache.
 - Speeds up the development by removing requiredment of having a local token set up.

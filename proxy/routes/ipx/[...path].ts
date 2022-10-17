@@ -3,9 +3,11 @@ import { createIPX, createIPXMiddleware } from 'ipx'
 const ipx = createIPX({
   alias: {
     '/tmdb': 'https://image.tmdb.org/t/p/original/',
+    '/youtube': 'https://img.youtube.com/',
   },
   domains: [
     'image.tmdb.org',
+    'img.youtube.com',
   ],
 })
 
