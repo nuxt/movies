@@ -2,7 +2,8 @@ import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
   routes: {
-    '/**': { cors: true, swr: 3600 },
+    '/**': { cors: true },
+    '/tmdb/**': { swr: 3600 },
   },
   runtimeConfig: {
     tmdb: {

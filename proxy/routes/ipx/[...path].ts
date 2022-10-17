@@ -1,6 +1,7 @@
 import { createIPX, createIPXMiddleware } from 'ipx'
 
 const ipx = createIPX({
+  maxAge: 3600,
   alias: {
     '/tmdb': 'https://image.tmdb.org/t/p/original/',
     '/youtube': 'https://img.youtube.com/',
