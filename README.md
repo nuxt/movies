@@ -1,5 +1,5 @@
 <br><p align="center">
-<img height="100px" src="./public/favicon.png" />
+<img height="100px" src="./public/movies.webp" />
 </p>
 
 <h1 align="center">Nuxt Movies</h1>
