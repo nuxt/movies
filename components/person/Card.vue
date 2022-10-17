@@ -17,8 +17,9 @@ defineProps<{
     >
       <NuxtImg
         v-if="item.profile_path"
-        format="webp"
         width="400"
+        height="600"
+        format="webp"
         :src="`/tmdb${item.profile_path}`"
         :alt="item.name"
         w-full h-full object-cover
