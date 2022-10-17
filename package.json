@@ -4,6 +4,7 @@
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
+    "dev:proxy": "cd server/proxy && pnpm dev",
     "start": "node .output/server/index.mjs",
     "lint": "eslint ."
   },

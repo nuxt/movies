@@ -9,10 +9,9 @@ const cache = new LRU({
 })
 
 function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
-  // eslint-disable-next-line no-console
-  console.log('fetching', url, params)
   return $fetch(url, {
-    baseURL: 'https://nuxt-movies-api.vercel.app/tmdb',
+    // baseURL: 'https://nuxt-movies-api.vercel.app/tmdb',
+    baseURL: 'http://localhost:3001/tmdb',
     params,
   })
 }
