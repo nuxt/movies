@@ -18,7 +18,7 @@ const play = () => showModal(getVideoLink(item)!)
       hover="scale-102 z10"
     >
       <NuxtImg
-        :src="`${'/youtube'}${item.key}/maxresdefault.jpg`"
+        :src="`/youtube/vi/${item.key}/maxresdefault.jpg`"
         width="400"
         format="webp"
         :alt="item.name"
