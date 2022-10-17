@@ -5,9 +5,7 @@ const { query } = defineProps<{
   query: QueryItem
 }>()
 
-const fn = useServerFunctions()
-
-const item = await fn.listMedia(query.type, query.query, 1)
+const item = await listMedia(query.type, query.query, 1)
 </script>
 
 <template>

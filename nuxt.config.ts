@@ -4,14 +4,20 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxt/image-edge',
-    'nuxt-server-fn',
   ],
   experimental: {
     reactivityTransform: true,
   },
-  build: {
-    transpile: [
-      'nuxt-server-fn/client',
-    ],
+  image: {
+    provider: 'proxy',
+    providers: {
+      proxy: {
+        provider: 'ipx',
+        options: {
+          // baseURL: 'http://localhost:3001/ipx',
+          baseURL: 'https://movies-proxy.vercel.app/ipx',
+        },
+      },
+    },
   },
 })

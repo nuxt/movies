@@ -6,10 +6,9 @@ const query = $computed(() => route.params.query as string)
 const type = $computed(() => route.params.type as MediaType || 'movie')
 
 const items: Media[] = reactive([])
-const fn = useServerFunctions()
 
 async function fetch(page: number) {
-  items.push(...(await fn.listMedia(type, query, page)).results)
+  items.push(...(await listMedia(type, query, page)).results)
 }
 </script>
 

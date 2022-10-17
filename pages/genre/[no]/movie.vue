@@ -6,12 +6,11 @@ const no = $computed(() => route.params.no as string)
 const type = 'movie' as MediaType
 
 const items: Media[] = reactive([])
-const fn = useServerFunctions()
 
-const list = await fn.getGenreList(type)
+const list = await getGenreList(type)
 const name = list.find(item => item.id === +no)?.name
 async function fetch(page: number) {
-  const data = await fn.getMediaByGenre(type, no, page)
+  const data = await getMediaByGenre(type, no, page)
   items.push(...data.results)
 }
 </script>

@@ -4,3 +4,4 @@ dist
 .output
 .nuxt
 .env
+.nitro

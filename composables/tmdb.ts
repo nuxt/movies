@@ -1,8 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import type { Credits, Media, MediaType, PageResult, Person } from '../../types'
-import { TMDB_API_PARAMS, TMDB_API_URL } from '~/constants/tmdbAPI'
+import type { Credits, Media, MediaType, PageResult, Person } from '../types'
 
 const cache = new LRU({
   max: 500,
@@ -10,14 +9,10 @@ const cache = new LRU({
 })
 
 function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
-  // eslint-disable-next-line no-console
-  console.log('fetching', url, params)
   return $fetch(url, {
-    baseURL: TMDB_API_URL,
-    params: {
-      ...TMDB_API_PARAMS,
-      ...params,
-    },
+    baseURL: 'https://movies-proxy.vercel.app/tmdb',
+    // baseURL: 'http://localhost:3001/tmdb',
+    params,
   })
 }
 
@@ -107,7 +102,7 @@ export function getPerson(id: string): Promise<Person> {
  * Search (searches movies, tv and people)
  */
 
-export function search(query: string, page = 1) {
+export function searchShows(query: string, page = 1) {
   return fetchTMDB('search/multi', { query, page })
 }
 

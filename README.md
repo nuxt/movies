@@ -18,18 +18,19 @@ Live preview: https://nuxt3-movies-five.vercel.app/
 <img width="1191" src="https://user-images.githubusercontent.com/11247099/171109644-c586de96-04be-4ae7-8a7b-c0d615a2ecba.png">
 <img width="764" src="https://user-images.githubusercontent.com/11247099/171109653-7137e2e5-ca06-4a30-9caa-bacdbc739121.png">
 
+## Proxy Server
+
+Check [proxy/README](./proxy)
 
 ## Setup
 
-1. Take a copy of `.env.sample` and re-name to `.env`
-2. Get your [TMDB](https://developers.themoviedb.org/3) API key
-3. Enter the details into the `.env` file
-4. Start the dev server with following scripts
-
 ``` bash
-# install dependencies
+# Enable pnpm
+$ corepack enable
+
+# Install dependencies
 $ pnpm install
 
-# dev server with hot reload at localhost:3000
+# Start dev server with hot reload at localhost:3000
 $ pnpm dev
 ```

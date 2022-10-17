@@ -26,7 +26,8 @@ const mounted = useMounted()
       lg="bottom-0 left-1/3"
     >
       <NuxtImg
-        :src="TMDB_IMAGE_BASE_ORIGINAL + item.backdrop_path"
+        width="400"
+        :src="`/tmdb${item.backdrop_path}`"
         :alt="item.title || item.name"
         h-full w-full object-cover
       />

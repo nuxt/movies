@@ -15,7 +15,9 @@ const { item } = defineProps<{
     title="View photo"
   >
     <NuxtImg
-      :src="TMDB_IMAGE_BASE_THUMBNAIL + item.file_path"
+      width="400"
+
+      :src="`/tmdb${item.file_path}`"
       alt="Photo"
       w-full h-full object-cover
     />

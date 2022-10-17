@@ -6,7 +6,6 @@ const router = useRouter()
 const input = $ref((route.query.s || '').toString())
 let count = $ref<undefined | number>()
 
-const fn = useServerFunctions()
 let items = $ref<Media[]>([])
 let currentSearch = $ref(input)
 
@@ -22,7 +21,7 @@ function search() {
 async function fetch(page: number) {
   if (!currentSearch)
     return
-  const data = await fn.search(currentSearch, page)
+  const data = await searchShows(currentSearch, page)
   count = data.total_results ?? count
   items.push(...data.results)
 }

@@ -18,7 +18,9 @@ defineProps<{
     >
       <NuxtImg
         v-if="item.poster_path"
-        :src="TMDB_IMAGE_BASE_THUMBNAIL + item.poster_path"
+
+        width="400"
+        :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
         w-full h-full object-cover
       />
