@@ -12,11 +12,9 @@ specifiers:
   '@pinia/nuxt': ^0.4.3
   '@unocss/nuxt': ^0.45.29
   '@vueuse/nuxt': ^9.3.0
-  birpc: ^0.2.3
   eslint: ^8.25.0
   lru-cache: ^7.14.0
   nuxt: ^3.0.0-rc.11
-  nuxt-server-fn: ^0.2.5
   ohash: ^0.1.5
   pinia: ^2.0.23
   typescript: ^4.8.4
@@ -33,11 +31,9 @@ devDependencies:
   '@pinia/nuxt': 0.4.3_typescript@4.8.4
   '@unocss/nuxt': 0.45.29
   '@vueuse/nuxt': 9.3.0_nuxt@3.0.0-rc.11
-  birpc: 0.2.3
   eslint: 8.25.0
   lru-cache: 7.14.0
   nuxt: 3.0.0-rc.11_z4bbprzjrhnsfa24uvmcbu7f5q
-  nuxt-server-fn: 0.2.5
   ohash: 0.1.5
   pinia: 2.0.23_typescript@4.8.4
   typescript: 4.8.4
@@ -1885,10 +1881,6 @@ packages:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
     dependencies:
       file-uri-to-path: 1.0.0
-    dev: true
-
-  /birpc/0.2.3:
-    resolution: {integrity: sha512-mG7m06C2JkfuHSaLRHhtHtMEvyT1P1nUyyuk5W/7LMT2p7YYX/tfzJzD2ynZZHem3JTi6yJve0nHPdrs/gpXYg==}
     dev: true
 
   /bl/4.1.0:
@@ -3747,15 +3739,6 @@ packages:
       ufo: 0.8.5
     dev: true
 
-  /h3/0.8.1:
-    resolution: {integrity: sha512-HWTShxx4RKpse3f2h5KOWTEAIZLKq9SHWaVBZkOhBH+fH8uRGYY1iNO7VDwImFwARtR/Pg+bVI8feXX9NIdQRQ==}
-    dependencies:
-      cookie-es: 0.5.0
-      destr: 1.1.1
-      radix3: 0.2.1
-      ufo: 0.8.6
-    dev: true
-
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
     dev: true
@@ -4918,23 +4901,6 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /nuxt-server-fn/0.2.5:
-    resolution: {integrity: sha512-wUzr2q0JjlAc1iOei97vE3l1uTH9xJDYeJSEGr2yNu/aKMzpTKpDOtG8wyXCyggF014UPHL6eOALNBYFkxXyGw==}
-    dependencies:
-      '@nuxt/kit': 3.0.0-rc.11
-      fast-glob: 3.2.12
-      h3: 0.8.1
-      ohash: 0.1.5
-      ohmyfetch: 0.4.19
-      ufo: 0.8.6
-    transitivePeerDependencies:
-      - esbuild
-      - rollup
-      - supports-color
-      - vite
-      - webpack
-    dev: true
-
   /nuxt/3.0.0-rc.11_z4bbprzjrhnsfa24uvmcbu7f5q:
     resolution: {integrity: sha512-I0wyxPHnUoJBWoROKUx91PLKaAFZ/TsxSpcm3/jn/Ysq2RGU5Q3o9AzqT0YcXW4rgH35QPFvGpqopU9X0vS7Qw==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
@@ -5695,10 +5661,6 @@ packages:
 
   /radix3/0.1.2:
     resolution: {integrity: sha512-Mpfd/OuX0zoJ6ojLD/RTOHvJPg6e6PjINtmYzV87kIXc5iUtDz34i7gg4SV4XjqRJTmSiYO/g9i/mKWGf4z8wg==}
-    dev: true
-
-  /radix3/0.2.1:
-    resolution: {integrity: sha512-FnhArTl5Tq7dodiLeSPKrDUyCQuJqEncP8cKdyy399g8F/cz7GH6FmzA3Rkosu2IZMkpswFFwXfb2ERSiL06pg==}
     dev: true
 
   /randombytes/2.1.0:
@@ -6527,10 +6489,6 @@ packages:
 
   /ufo/0.8.5:
     resolution: {integrity: sha512-e4+UtA5IRO+ha6hYklwj6r7BjiGMxS0O+UaSg9HbaTefg4kMkzj4tXzEBajRR+wkxf+golgAWKzLbytCUDMJAA==}
-    dev: true
-
-  /ufo/0.8.6:
-    resolution: {integrity: sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==}
     dev: true
 
   /unbox-primitive/1.0.2:

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const id = $(useRouteParam<string>('id'))
-const person = await useServerFunctions().getPerson(id)
+const person = await getPerson(id)
 
 useHead({
   title: person.name,

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { routerKey } from 'vue-router'
 import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
 
@@ -8,7 +7,6 @@ definePageMeta({
   middleware: 'type',
 })
 
-const fn = useServerFunctions()
 const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')
 
@@ -22,10 +20,10 @@ const AsyncWrapper = defineComponent(async (_, ctx) => {
   if (!queries)
     return throwError('404')
 
-  const list = await fn.listMedia(type, queries?.[0].query, 1)
+  const list = await listMedia(type, queries?.[0].query, 1)
   if (!list)
     return () => {}
-  const item = await fn.getMedia(type, list.results?.[0].id)
+  const item = await getMedia(type, list.results?.[0].id)
   return () => ctx.slots?.default?.({ item })
 })
 </script>

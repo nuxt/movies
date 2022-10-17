@@ -9,11 +9,10 @@ definePageMeta({
 const route = useRoute()
 const type = $computed(() => route.params.type as MediaType || 'movie')
 const id = $computed(() => route.params.id as string)
-const fn = useServerFunctions()
 
 const [item, recommendations] = await Promise.all([
-  fn.getMedia(type, id),
-  fn.getRecommendations(type, id),
+  getMedia(type, id),
+  getRecommendations(type, id),
 ])
 
 useHead({
