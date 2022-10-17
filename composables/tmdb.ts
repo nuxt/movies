@@ -106,15 +106,3 @@ export function searchShows(query: string, page = 1) {
   return fetchTMDB('search/multi', { query, page })
 }
 
-/**
- * Get YouTube video info
- */
-export function getYouTubeVideo(id: string) {
-  return $fetch('https://www.googleapis.com/youtube/v3/videos', {
-    params: {
-      key: process.env.API_YOUTUBE_KEY,
-      id,
-      part: 'contentDetails',
-    },
-  })
-}
