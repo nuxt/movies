@@ -10,7 +10,7 @@ const style = $computed(() => ({
 
 <template>
   <div relative aspect="11/2" filter-hue-rotate-320deg>
-    <img src="/img/stars.webp" absolute inset-0 aria-hidden="true">
-    <img src="/img/stars-filled.webp" absolute inset-0 aria-hidden="true" :style="style">
+    <img src="/stars.webp" absolute inset-0 aria-hidden="true">
+    <img src="/stars-filled.webp" absolute inset-0 aria-hidden="true" :style="style">
   </div>
 </template>
