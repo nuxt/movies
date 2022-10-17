@@ -1,4 +1,4 @@
-// const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development'
 
 export default defineNuxtConfig({
   modules: [
@@ -12,7 +12,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     routes: {
-      // '/**': { swr: isDev ? 100 : 3600 },
+      '/**': {
+        // swr: isDev ? 0 : 3600, TODO
+        headers: { 'Cache-Control': isDev ? 'no-cache' : 's-maxage=3600, stale-while-revalidate' },
+      },
     },
   },
   image: {
