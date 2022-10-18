@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div flex="~ row gap5" text-lg mt-5>
+  <div flex="~ row gap5" items-center text-lg mt-5>
     <a
       v-if="links.twitter_id"
       :href="`https://twitter.com/${links.twitter_id}`"
@@ -86,5 +86,6 @@ defineProps<{
     >
       <div i-ph-link-simple />
     </a>
+    <slot />
   </div>
 </template>
