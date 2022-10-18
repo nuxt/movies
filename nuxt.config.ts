@@ -10,13 +10,8 @@ export default defineNuxtConfig({
   experimental: {
     reactivityTransform: true,
   },
-  nitro: {
-    routes: {
-      '/**': {
-        // swr: isDev ? 0 : 3600, TODO
-        headers: { 'Cache-Control': isDev ? 'no-cache' : 's-maxage=3600, stale-while-revalidate' },
-      },
-    },
+  routeRules: {
+    '/**': isDev ? {} : { cache: { swr: true, headersOnly: true } },
   },
   image: {
     provider: 'proxy',
