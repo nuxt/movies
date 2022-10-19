@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { onKeyDown } from '@vueuse/core'
 import type { Image } from '~/types'
-import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
 
 let images = $ref<Image[] | null>(null)
 let index = $ref(0)
