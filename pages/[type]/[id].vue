@@ -3,7 +3,9 @@ import type { MediaType } from '~/types'
 
 definePageMeta({
   key: route => route.fullPath,
-  middleware: 'type',
+  validate: ({ params }) => {
+    return ['movie', 'tv'].includes(String(params.type))
+  },
 })
 
 const route = useRoute()
