@@ -37,7 +37,7 @@ const mounted = useMounted()
     <div
       absolute bottom-0 left-0 px-10 justify-center
       lt-lg="bg-gradient-to-t right-0 p10"
-      lg="top-0 px25 w-2/3 bg-gradient-to-r"
+      lg="px25 w-2/3 bg-gradient-to-r"
       from-black via-black to-transparent
     >
       <Transition appear name="hero">
