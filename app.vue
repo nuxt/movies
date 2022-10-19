@@ -9,8 +9,8 @@ useHead({
   title: 'Nuxt Movies',
   titleTemplate: title => title !== 'Nuxt Movies' ? `${title} · Nuxt Movies` : title,
   meta: [
-    { name: 'description', content: 'https://movies.nuxt.space/social-card.png' },
-    { property: 'og:image', content: 'A TMDB client built with Nuxt Image to show the potential of it ✨' },
+    { name: 'description', content: 'A TMDB client built with Nuxt Image to show the potential of it ✨' },
+    { property: 'og:image', content: 'https://movies.nuxt.space/social-card.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@nuxt_js' },
     { name: 'twitter:creator', content: '@nuxt_js' },
