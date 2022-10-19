@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Media, MediaType } from '~/types'
+import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
 defineProps<{
   type: MediaType
@@ -31,7 +32,7 @@ defineProps<{
     <div mt-2>
       {{ item.title || item.name }}
     </div>
-    <div flex="~ row" text-sm gap-2 items-center>
+    <div text-sm row gap-2 items-center>
       <StarsRate w-20 :value="item.vote_average" />
       <div op60>
         {{ item.vote_average }}

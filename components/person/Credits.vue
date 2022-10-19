@@ -7,7 +7,7 @@ const { item } = defineProps<{
 </script>
 
 <template>
-  <div flx px16 gap5>
+  <div px16 gap5>
     <PersonCreditsList
       v-if="item.combined_credits?.cast?.length"
       title="Acting"
