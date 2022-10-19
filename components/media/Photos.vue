@@ -9,8 +9,8 @@ const show = useImageModal()
 </script>
 
 <template>
-  <div px16 py8 gap6>
-    <div row gap-2 items-baseline>
+  <div flex="~ col" px16 py8 gap6>
+    <div flex gap-2 items-baseline>
       <div text-2xl>
         Backdrops
       </div>
@@ -28,7 +28,7 @@ const show = useImageModal()
         @click="show(item.images!.backdrops, idx)"
       />
     </div>
-    <div mt-10 row gap-2 items-baseline>
+    <div flex mt-10 gap-2 items-baseline>
       <div text-2xl>
         Posters
       </div>

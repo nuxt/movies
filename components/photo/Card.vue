@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Image } from '~/types'
-import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
 const { item } = defineProps<{
   item: Image

@@ -24,7 +24,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
       block border="4 gray4/10" w-79 lt-md:hidden
       transition duration-400 object-cover aspect="10/16"
     />
-    <div p4 gap6>
+    <div flex="~ col" p4 gap6>
       <div v-if="item.overview">
         <h2 text-3xl mb4>
           Storyline

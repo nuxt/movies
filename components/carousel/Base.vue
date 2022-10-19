@@ -16,7 +16,7 @@ function scrollRight() {
 </script>
 
 <template>
-  <div row py3 px10 items-center mt5>
+  <div flex py3 px10 items-center mt5>
     <div text-2xl>
       <slot name="title" />
     </div>
@@ -25,19 +25,19 @@ function scrollRight() {
   </div>
   <div relative>
     <div ref="scrollEl" overflow-y-auto>
-      <div row gap-2 w-max p-2 px-10>
+      <div flex gap-2 w-max p-2 px-10>
         <slot />
       </div>
     </div>
     <button
-      absolute top-0 left-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
+      flex="~ col" absolute top-0 left-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       title="Scroll left"
       @click="scrollLeft()"
     >
       <div i-ph-caret-left-light text-3xl text-white />
     </button>
     <button
-      absolute top-0 right-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
+      flex="~ col" absolute top-0 right-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       title="Scroll right"
       @click="scrollRight()"
     >
