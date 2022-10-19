@@ -44,7 +44,7 @@ watch(
 
 <template>
   <div>
-    <div flex="~ row" bg-gray:10 items-center px6 py4 gap3 sticky>
+    <div bg-gray:10 row items-center px6 py4 gap3 sticky>
       <div i-ph:magnifying-glass text-xl op50 />
       <input
         v-model="input"

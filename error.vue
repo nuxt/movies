@@ -12,7 +12,7 @@ const handleError = () => clearError({ redirect: '/' })
 
 <template>
   <NuxtLayout>
-    <div flex h-screen text-center items-center justify-center gap4>
+    <div h-screen text-center flex items-center justify-center gap4>
       <div text-3xl>
         {{ is404 ? 'This page could not be found' : 'An error occurred' }}
       </div>
