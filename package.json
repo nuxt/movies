@@ -22,7 +22,7 @@
     "@vueuse/nuxt": "^9.3.0",
     "eslint": "^8.25.0",
     "lru-cache": "^7.14.0",
-    "nuxt": "npm:nuxt3@3.0.0-rc.13-27769729.ba3a118",
+    "nuxt": "npm:nuxt3@3.0.0-rc.13-27769897.0f2ef5d",
     "ohash": "^0.1.5",
     "pinia": "^2.0.23",
     "typescript": "^4.8.4"
