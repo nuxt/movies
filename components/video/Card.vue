@@ -12,7 +12,7 @@ const play = () => showModal(getVideoLink(item)!)
 <template>
   <button pb2 text-left @click="play()">
     <div
-      block bg-gray4:10 p1
+      block bg-gray4:10 p1 flex
       class="aspect-16/9"
       transition duration-400 relative
       hover="scale-102 z10"
@@ -25,7 +25,7 @@ const play = () => showModal(getVideoLink(item)!)
         :alt="item.name"
         w-full h-full object-cover
       />
-      <div w-full h-full absolute inset-0 op20 hover:op100 transition>
+      <div flex w-full h-full absolute inset-0 op20 hover:op100 transition>
         <div i-ph-play ma text-3xl />
       </div>
     </div>

@@ -12,7 +12,7 @@ const credits = [...items]
 </script>
 
 <template>
-  <div gap1>
+  <div flex="~ col" gap1>
     <h2 text-2xl pb4>
       {{ title }}
     </h2>
@@ -20,7 +20,7 @@ const credits = [...items]
       v-for="i of credits"
       :key="i.id"
       :to="`/${i.media_type}/${i.id}`"
-      flex="~" gap2 px2 py3 bg-gray:5
+      flex="col" gap2 px2 py3 bg-gray:5
     >
       <div text-center w-20 tabular-nums>
         {{ i.release_date ? i.release_date.slice(0, 4) : i.first_air_date ? i.first_air_date.slice(0, 4) : '-' }}

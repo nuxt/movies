@@ -38,14 +38,12 @@ useEventListener('keydown', (e) => {
 </script>
 
 <template>
-  <div v-if="images && current" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90 p5>
+  <div v-if="images && current" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90 p5 flex items-center justify-center>
     <button absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full @click="images = null">
       <div i-carbon-close />
     </button>
     <NuxtImg
       :key="current.file_path"
-      width="400"
-      height="600"
       format="webp"
       :src="`/tmdb${current.file_path}`"
       aria-hidden="true"

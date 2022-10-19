@@ -1,5 +1,11 @@
 <template>
-  <div py5 lg:px5 justify-evenly items-center border="t lg:r base" flex="row lg:col" bg-black>
+  <div
+    flex="~ row lg:col"
+    justify-evenly items-center
+    py5 lg:px5
+    border="t lg:r base"
+    bg-black
+  >
     <RouterLink v-slot="{ isActive }" to="/" title="Home">
       <div
         text-2xl

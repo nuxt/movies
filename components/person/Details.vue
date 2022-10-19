@@ -10,7 +10,7 @@ const tab = $ref<'known' | 'credits' | 'photos'>('known')
 
 <template>
   <PersonInfo :item="item" />
-  <div row items-center justify-center gap8 py6>
+  <div flex items-center justify-center gap8 py6>
     <button n-tab :class="{ 'n-tab-active': tab === 'known' }" @click="tab = 'known'">
       Known For
     </button>

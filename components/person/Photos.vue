@@ -7,8 +7,8 @@ defineProps<{
 </script>
 
 <template>
-  <div px16 gap6>
-    <div mt-10 row gap-2 items-baseline>
+  <div flex="~ col" px16 gap6>
+    <div flex mt-10 gap-2 items-baseline>
       <div text-2xl>
         Photos
       </div>

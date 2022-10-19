@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   ],
   experimental: {
     reactivityTransform: true,
+    inlineSSRStyles: false,
   },
   routeRules: {
     '/**': isDev ? {} : { cache: { swr: true, headersOnly: true } },

@@ -1,5 +1,5 @@
 <script setup>
-import '@unocss/reset/antfu.css'
+import '@unocss/reset/tailwind.css'
 
 useHead({
   htmlAttrs: {
