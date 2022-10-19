@@ -5,7 +5,7 @@ import { QUERY_LIST } from '~/constants/lists'
 definePageMeta({
   key: route => route.fullPath,
   validate: ({ params }) => {
-    return ['movie', 'tv'].includes(String(params.type))
+    return ['movie', 'tv'].includes(params.type as MediaType)
   },
 })
 
