@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Person } from '~/types'
-import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
 defineProps<{
   item: Person
@@ -17,8 +16,8 @@ defineProps<{
     >
       <NuxtImg
         v-if="item.profile_path"
-        width="400"
-        height="600"
+        width="500"
+        height="800"
         format="webp"
         :src="`/tmdb${item.profile_path}`"
         :alt="item.name"
