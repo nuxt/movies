@@ -16,9 +16,14 @@ const [item, recommendations] = await Promise.all([
   getMedia(type, id),
   getRecommendations(type, id),
 ])
+const $img = useImage()
 
 useHead({
   title: item.name || item.title,
+  meta: [
+    { name: 'description', content: item.overview },
+    { property: 'og:image', content: $img(`/tmdb${item.poster_path}`, { width: 1200, height: 630 }) },
+  ],
 })
 </script>
 

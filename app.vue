@@ -6,10 +6,10 @@ useHead({
     lang: 'en',
   },
   charset: 'utf-8',
-  title: 'Movies',
-  titleTemplate: '%s - Nuxt3 Movies',
+  title: 'Nuxt Movies',
+  titleTemplate: title => title !== 'Nuxt Movies' ? `${title} · Nuxt Movies` : title,
   meta: [
-    { name: 'description', content: 'Nuxt Movies - a TMDB client for demonstraction' },
+    { name: 'description', content: 'A TMDB client built with Nuxt Image to show the potential of it ✨' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@nuxt_js' },
     { name: 'twitter:creator', content: '@nuxt_js' },
