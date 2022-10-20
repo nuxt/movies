@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "PORT=3001 nitropack dev",
-    "dev-windows": "set PORT=3001 nitropack dev"
+    "dev:windows": "set PORT=3001 nitropack dev"
     "build": "nitropack build"
   },
   "devDependencies": {
