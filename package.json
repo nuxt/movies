@@ -6,6 +6,7 @@
     "dev": "nuxi dev",
     "dev:proxy": "cd proxy && pnpm dev",
     "start": "node .output/server/index.mjs",
+    "postinstall": "nuxt prepare",
     "lint": "eslint ."
   },
   "devDependencies": {
