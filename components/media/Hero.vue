@@ -35,7 +35,8 @@ const mounted = useMounted()
       />
     </div>
     <div
-      absolute bottom-0 left-0 px-10 justify-center
+      absolute bottom-0 left-0 top-0 px-10
+      flex="~ col" justify-center
       lt-lg="bg-gradient-to-t right-0 p10"
       lg="px25 w-2/3 bg-gradient-to-r"
       from-black via-black to-transparent
