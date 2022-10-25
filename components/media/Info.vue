@@ -15,7 +15,6 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
 <template>
   <div p4 grid="~ cols-[max-content_1fr]" gap-8 items-center ma max-w-300>
     <NuxtImg
-
       width="400"
       height="600"
       format="webp"
@@ -24,12 +23,11 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
       block border="4 gray4/10" w-79 lt-md:hidden
       transition duration-400 object-cover aspect="10/16"
     />
-    <div flex="~ col" p4 gap6>
+    <div lt-md:w="[calc(100vw-2rem)]" flex="~ col" md:p4 gap6>
       <div v-if="item.overview">
         <h2 text-3xl mb4>
           Storyline
         </h2>
-
         <div op80 v-text="item.overview" />
       </div>
 
