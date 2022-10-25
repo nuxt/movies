@@ -3,7 +3,7 @@ import { options } from '#cache-ssr-options'
 
 const DefaultOptionsLRU = {
     max: 500,
-    ttl: 10,
+    ttl: 1000 * 60,
 }
 interface InMemory {
     initialized:boolean
