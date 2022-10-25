@@ -8,7 +8,8 @@ export default defineNitroPlugin((nitroApp) => {
  
   nitroApp.hooks.hook('render:response', (response, {event}) => {
       const isCacheable = isUrlCacheable(event.req,options.pages)
-
+      event.res.setHeader("x-bgv-url",`${event.req.url}`)
+      event.res.setHeader("x-bgv-Cacheable",`${isCacheable}`)
       if(isCacheable && response.statusCode === 200){
         const key = event.req.url
         InMemoryCache.set(key,response)
