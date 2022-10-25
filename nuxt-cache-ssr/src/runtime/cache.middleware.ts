@@ -14,7 +14,7 @@ export default fromNodeMiddleware((req, res,next) => {
       next()
     } else {
       res.writeHead(200, { ...cachedRes.headers, 'x-ssr-cache': 'Hit!!!' });
-      res.end(cachedRes.body)
+      res.end("Hello")
     }
   }
     
