@@ -6,6 +6,7 @@ import {isUrlCacheable} from './cache.utils'
 
 export default fromNodeMiddleware((req, res,next) => {
   const {url} = req
+  res.end("Hello")
   if(!isUrlCacheable(req,options.pages)){
     next()
   }else{
