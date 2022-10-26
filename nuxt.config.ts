@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     inlineSSRStyles: false,
   },
   routeRules: {
-    '/**': isDev ? {} : { cache: { swr: true, headersOnly: true } },
+    '/**': isDev ? {} : { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
   },
   runtimeConfig: {
     public: {
