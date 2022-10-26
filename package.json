@@ -6,7 +6,7 @@
     "dev": "nuxi dev",
     "dev:proxy": "cd proxy && pnpm dev",
     "start": "node .output/server/index.mjs",
-    "postinstall": "nuxi prepare",
+    "postinstall": "cd nuxt-cache-ssr && npm i && npm run dev:prepare && cd .. && nuxi prepare",
     "lint": "eslint ."
   },
   "devDependencies": {
