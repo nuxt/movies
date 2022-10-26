@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div flex="~ col" px16 py4 gap6>
+  <div flex="~ col" px4 md:px14 py4 gap6>
     <div op50>
       {{ item.videos?.results.length || 0 }} Videos
     </div>
