@@ -5,3 +5,6 @@ dist
 .nuxt
 .env
 .nitro
+
+# Local Netlify folder
+.netlify

@@ -1,4 +1,6 @@
-import LRU from 'lru-cache';
+// import LRU from 'lru-cache';
+import { caching } from 'cache-manager'
+
 import { options } from '#cache-ssr-options'
 
 const DefaultOptionsLRU = {
@@ -12,22 +14,33 @@ class InMemoryCache {
     cache:any;
 
     constructor(options = {}) {
-        this.cache = new LRU({ ...DefaultOptionsLRU, ...options })
+        // this.cache = new LRU({ ...DefaultOptionsLRU, ...options })
+        this.cached = {}
     }
 
-    get(key) {
+   async get(key) {
      
-        return this.cache.get(key)
+        // return this.cache.get(key)
+        const result = await this.cached.get(key)
+        return result
     }
 
-    set(key, value) {
+   async set(key, value) {
 
-        this.cache.set(key, value)
+        // this.cache.set(key, value)
+        await this.cached.set(key, value)
     }
 
-    has(key) {
-        return this.cache.has(key)
-    }
+    async init () {
+        this.cached = await caching('memory', {
+          max: 500,
+          ttl: 1000 * 60 * 180 // 3 hours
+        })
+      }
+
+    // has(key) {
+    //     return this.cache.has(key)
+    // }
 
 }
 
@@ -36,4 +49,4 @@ if(options.LRU){
     lruOptions = {...options.LRU}
 }
 
-export default new InMemoryCache(lruOptions)
+export default new InMemoryCache()

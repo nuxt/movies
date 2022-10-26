@@ -4,13 +4,13 @@ import { options } from '#cache-ssr-options'
 import {isUrlCacheable} from './cache.utils'
 
 
-export default fromNodeMiddleware((req, res,next) => {
+export default fromNodeMiddleware(async (req, res,next) => {
   const {url} = req
-  
+  console.log("BGVVVV")
   if(!isUrlCacheable(req,options.pages)){
     next()
   }else{
-    const cachedRes = InMemoryCache.get(url)
+    const cachedRes = await InMemoryCache.get(url)
     res.setHeader("x-cached-nuxt",`${cachedRes?.statusCode?.toString()}` )
     if (!cachedRes) {
       next()

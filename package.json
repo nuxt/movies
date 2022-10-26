@@ -2,12 +2,11 @@
   "private": true,
   "packageManager": "pnpm@7.13.4",
   "scripts": {
-    "prebuild":"cd nuxt-cache-ssr && npm i && npm run dev:prepare && cd ..",
     "build": "nuxi build",
     "dev": "nuxi dev",
     "dev:proxy": "cd proxy && pnpm dev",
     "start": "node .output/server/index.mjs",
-    "postinstall": "cd nuxt-cache-ssr && npm i && npm run dev:prepare && cd .. && nuxi prepare",
+    "postinstall": "nuxi prepare",
     "lint": "eslint ."
   },
   "devDependencies": {
@@ -28,5 +27,8 @@
     "ohash": "^0.1.5",
     "pinia": "^2.0.23",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "cache-manager": "^5.1.1"
   }
 }
