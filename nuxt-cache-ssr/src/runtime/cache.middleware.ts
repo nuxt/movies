@@ -11,7 +11,7 @@ export default fromNodeMiddleware(async (req, res,next) => {
     next()
   }else{
     const cachedRes = await InMemoryCache.get(url)
-    res.setHeader("x-cached-nuxt",`${cachedRes?.statusCode?.toString()}` )
+    res.setHeader("x-cached-nuxt",`${cachedRes?.statusCode?.toString()} url: ${url}` )
     if (!cachedRes) {
       next()
     } else {
