@@ -5,3 +5,4 @@ dist
 .nuxt
 .env
 .nitro
+.DS_Store
