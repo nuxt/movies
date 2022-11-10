@@ -35,7 +35,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
         <ul grid="~ cols-[max-content_1fr] lg:cols-[max-content_1fr_max-content_1fr] gap3" items-center>
           <template v-if="item.release_date">
             <div>
-              {{ $t('Released Date') }}
+              {{ $t('Release Date') }}
             </div>
             <div>
               {{ formatDate(item.release_date) }}
