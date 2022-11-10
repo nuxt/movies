@@ -15,7 +15,7 @@ const item = await listMedia(query.type, query.query, 1)
     </template>
     <template #more>
       <NuxtLink :to="`/${query.type}/category/${query.query}`" n-link>
-        Explore more
+        {{ $t('Explore more') }}
       </NuxtLink>
     </template>
     <MediaCard

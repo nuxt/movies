@@ -7,6 +7,9 @@
     "Top Rated TV Shows": "Top Rated TV Shows",
     "TV Shows Airing Today": "TV Shows Airing Today",
 
+    "Watch Trailer": "Watch Trailer",
+    "Explore more": "Explore more",
+
     "Overview": "Overview",
     "Videos": "Videos",
     "Media Photos": "Photos",
@@ -47,5 +50,8 @@
     "{numberOfImages} Images": "{numberOfImages} Images",
     "{numberOfVideos} Videos": "{numberOfVideos} Videos",
 
-    "as {character}": "as {character}"
+    "as {character}": "as {character}",
+
+    "{count} items": "{count} items",
+    "Search result for: {currentSearch}": "Search result for: {currentSearch}"
 }

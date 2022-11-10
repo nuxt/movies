@@ -63,7 +63,7 @@ watch(
       :count="count"
       type="movie"
     >
-      <div>Search result for: {{ currentSearch }}</div>
+      <div>{{ $t('Search result for: {currentSearch}', { currentSearch: currentSearch }) }}</div>
     </MediaAutoLoadGrid>
     <div v-else text-4xl p10 font-100 op50 text-center>
       {{ $t('Type something to search...') }}

@@ -72,7 +72,7 @@ const mounted = useMounted()
               @click="playTrailer()"
             >
               <div i-ph-play />
-              Watch Trailer
+              {{ $t('Watch Trailer') }}
             </button>
           </div>
         </div>

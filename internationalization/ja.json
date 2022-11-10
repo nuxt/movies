@@ -7,6 +7,9 @@
     "Top Rated TV Shows": "評価の高いテレビ番組",
     "TV Shows Airing Today": "今日放送中のテレビ番組",
 
+    "Watch Trailer": "予告編を見ます",
+    "Explore more": "もっと見る",
+
     "Overview": "概要",
     "Videos": "動画",
     "Media Photos": "写真",
@@ -47,5 +50,8 @@
     "{numberOfImages} Images": "{numberOfImages}枚写真",
     "{numberOfVideos} Videos": "{numberOfVideos}本動画",
 
-    "as {character}": "演 {character}"
+    "as {character}": "演 {character}",
+
+    "{count} items": "{count}件",
+    "Search result for: {currentSearch}": "「{currentSearch}」の検索結果 "
 }

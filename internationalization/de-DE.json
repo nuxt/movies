@@ -7,6 +7,9 @@
     "Top Rated TV Shows": "Bestbewertete Serien",
     "TV Shows Airing Today": "Serien die heute ausgestrahlt werden",
 
+    "Watch Trailer": "Trailer ansehen",
+    "Explore more": "Mehr entdecken",
+
     "Overview": "Überblick",
     "Videos": "Videos",
     "Media Photos": "Fotos",
@@ -47,5 +50,8 @@
     "{numberOfImages} Images": "{numberOfImages} Bilder",
     "{numberOfVideos} Videos": "{numberOfVideos} Videos",
 
-    "as {character}": "Rolle: {character}"
+    "as {character}": "Rolle: {character}",
+
+    "{count} items": "{count} Ergebnisse ",
+    "Search result for: {currentSearch}": "Suchergebnis für {currentSearch}"
 }

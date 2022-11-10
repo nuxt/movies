@@ -7,6 +7,9 @@
     "Top Rated TV Shows": "高分剧集",
     "TV Shows Airing Today": "今日播出剧集",
 
+    "Watch Trailer": "观看预告",
+    "Explore more": "查看更多",
+
     "Overview": "概述",
     "Videos": "视频",
     "Media Photos": "照片",
@@ -47,5 +50,8 @@
     "{numberOfImages} Images": "{numberOfImages}张照片",
     "{numberOfVideos} Videos": "{numberOfVideos}个视频",
 
-    "as {character}": "饰 {character}"
+    "as {character}": "饰 {character}",
+
+    "{count} items": "{count}条结果",
+    "Search result for: {currentSearch}": "搜索 {currentSearch}"
 }
