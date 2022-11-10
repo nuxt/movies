@@ -45,6 +45,22 @@ export default defineNuxtConfig({
         code: 'en',
         file: 'en.json'
       },
+      {
+        code: 'de-DE',
+        file: 'de-DE.json'
+      },
+      {
+        code: 'es-ES',
+        file: 'es-ES.json'
+      },
+      {
+        code: 'ja',
+        file: 'ja.json'
+      },
+      {
+        code: 'zh-CN',
+        file: 'zh-CN.json'
+      }
     ],
     lazy: true,
     langDir: 'internationalization',
