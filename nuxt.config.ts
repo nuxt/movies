@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxt/image-edge',
+    '@nuxtjs/i18n',
   ],
   experimental: {
     reactivityTransform: true,
@@ -32,5 +33,24 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  i18n: {
+    detectBrowserLanguage: {
+      useCookie: false,
+    },
+    strategy: 'no_prefix',
+    locales: [
+      {
+        code: 'en',
+        file: 'en.json'
+      },
+      
+    ],
+    vueI18n: {
+      fallbackLocale: 'en'
+    },
+    lazy: true,
+    langDir: 'internationalization',
+    defaultLocale: 'en'
   },
 })
