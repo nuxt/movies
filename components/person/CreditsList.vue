@@ -27,7 +27,7 @@ const credits = [...items]
       </div>
       <div>{{ i.title || i.name }}</div>
       <div op50>
-        {{ i.character ? `as ${i.character}` : '' }}
+        {{ i.character ? $t('as {character}', { character: i.character }) : '' }}
       </div>
     </NuxtLink>
   </div>

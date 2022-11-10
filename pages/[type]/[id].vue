@@ -33,7 +33,7 @@ useHead({
     <MediaDetails :item="item" :type="type" />
     <CarouselBase v-if="recommendations?.results.length">
       <template #title>
-        More like this
+        {{ $t('More like this') }}
       </template>
       <MediaCard
         v-for="i of recommendations.results"

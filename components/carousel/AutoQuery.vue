@@ -11,7 +11,7 @@ const item = await listMedia(query.type, query.query, 1)
 <template>
   <CarouselBase>
     <template #title>
-      {{ query.title }}
+      {{ $t(query.title) }}
     </template>
     <template #more>
       <NuxtLink :to="`/${query.type}/category/${query.query}`" n-link>

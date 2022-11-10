@@ -51,7 +51,7 @@ watch(
         v-focus
         type="text"
         text-2xl bg-transparent outline-none
-        placeholder="Type to search..."
+        :placeholder="$t('Type to search...')"
         @keyup.enter="search"
       >
     </div>
@@ -66,7 +66,7 @@ watch(
       <div>Search result for: {{ currentSearch }}</div>
     </MediaAutoLoadGrid>
     <div v-else text-4xl p10 font-100 op50 text-center>
-      Type something to search...
+      {{ $t('Type something to search...') }}
     </div>
   </div>
 </template>
