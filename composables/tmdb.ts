@@ -12,6 +12,10 @@ const cache = new LRU({
 })
 
 function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+  if (params['language'] == undefined) {
+    const locale = useNuxtApp().$i18n.locale
+    params['language'] = unref(locale)
+  }
   return $fetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,
     params,
@@ -86,7 +90,7 @@ export function getCredits(id: string | number, type: string): Promise<Credits> 
  * Get genre list
  */
 export function getGenreList(media: string): Promise<{ name: string; id: number }[]> {
-  return fetchTMDB(`genre/${media}/list`, { language: undefined }).then(res => res.genres)
+  return fetchTMDB(`genre/${media}/list`).then(res => res.genres)
 }
 
 /**
