@@ -12,10 +12,10 @@ const show = useImageModal()
   <div flex="~ col" px4 md:px16 py8 gap6>
     <div flex gap-2 items-baseline>
       <div text-2xl>
-        Backdrops
+        {{ $t('Backdrops') }}
       </div>
       <div text-sm op50>
-        {{ item.images?.backdrops.length }} images
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.backdrops.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-20rem" gap4>
@@ -30,10 +30,10 @@ const show = useImageModal()
     </div>
     <div flex mt-10 gap-2 items-baseline>
       <div text-2xl>
-        Posters
+        {{ $t('Posters') }}
       </div>
       <div text-sm op50>
-        {{ item.images?.posters.length }} images
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.posters.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-15rem" gap4>

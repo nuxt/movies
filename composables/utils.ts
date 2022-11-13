@@ -1,11 +1,9 @@
 import LANGUAGES from '~/constants/languages'
 
 export function formatDate(string: string) {
-  const dateArray = string.split('-')
-  const date = dateArray[2].slice(0, 1) === '0' ? dateArray[2].slice(1, 1) : dateArray[2]
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-  return `${date} ${months[+dateArray[1] - 1]} ${dateArray[0]}`
+  const locale = useNuxtApp().$i18n.locale
+  const date = new Date(string).toLocaleDateString(unref(locale))
+  return date
 }
 
 /**

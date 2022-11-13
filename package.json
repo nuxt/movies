@@ -18,6 +18,7 @@
     "@iconify-json/twemoji": "^1.1.5",
     "@nuxt/image-edge": "1.0.0-27769790.4b27db3",
     "@nuxtjs/color-mode": "^3.1.8",
+    "@nuxtjs/i18n": "8.0.0-beta.3",
     "@pinia/nuxt": "^0.4.3",
     "@unocss/nuxt": "^0.45.30",
     "@vueuse/nuxt": "^9.3.1",

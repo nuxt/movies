@@ -52,7 +52,7 @@ const mounted = useMounted()
               {{ item.vote_average }}
             </div>
             <div op50 hidden md:block>
-              {{ item.vote_count }} Reviews
+              {{ $t('{numberOfReviews} Reviews', { numberOfReviews: item.vote_count }) }}
             </div>
             <div v-if="item.release_date" op50>
               {{ item.release_date.slice(0, 4) }}
@@ -72,7 +72,7 @@ const mounted = useMounted()
               @click="playTrailer()"
             >
               <div i-ph-play />
-              Watch Trailer
+              {{ $t('Watch Trailer') }}
             </button>
           </div>
         </div>

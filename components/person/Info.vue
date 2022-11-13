@@ -30,7 +30,7 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
 
         <div v-if="item.biography" font-sans ws-pre-wrap op80 leading-relaxed v-text="item.biography" />
         <div v-else op50 italic>
-          (no biography)
+          {{ $t('(no biography)') }}
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
         <ul grid="~ cols-[max-content_1fr] gap3" items-center>
           <template v-if="item.known_for_department">
             <div op60>
-              Known for
+              {{ $t('Known for') }}
             </div>
             <div>
               {{ item.known_for_department }}
@@ -46,7 +46,7 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
           </template>
           <template v-if="item.place_of_birth">
             <div op60>
-              Place of birth
+              {{ $t('Place of birth') }}
             </div>
             <div>
               {{ item.place_of_birth }}
@@ -55,7 +55,7 @@ const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.home
 
           <template v-if="item.birthday">
             <div op60>
-              Birthday
+              {{ $t('Birthday') }}
             </div>
             <div>
               {{ formatDate(item.birthday) }}

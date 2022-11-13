@@ -1,0 +1,57 @@
+{
+  "Popular Movies": "Beliebte Filme",
+  "Top Rated Movies": "Bestbewertete Filme",
+  "Upcoming Movies": "Kommende Filme",
+  "Now Playing Movies": "Kinofilme",
+  "Popular TV Shows": "Beliebte Serien",
+  "Top Rated TV Shows": "Bestbewertete Serien",
+  "TV Shows Airing Today": "Serien die heute ausgestrahlt werden",
+
+  "Watch Trailer": "Trailer ansehen",
+  "Explore more": "Mehr entdecken",
+
+  "Overview": "Überblick",
+  "Videos": "Videos",
+  "Media Photos": "Fotos",
+
+  "Cast": "Besetzung",
+  "More like this": "Ähnlich",
+
+  "Storyline": "Handlung",
+  "Release Date": "Erscheinungsdatum",
+  "Länge": "Runtime",
+  "Director": "Regie",
+  "Budget": "Budget",
+  "Revenue": "Einnahmen",
+  "Genre": "Genre",
+  "Status": "Status",
+  "Language": "Sprache",
+  "Production": "Produktion",
+
+  "Backdrops": "Kulissen",
+  "Posters": "Plakate",
+
+  "Known For": "Bekannt für",
+  "Credits": "Filmographie",
+  "Person Photos": "Fotos",
+  "(no biography)": "(keine Biografie)",
+  "Known for": "Bekannt für",
+  "Place of birth": "Geburtsort",
+  "Birthday": "Geburtsdatum",
+
+  "Acting Credits": "Darsteller",
+  "Production Credits": "Produktion",
+
+  "Type to search...": "Durchsuchen",
+  "Type something to search...": "Suchen...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} Rezension",
+
+  "{numberOfImages} Images": "{numberOfImages} Bilder",
+  "{numberOfVideos} Videos": "{numberOfVideos} Videos",
+
+  "as {character}": "Rolle: {character}",
+
+  "{count} items": "{count} Ergebnisse ",
+  "Search result for: {currentSearch}": "Suchergebnis für {currentSearch}"
+}

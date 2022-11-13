@@ -10,12 +10,12 @@ const { item } = defineProps<{
   <div flex="~ col" px16 gap5>
     <PersonCreditsList
       v-if="item.combined_credits?.cast?.length"
-      title="Acting"
+      :title="$t('Acting Credits')"
       :items="item.combined_credits.cast"
     />
     <PersonCreditsList
       v-if="item.combined_credits?.crew?.length"
-      title="Production"
+      title="$t('Production Credits')"
       :items="item.combined_credits.crew"
     />
   </div>

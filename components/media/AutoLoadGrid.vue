@@ -50,7 +50,7 @@ else {
       <slot />
     </h1>
     <div v-if="count != null" px8 op50>
-      {{ count }} items
+      {{ $t('{count} items', { count }) }}
     </div>
     <MediaGrid>
       <MediaCard

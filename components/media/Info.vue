@@ -26,7 +26,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
     <div lt-md:w="[calc(100vw-2rem)]" flex="~ col" md:p4 gap6>
       <div v-if="item.overview">
         <h2 text-3xl mb4>
-          Storyline
+          {{ $t('Storyline') }}
         </h2>
         <div op80 v-text="item.overview" />
       </div>
@@ -35,7 +35,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
         <ul grid="~ cols-[max-content_1fr] lg:cols-[max-content_1fr_max-content_1fr] gap3" items-center>
           <template v-if="item.release_date">
             <div>
-              Released
+              {{ $t('Release Date') }}
             </div>
             <div>
               {{ formatDate(item.release_date) }}
@@ -43,7 +43,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.runtime">
             <div>
-              Runtime
+              {{ $t('Runtime') }}
             </div>
 
             <div>
@@ -52,7 +52,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="directors?.length">
             <div>
-              Director
+              {{ $t('Director') }}
             </div>
 
             <div flex="~ row wrap gap1">
@@ -69,7 +69,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.budget">
             <div>
-              Budget
+              {{ $t('Budget') }}
             </div>
 
             <div>
@@ -78,7 +78,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.revenue">
             <div>
-              Revenue
+              {{ $t('Revenue') }}
             </div>
 
             <div>
@@ -87,7 +87,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.genres && item.genres.length">
             <div>
-              Genre
+              {{ $t('Genre') }}
             </div>
 
             <div flex="~ row wrap gap1">
@@ -103,7 +103,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.status">
             <div>
-              Status
+              {{ $t('Status') }}
             </div>
 
             <div>
@@ -112,7 +112,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.original_language">
             <div>
-              Language
+              {{ $t('Language') }}
             </div>
 
             <div>
@@ -121,7 +121,7 @@ const directors = $computed(() => item.credits?.crew.filter(person => person.job
           </template>
           <template v-if="item.production_companies && item.production_companies.length">
             <div>
-              Production
+              {{ $t('Production') }}
             </div>
 
             <div>

@@ -1,0 +1,57 @@
+{
+  "Popular Movies": "热门电影",
+  "Top Rated Movies": "高分电影",
+  "Upcoming Movies": "即将上映电影",
+  "Now Playing Movies": "正在上映电影",
+  "Popular TV Shows": "热门剧集",
+  "Top Rated TV Shows": "高分剧集",
+  "TV Shows Airing Today": "今日播出剧集",
+
+  "Watch Trailer": "观看预告",
+  "Explore more": "查看更多",
+
+  "Overview": "概述",
+  "Videos": "视频",
+  "Media Photos": "照片",
+
+  "Cast": "演员",
+  "More like this": "更多类似的",
+
+  "Storyline": "剧情",
+  "Release Date": "上映日期",
+  "Runtime": "片长",
+  "Director": "导演",
+  "Budget": "成本",
+  "Revenue": "票房",
+  "Genre": "类型",
+  "Status": "状态",
+  "Language": "语言",
+  "Production": "制片",
+
+  "Backdrops": "背景",
+  "Posters": "海报",
+
+  "Known For": "知名",
+  "Credits": "作品",
+  "Person Photos": "照片",
+  "(no biography)": "（没有简介）",
+  "Known for": "知名",
+  "Place of birth": "出生地",
+  "Birthday": "生日",
+
+  "Acting Credits": "演出",
+  "Production Credits": "制片",
+
+  "Type to search...": "搜索",
+  "Type something to search...": "请输入要搜索的内容",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews}人评价",
+
+  "{numberOfImages} Images": "{numberOfImages}张照片",
+  "{numberOfVideos} Videos": "{numberOfVideos}个视频",
+
+  "as {character}": "饰 {character}",
+
+  "{count} items": "{count}条结果",
+  "Search result for: {currentSearch}": "搜索 {currentSearch}"
+}

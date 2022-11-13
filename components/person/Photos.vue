@@ -10,10 +10,10 @@ defineProps<{
   <div flex="~ col" px16 gap6>
     <div flex mt-10 gap-2 items-baseline>
       <div text-2xl>
-        Photos
+        {{ $t('Person Photos') }}
       </div>
       <div text-sm op50>
-        {{ item.images?.profiles.length }} images
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.profiles.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-15rem" gap4>

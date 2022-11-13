@@ -1,0 +1,57 @@
+{
+  "Popular Movies": "Popular Movies",
+  "Top Rated Movies": "Top Rated Movies",
+  "Upcoming Movies": "Upcoming Movies",
+  "Now Playing Movies": "Now Playing Movies",
+  "Popular TV Shows": "Popular TV Shows",
+  "Top Rated TV Shows": "Top Rated TV Shows",
+  "TV Shows Airing Today": "TV Shows Airing Today",
+
+  "Watch Trailer": "Watch Trailer",
+  "Explore more": "Explore more",
+
+  "Overview": "Overview",
+  "Videos": "Videos",
+  "Media Photos": "Photos",
+
+  "Cast": "Cast",
+  "More like this": "More like this",
+
+  "Storyline": "Storyline",
+  "Release Date": "Released",
+  "Runtime": "Runtime",
+  "Director": "Director",
+  "Budget": "Budget",
+  "Revenue": "Revenue",
+  "Genre": "Genre",
+  "Status": "Status",
+  "Language": "Language",
+  "Production": "Production",
+
+  "Backdrops": "Backdrops",
+  "Posters": "Posters",
+
+  "Known For": "Known For",
+  "Credits": "Credits",
+  "Person Photos": "Photos",
+  "(no biography)": "(no biography)",
+  "Known for": "Known for",
+  "Place of birth": "Place of birth",
+  "Birthday": "Birthday",
+
+  "Acting Credits": "Acting",
+  "Production Credits": "Production",
+
+  "Type to search...": "Type to search...",
+  "Type something to search...": "Type something to search...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} Reviews",
+
+  "{numberOfImages} Images": "{numberOfImages} Images",
+  "{numberOfVideos} Videos": "{numberOfVideos} Videos",
+
+  "as {character}": "as {character}",
+
+  "{count} items": "{count} items",
+  "Search result for: {currentSearch}": "Search result for: {currentSearch}"
+}
