@@ -12,9 +12,9 @@ const cache = new LRU({
 })
 
 function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
-  if (params['language'] == undefined) {
+  if (params.language == null) {
     const locale = useNuxtApp().$i18n.locale
-    params['language'] = unref(locale)
+    params.language = unref(locale)
   }
   return $fetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,

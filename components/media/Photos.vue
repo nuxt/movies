@@ -15,7 +15,7 @@ const show = useImageModal()
         {{ $t('Backdrops') }}
       </div>
       <div text-sm op50>
-        {{ $t('{numberOfImages} Images', {numberOfImages: item.images?.backdrops.length}) }}
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.backdrops.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-20rem" gap4>
@@ -33,7 +33,7 @@ const show = useImageModal()
         {{ $t('Posters') }}
       </div>
       <div text-sm op50>
-        {{ $t('{numberOfImages} Images', {numberOfImages: item.images?.posters.length}) }}
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.posters.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-15rem" gap4>

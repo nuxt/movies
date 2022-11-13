@@ -37,33 +37,33 @@ export default defineNuxtConfig({
   i18n: {
     detectBrowserLanguage: {
       useCookie: false,
-      fallbackLocale: 'en'
+      fallbackLocale: 'en',
     },
     strategy: 'no_prefix',
     locales: [
       {
         code: 'en',
-        file: 'en.json'
+        file: 'en.json',
       },
       {
         code: 'de-DE',
-        file: 'de-DE.json'
+        file: 'de-DE.json',
       },
       {
         code: 'es-ES',
-        file: 'es-ES.json'
+        file: 'es-ES.json',
       },
       {
         code: 'ja',
-        file: 'ja.json'
+        file: 'ja.json',
       },
       {
         code: 'zh-CN',
-        file: 'zh-CN.json'
-      }
+        file: 'zh-CN.json',
+      },
     ],
     lazy: true,
     langDir: 'internationalization',
-    defaultLocale: 'en'
+    defaultLocale: 'en',
   },
 })
