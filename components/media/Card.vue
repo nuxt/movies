@@ -24,7 +24,7 @@ defineProps<{
         :alt="item.title || item.name"
         w-full h-full object-cover
       />
-      <div v-else h-full op10>
+      <div v-else h-full op10 flex>
         <div i-ph:question ma text-4xl />
       </div>
     </div>
