@@ -7,6 +7,8 @@ export default defineEventHandler(async (event) => {
   // eslint-disable-next-line no-console
   console.log('Fetching TMDB API', event.req.url)
   const config = useRuntimeConfig()
+  if (!config.tmdb.apiKey)
+    throw new Error('TMDB API key is not set')
   try {
     return await $fetch(event.context.params.path, {
       baseURL: TMDB_API_URL,
@@ -20,6 +22,6 @@ export default defineEventHandler(async (event) => {
   catch (e: any) {
     const status = e?.response?.status || 500
     event.res.statusCode = status
-    return e.message?.replace(/\?api_key=.*/, '')
+    return e.message?.replace(config.tmdb.apiKey, '***')
   }
 })
