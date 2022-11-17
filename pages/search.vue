@@ -4,6 +4,7 @@ import type { Media } from '~/types'
 const route = useRoute()
 const router = useRouter()
 const input = $ref((route.query.s || '').toString())
+let error = $ref<unknown>()
 let count = $ref<undefined | number>()
 
 let items = $ref<Media[]>([])
@@ -21,9 +22,14 @@ function search() {
 async function fetch(page: number) {
   if (!currentSearch)
     return
-  const data = await searchShows(currentSearch, page)
-  count = data.total_results ?? count
-  items.push(...data.results)
+  try {
+    const data = await searchShows(currentSearch, page)
+    count = data.total_results ?? count
+    items.push(...data.results)
+  }
+  catch (e: any) {
+    error = e
+  }
 }
 
 const throttledSearch = useDebounceFn(search, 200)
@@ -55,8 +61,17 @@ watch(
         @keyup.enter="search"
       >
     </div>
+    <div v-if="error" p8 flex flex-col gap-3 items-start>
+      <h1 text-4xl text-red>
+        {{ $t('Error occurred on fetching') }}
+      </h1>
+      <pre py2>{{ error }}</pre>
+      <button n-link border px4 py1 rounded @click="error = undefined">
+        {{ $t('Retry') }}
+      </button>
+    </div>
     <MediaAutoLoadGrid
-      v-if="currentSearch"
+      v-else-if="currentSearch"
       :key="currentSearch"
       :fetch="fetch"
       :items="items"

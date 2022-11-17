@@ -53,5 +53,8 @@
   "as {character}": "as {character}",
 
   "{count} items": "{count} items",
-  "Search result for: {currentSearch}": "Search result for: {currentSearch}"
+  "Search result for: {currentSearch}": "Search result for: {currentSearch}",
+
+  "Error occurred on fetching": "Error occurred on fetching",
+  "Retry": "Retry"
 }
