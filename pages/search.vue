@@ -56,7 +56,7 @@ watch(
         v-model="input"
         v-focus
         type="text"
-        text-2xl bg-transparent outline-none
+        text-2xl bg-transparent outline-none w-full
         :placeholder="$t('Type to search...')"
         @keyup.enter="search"
       >
