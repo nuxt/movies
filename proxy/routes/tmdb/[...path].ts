@@ -1,4 +1,4 @@
-import { $fetch } from 'ohmyfetch'
+import { $fetch } from 'ofetch'
 import { getQuery } from 'ufo'
 
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
