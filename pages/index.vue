@@ -3,7 +3,7 @@ import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
 
 const route = useRoute()
-const type = $computed(() => route.params.type as MediaType || 'movie')
+const type = computed(() => route.params.type as MediaType || 'movie')
 
 const queries = $computed(() => [
   QUERY_LIST.movie[0],
@@ -11,8 +11,8 @@ const queries = $computed(() => [
 ])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
-  const list = await listMedia(type, queries[0].query, 1)
-  const item = await getMedia(type, list.results[0].id)
+  const list = await listMedia(type.value, queries[0].query, 1)
+  const item = await getMedia(type.value, list.results[0].id)
   return () => ctx.slots?.default?.({ item })
 })
 </script>
