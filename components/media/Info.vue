@@ -8,8 +8,8 @@ const { item } = defineProps<{
   type: MediaType
 }>()
 
-const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.homepage }))
-const directors = $computed(() => item.credits?.crew.filter(person => person.job === 'Director'))
+const externalIds = computed(() => ({ ...item.external_ids, homepage: item.homepage }))
+const directors = computed(() => item.credits?.crew.filter(person => person.job === 'Director'))
 </script>
 
 <template>
