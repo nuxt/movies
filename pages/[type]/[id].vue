@@ -9,12 +9,12 @@ definePageMeta({
 })
 
 const route = useRoute()
-const type = $computed(() => route.params.type as MediaType || 'movie')
-const id = $computed(() => route.params.id as string)
+const type = computed(() => route.params.type as MediaType || 'movie')
+const id = computed(() => route.params.id as string)
 
 const [item, recommendations] = await Promise.all([
-  getMedia(type, id),
-  getRecommendations(type, id),
+  getMedia(type.value, id.value),
+  getRecommendations(type.value, id.value),
 ])
 const $img = useImage()
 
