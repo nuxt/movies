@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const scrollEl = $ref<HTMLDivElement>()
+const scrollEl = ref<HTMLDivElement>()
 
 function scrollLeft() {
   scrollEl?.scrollTo({
@@ -9,7 +9,7 @@ function scrollLeft() {
 }
 function scrollRight() {
   scrollEl?.scrollTo({
-    left: scrollEl?.scrollWidth - scrollEl?.clientWidth,
+    left: scrollEl.value?.scrollWidth - scrollEl.value?.clientWidth,
     behavior: 'smooth',
   })
 }

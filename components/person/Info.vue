@@ -7,7 +7,7 @@ const { item } = defineProps<{
   item: Person
 }>()
 
-const externalIds = $computed(() => ({ ...item.external_ids, homepage: item.homepage }))
+const externalIds = computed(() => ({ ...item.external_ids, homepage: item.homepage }))
 </script>
 
 <template>

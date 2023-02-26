@@ -5,7 +5,7 @@ defineProps<{
   item: Person
 }>()
 
-const tab = $ref<'known' | 'credits' | 'photos'>('known')
+const tab = ref<'known' | 'credits' | 'photos'>('known')
 </script>
 
 <template>

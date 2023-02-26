@@ -7,12 +7,12 @@ const { item } = defineProps<{
   item: Media
 }>()
 
-const trailer = $computed(() => getTrailer(item))
+const trailer = computed(() => getTrailer(item))
 
 const showModal = useIframeModal()
 function playTrailer() {
-  if (trailer)
-    showModal(trailer)
+  if (trailer.value)
+    showModal(trailer.value)
 }
 
 const mounted = useMounted()

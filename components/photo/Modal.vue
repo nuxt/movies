@@ -1,33 +1,33 @@
 <script setup lang="ts">
 import type { Image } from '~/types'
 
-let images = $ref<Image[] | null>(null)
-let index = $ref(0)
+let images = ref<Image[] | null>(null)
+let index = ref(0)
 
-const current = $computed(() => images?.[index])
+const current = computed(() => images.value?.[index.value])
 
 provideImageModal((img, idx) => {
-  images = img
-  index = idx
+  images.value = img
+  index.value = idx
 })
 
 function prev() {
-  if (!images)
+  if (!images.value)
     return
-  index = (index - 1 + images.length) % images.length
+  index.value = (index.value - 1 + images.value.length) % images.value.length
 }
 
 function next() {
-  if (!images)
+  if (!images.value)
     return
-  index = (index + 1) % images.length
+  index.value = (index.value + 1) % images.value.length
 }
 
 useEventListener('keydown', (e) => {
-  if (!images)
+  if (!images.value)
     return
   if (e.key === 'Escape')
-    images = null
+    images.value = null
   else if (e.key === 'ArrowLeft')
     prev()
   else if (e.key === 'ArrowRight')
