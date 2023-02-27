@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { QueryItem } from '~/types'
 
-const { query } = defineProps<{
+const props = withDefaults(defineProps<{
   query: QueryItem
-}>()
+}>(), {
+    query: () => ({})
+})
 
-const item = await listMedia(query.type, query.query, 1)
+const item = await listMedia(props.query.type, props.query.query, 1)
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const item = await listMedia(query.type, query.query, 1)
       {{ $t(query.title) }}
     </template>
     <template #more>
-      <NuxtLink :to="`/${query.type}/category/${query.query}`" n-link>
+      <NuxtLink :to="`/${props.query.type}/category/${props.query.query}`" n-link>
         {{ $t('Explore more') }}
       </NuxtLink>
     </template>
@@ -22,7 +24,7 @@ const item = await listMedia(query.type, query.query, 1)
       v-for="i of item.results"
       :key="i.id"
       :item="i"
-      :type="query.type"
+      :type="props.query.type"
       flex-1 w-60
     />
   </CarouselBase>

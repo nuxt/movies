@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { Image } from '~/types'
 
-const { item } = defineProps<{
+const props = withDefaults(defineProps<{
   item: Image
-}>()
+}>(), {
+    item: () => ({})
+})
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const { item } = defineProps<{
       width="400"
       height="600"
       format="webp"
-      :src="`/tmdb${item.file_path}`"
+      :src="`/tmdb${props.item.file_path}`"
       alt="Photo"
       w-full h-full object-cover
     />
