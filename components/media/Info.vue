@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
   type: MediaType
 }>(), {
     item: () => ({}),
-    type: '',
+    type: 'movie',
 })
 
 const externalIds = computed(() => ({ ...props.item.external_ids, homepage: props.item.homepage }))
