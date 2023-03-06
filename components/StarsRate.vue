@@ -2,7 +2,7 @@
 const props = withDefaults(defineProps<{
   value?: number
 }>(), {
-    value: 0
+  value: 0,
 })
 
 const style = computed(() => ({

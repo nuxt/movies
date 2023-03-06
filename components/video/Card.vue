@@ -4,7 +4,7 @@ import type { Video } from '~/types'
 const props = withDefaults(defineProps<{
   item: Video
 }>(), {
-    item: () => ({})
+  item: () => ({}),
 })
 
 const showModal = useIframeModal()

@@ -4,7 +4,7 @@ import type { QueryItem } from '~/types'
 const props = withDefaults(defineProps<{
   query: QueryItem
 }>(), {
-    query: () => ({})
+  query: () => ({}),
 })
 
 const item = await listMedia(props.query.type, props.query.query, 1)

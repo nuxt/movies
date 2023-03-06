@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { Media } from '~/types'
-import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
 import { formatTime } from '~/composables/utils'
 
 const props = withDefaults(defineProps<{
   item: Media
 }>(), {
-    item: () => ({})
+  item: () => ({}),
 })
 
 const trailer = computed(() => getTrailer(props.item))

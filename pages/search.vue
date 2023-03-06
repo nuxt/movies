@@ -4,14 +4,13 @@ import type { Media } from '~/types'
 const route = useRoute()
 const router = useRouter()
 const input = ref((route.query.s || '').toString())
-let error = ref<unknown>()
-let count = ref<undefined | number>()
+const error = ref<unknown>()
+const count = ref<undefined | number>()
 
-let items = ref<Media[]>([])
-let currentSearch = ref(input.value)
+const items = ref<Media[]>([])
+const currentSearch = ref(input.value)
 
 function search() {
-
   if (currentSearch.value === input.value)
     return
 

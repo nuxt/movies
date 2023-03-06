@@ -4,7 +4,7 @@ import type { Image } from '~/types'
 const props = withDefaults(defineProps<{
   item: Image
 }>(), {
-    item: () => ({})
+  item: () => ({}),
 })
 </script>
 

@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { Person } from '~/types'
 import { formatDate } from '~/composables/utils'
-import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
-const props =  withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   item: Person
 }>(), {
-    item: () => ({})
+  item: () => ({}),
 })
 
 const externalIds = computed(() => ({ ...props.item.external_ids, homepage: props.item.homepage }))

@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import type { Media, MediaType } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
-import { TMDB_IMAGE_BASE_THUMBNAIL } from '~/constants/images'
 
 const props = withDefaults(defineProps<{
   item: Media
   type: MediaType
 }>(), {
-    item: () => ({}),
-    type: 'movie',
+  item: () => ({}),
+  type: 'movie',
 })
 
 const externalIds = computed(() => ({ ...props.item.external_ids, homepage: props.item.homepage }))

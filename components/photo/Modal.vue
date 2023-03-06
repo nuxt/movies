@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Image } from '~/types'
 
-let images = ref<Image[] | null>(null)
-let index = ref(0)
+const images = ref<Image[] | null>(null)
+const index = ref(0)
 
 const current = computed(() => images.value?.[index.value])
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onKeyDown } from '@vueuse/core'
 
-let src = ref<string | null>(null)
+const src = ref<string | null>(null)
 
 function showModal(link: string) {
   src.value = link

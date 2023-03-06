@@ -2,11 +2,11 @@
 import type { Media } from '~/types'
 
 const props = withDefaults(defineProps<{
-    items: Media[]
-    title: string
+  items: Media[]
+  title: string
 }>(), {
-    items: () => ([]),
-    title: ''
+  items: () => ([]),
+  title: '',
 })
 
 const credits = [...props.items]

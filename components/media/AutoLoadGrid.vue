@@ -11,7 +11,7 @@ const props = defineProps<{
 const tailEl = ref<HTMLDivElement>()
 
 let page = 0
-let isLoading = ref(false)
+const isLoading = ref(false)
 
 async function loadingNext() {
   if (isLoading.value)
