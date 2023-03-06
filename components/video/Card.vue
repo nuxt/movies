@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import type { Video } from '~/types'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   item: Video
-}>(), {
-  item: () => ({}),
-})
+}>()
 
 const showModal = useIframeModal()
-const play = () => showModal(getVideoLink(item)!)
+const play = () => showModal(getVideoLink(props.item)!)
 </script>
 
 <template>

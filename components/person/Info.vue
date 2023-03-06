@@ -2,11 +2,9 @@
 import type { Person } from '~/types'
 import { formatDate } from '~/composables/utils'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   item: Person
-}>(), {
-  item: () => ({}),
-})
+}>()
 
 const externalIds = computed(() => ({ ...props.item.external_ids, homepage: props.item.homepage }))
 </script>

@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import type { Image } from '~/types'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   item: Image
-}>(), {
-  item: () => ({}),
-})
+}>()
 </script>
 
 <template>

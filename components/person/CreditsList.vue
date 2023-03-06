@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import type { Media } from '~/types'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   items: Media[]
   title: string
-}>(), {
-  items: () => ([]),
-  title: '',
-})
+}>()
 
 const credits = [...props.items]
   .sort((a, b) => (b.release_date || b.first_air_date || '9999')

@@ -1,9 +1,12 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
-  value?: number
-}>(), {
-  value: 0,
-})
+const props = withDefaults(
+  defineProps<{
+    value?: number
+  }>(),
+  {
+    value: 0,
+  },
+)
 
 const style = computed(() => ({
   'clip-path': `inset(0 ${(10 - props.value) * 10}% 0 0)`,

@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import type { QueryItem } from '~/types'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   query: QueryItem
-}>(), {
-  query: () => ({}),
-})
+}>()
 
 const item = await listMedia(props.query.type, props.query.query, 1)
 </script>
