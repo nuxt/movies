@@ -10,22 +10,22 @@ definePageMeta({
 })
 
 const route = useRoute()
-const type = $computed(() => route.params.type as MediaType || 'movie')
+const type = computed(() => route.params.type as MediaType || 'movie')
 
 useHead({
-  title: type === 'movie' ? 'Movies' : 'TV Shows',
+  title: type.value === 'movie' ? 'Movies' : 'TV Shows',
 })
 
-const queries = $computed(() => QUERY_LIST[type as MediaType])
+const queries = computed(() => QUERY_LIST[type.value as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
-  if (!queries)
+  if (!queries.value)
     return throwError('404')
 
-  const list = await listMedia(type, queries?.[0].query, 1)
+  const list = await listMedia(type.value, queries.value?.[0].query, 1)
   if (!list)
     return () => {}
-  const item = await getMedia(type, list.results?.[0].id)
+  const item = await getMedia(type.value, list.results?.[0].id)
   return () => ctx.slots?.default?.({ item })
 })
 </script>

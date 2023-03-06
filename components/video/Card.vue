@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { Video } from '~/types'
 
-const { item } = defineProps<{
+const props = defineProps<{
   item: Video
 }>()
 
 const showModal = useIframeModal()
-const play = () => showModal(getVideoLink(item)!)
+const play = () => showModal(getVideoLink(props.item)!)
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const play = () => showModal(getVideoLink(item)!)
         width="400"
         height="600"
         format="webp"
-        :alt="item.name"
+        :alt="props.item.name"
         w-full h-full object-cover
       />
       <div flex w-full h-full absolute inset-0 op20 hover:op100 transition>
@@ -30,10 +30,10 @@ const play = () => showModal(getVideoLink(item)!)
       </div>
     </div>
     <div mt-2>
-      {{ item.name }}
+      {{ props.item.name }}
     </div>
     <div op60 text-sm>
-      {{ item.type }}
+      {{ props.item.type }}
     </div>
   </button>
 </template>

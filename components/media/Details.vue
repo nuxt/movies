@@ -6,7 +6,7 @@ defineProps<{
   type: MediaType
 }>()
 
-const tab = $ref<'overview' | 'videos' | 'photos'>('overview')
+const tab = ref<'overview' | 'videos' | 'photos'>('overview')
 </script>
 
 <template>

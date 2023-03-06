@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import { onKeyDown } from '@vueuse/core'
 
-let src = $ref<string | null>(null)
+const src = ref<string | null>(null)
 
 function showModal(link: string) {
-  src = link
+  src.value = link
 }
 const el = ref<HTMLIFrameElement>()
 
 provideIframeModal(showModal)
 
 onKeyDown('Escape', () => {
-  if (src)
-    src = null
+  if (src.value)
+    src.value = null
 })
 
 onClickOutside(el, () => {
-  src = null
+  src.value = null
 })
 </script>
 

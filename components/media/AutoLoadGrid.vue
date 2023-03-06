@@ -11,25 +11,25 @@ const props = defineProps<{
 const tailEl = ref<HTMLDivElement>()
 
 let page = 0
-let isLoading = $ref(false)
+const isLoading = ref(false)
 
 async function loadingNext() {
-  if (isLoading)
+  if (isLoading.value)
     return
-  isLoading = true
+  isLoading.value = true
   try {
     page += 1
     await props.fetch(page)
   }
   finally {
-    isLoading = false
+    isLoading.value = false
   }
 }
 
 if (process.client) {
   loadingNext()
   useIntervalFn(() => {
-    if (!tailEl.value || isLoading)
+    if (!tailEl.value || isLoading.value)
       return
     if (props.count != null && props.items.length >= props.count)
       return

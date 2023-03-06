@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import type { Person } from '~/types'
 
-const { item } = defineProps<{
+const props = withDefaults(defineProps<{
   item: Person
-}>()
+}>(), {
+  item: () => ({}),
+})
 </script>
 
 <template>
   <div flex="~ col" px16 gap5>
     <PersonCreditsList
-      v-if="item.combined_credits?.cast?.length"
+      v-if="props.item.combined_credits?.cast?.length"
       :title="$t('Acting Credits')"
-      :items="item.combined_credits.cast"
+      :items="props.item.combined_credits.cast"
     />
     <PersonCreditsList
-      v-if="item.combined_credits?.crew?.length"
+      v-if="props.item.combined_credits?.crew?.length"
       title="$t('Production Credits')"
-      :items="item.combined_credits.crew"
+      :items="props.item.combined_credits.crew"
     />
   </div>
 </template>

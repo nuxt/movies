@@ -3,32 +3,33 @@ import type { Media } from '~/types'
 
 const route = useRoute()
 const router = useRouter()
-const input = $ref((route.query.s || '').toString())
-let error = $ref<unknown>()
-let count = $ref<undefined | number>()
+const input = ref((route.query.s || '').toString())
+const error = ref<unknown>()
+const count = ref<undefined | number>()
 
-let items = $ref<Media[]>([])
-let currentSearch = $ref(input)
+const items = ref<Media[]>([])
+const currentSearch = ref(input.value)
 
 function search() {
-  if (currentSearch === input)
+  if (currentSearch.value === input.value)
     return
-  currentSearch = input
-  count = undefined
-  items = []
-  router.replace({ query: { s: input } })
+
+  currentSearch.value = input.value.toString()
+  count.value = undefined
+  items.value = []
+  router.replace({ query: { s: input.value } })
 }
 
 async function fetch(page: number) {
-  if (!currentSearch)
+  if (!currentSearch.value)
     return
   try {
-    const data = await searchShows(currentSearch, page)
-    count = data.total_results ?? count
-    items.push(...data.results)
+    const data = await searchShows(currentSearch.value, page)
+    count.value = data.total_results ?? count.value
+    items.value.push(...data.results)
   }
   catch (e: any) {
-    error = e
+    error.value = e
   }
 }
 
@@ -39,11 +40,11 @@ const vFocus = {
 }
 
 useHead({
-  title: computed(() => `Search: ${currentSearch}`),
+  title: computed(() => `Search: ${currentSearch.value}`),
 })
 
 watch(
-  () => input,
+  () => input.value,
   () => throttledSearch(),
 )
 </script>

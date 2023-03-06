@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import type { Media } from '~/types'
-import { TMDB_IMAGE_BASE_ORIGINAL } from '~/constants/images'
 import { formatTime } from '~/composables/utils'
 
-const { item } = defineProps<{
+const props = withDefaults(defineProps<{
   item: Media
-}>()
+}>(), {
+  item: () => ({}),
+})
 
-const trailer = $computed(() => getTrailer(item))
+const trailer = computed(() => getTrailer(props.item))
 
 const showModal = useIframeModal()
 function playTrailer() {
-  if (trailer)
-    showModal(trailer)
+  if (trailer.value)
+    showModal(trailer.value)
 }
 
 const mounted = useMounted()
@@ -29,8 +30,8 @@ const mounted = useMounted()
         width="400"
         height="225"
         format="webp"
-        :src="`/tmdb${item.backdrop_path}`"
-        :alt="item.title || item.name"
+        :src="`/tmdb${props.item.backdrop_path}`"
+        :alt="props.item.title || props.item.name"
         h-full w-full object-cover
       />
     </div>
@@ -44,25 +45,25 @@ const mounted = useMounted()
       <Transition appear name="hero">
         <div v-show="mounted">
           <h1 mt-2 text-4xl lg:text-5xl line-clamp-2>
-            {{ item.title || item.name }}
+            {{ props.item.title || props.item.name }}
           </h1>
           <div flex="~ row wrap" gap3 items-center mt4>
-            <StarsRate w-25 :value="item.vote_average" />
+            <StarsRate w-25 :value="props.item.vote_average" />
             <div op50 hidden md:block>
-              {{ item.vote_average }}
+              {{ props.item.vote_average }}
             </div>
             <div op50 hidden md:block>
-              {{ $t('{numberOfReviews} Reviews', { numberOfReviews: item.vote_count }) }}
+              {{ $t('{numberOfReviews} Reviews', { numberOfReviews: props.item.vote_count }) }}
             </div>
-            <div v-if="item.release_date" op50>
-              {{ item.release_date.slice(0, 4) }}
+            <div v-if="props.item.release_date" op50>
+              {{ props.item.release_date.slice(0, 4) }}
             </div>
-            <div v-if="item.runtime" op50>
-              {{ formatTime(item.runtime) }}
+            <div v-if="props.item.runtime" op50>
+              {{ formatTime(props.item.runtime) }}
             </div>
           </div>
           <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5 text-xs md:text-base>
-            {{ item.overview }}
+            {{ props.item.overview }}
           </p>
           <div v-if="trailer" py5 display-none lg:block>
             <button

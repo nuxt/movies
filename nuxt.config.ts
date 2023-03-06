@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   experimental: {
-    reactivityTransform: true,
     inlineSSRStyles: false,
   },
   routeRules: {
