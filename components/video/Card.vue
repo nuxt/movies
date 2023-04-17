@@ -6,7 +6,9 @@ const props = defineProps<{
 }>()
 
 const showModal = useIframeModal()
-const play = () => showModal(getVideoLink(props.item)!)
+function play() {
+  return showModal(getVideoLink(props.item)!)
+}
 </script>
 
 <template>

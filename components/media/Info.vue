@@ -6,7 +6,7 @@ const props = withDefaults(defineProps<{
   item: Media
   type: MediaType
 }>(), {
-  item: () => ({}),
+  item: () => ({} as Media),
   type: 'movie',
 })
 

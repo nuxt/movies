@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   if (!config.tmdb.apiKey)
     throw new Error('TMDB API key is not set')
   try {
-    return await $fetch(event.context.params.path, {
+    return await $fetch(event.context.params!.path, {
       baseURL: TMDB_API_URL,
       params: {
         api_key: config.tmdb.apiKey,

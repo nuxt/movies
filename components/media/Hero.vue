@@ -5,7 +5,7 @@ import { formatTime } from '~/composables/utils'
 const props = withDefaults(defineProps<{
   item: Media
 }>(), {
-  item: () => ({}),
+  item: () => ({} as Media),
 })
 
 const trailer = computed(() => getTrailer(props.item))

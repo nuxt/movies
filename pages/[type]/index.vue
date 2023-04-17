@@ -20,7 +20,7 @@ const queries = computed(() => QUERY_LIST[type.value as MediaType])
 
 const AsyncWrapper = defineComponent(async (_, ctx) => {
   if (!queries.value)
-    return throwError('404')
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 
   const list = await listMedia(type.value, queries.value?.[0].query, 1)
   if (!list)

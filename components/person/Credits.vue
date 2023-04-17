@@ -4,7 +4,7 @@ import type { Person } from '~/types'
 const props = withDefaults(defineProps<{
   item: Person
 }>(), {
-  item: () => ({}),
+  item: () => ({} as Person),
 })
 </script>
 
