@@ -43,7 +43,7 @@ export function listMedia(type: MediaType, query: string, page: number): Promise
 
 export function getMedia(type: MediaType, id: string): Promise<Media> {
   return fetchTMDB(`${type}/${id}`, {
-    append_to_response: 'videos,credits,images,external_ids,release_dates',
+    append_to_response: 'videos,credits,images,external_ids,release_dates,combined_credits',
     include_image_language: 'en',
   })
 }

@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <MediaInfo :item="item" :type="type" />
-  <CarouselBase>
+  <CarouselBase v-if="item.credits?.cast?.length">
     <template #title>
       {{ $t('Cast') }}
     </template>
