@@ -22,6 +22,9 @@ export default defineNuxtConfig({
       apiBaseUrl,
     },
   },
+  devtools: {
+    enabled: true,
+  },
   image: {
     provider: 'proxy',
     providers: {

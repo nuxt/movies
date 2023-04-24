@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.2.0",
+  "packageManager": "pnpm@8.3.1",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
@@ -11,24 +11,25 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
+    "@antfu/eslint-config": "^0.38.5",
     "@iconify-json/carbon": "^1.1.16",
     "@iconify-json/cib": "^1.1.4",
     "@iconify-json/ph": "^1.1.5",
-    "@iconify-json/simple-icons": "^1.1.49",
+    "@iconify-json/simple-icons": "^1.1.50",
     "@iconify-json/twemoji": "^1.1.11",
+    "@nuxt/devtools": "^0.4.2",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/i18n": "8.0.0-beta.11",
-    "@pinia/nuxt": "^0.4.8",
-    "@unocss/nuxt": "^0.51.4",
-    "@vueuse/nuxt": "^10.0.2",
-    "eslint": "^8.38.0",
-    "lru-cache": "^9.0.3",
-    "nuxt": "^3.4.1",
-    "ohash": "^1.0.0",
-    "pinia": "^2.0.34",
+    "@pinia/nuxt": "^0.4.9",
+    "@unocss/nuxt": "^0.51.8",
+    "@vueuse/nuxt": "^10.1.0",
+    "eslint": "^8.39.0",
+    "lru-cache": "^9.1.1",
+    "nuxt": "^3.4.2",
+    "ohash": "^1.1.2",
+    "pinia": "^2.0.35",
     "typescript": "^5.0.4",
-    "vue-tsc": "^1.2.0"
+    "vue-tsc": "^1.4.4"
   }
 }
