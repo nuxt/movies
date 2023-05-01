@@ -4,12 +4,12 @@ import { getQuery } from 'ufo'
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
 export default defineEventHandler(async (event) => {
-  const query = getQuery(event.req.url!)
+  const query = getQuery(event.node.req.url!)
   // eslint-disable-next-line no-console
   console.log(
     'Fetching TMDB API',
     {
-      url: event.req.url,
+      url: event.node.req.url,
       query,
       params: event.context.params,
     },
@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   }
   catch (e: any) {
     const status = e?.response?.status || 500
-    event.res.statusCode = status
+    event.node.res.statusCode = status
     return e.message?.replace(config.tmdb.apiKey, '***')
   }
 })
