@@ -17,7 +17,7 @@
     "@iconify-json/ph": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.50",
     "@iconify-json/twemoji": "^1.1.11",
-    "@nuxt/devtools": "^0.4.2",
+    "@nuxt/devtools": "^0.4.5",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/i18n": "8.0.0-beta.11",
