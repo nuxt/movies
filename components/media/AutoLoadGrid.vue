@@ -26,21 +26,19 @@ async function loadingNext() {
   }
 }
 
+await loadingNext()
+
 if (process.client) {
-  loadingNext()
   useIntervalFn(() => {
     if (!tailEl.value || isLoading.value)
       return
-    if (props.count != null && props.items.length >= props.count)
+    if (props.count != null && props.items?.length >= props.count)
       return
     const { top } = tailEl.value.getBoundingClientRect()
     const delta = top - window.innerHeight
     if (delta < 400)
       loadingNext()
   }, 500)
-}
-else {
-  await loadingNext()
 }
 </script>
 

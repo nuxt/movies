@@ -13,7 +13,7 @@ defineProps<{
         {{ $t('Person Photos') }}
       </div>
       <div text-sm op50>
-        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.profiles.length }) }}
+        {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.profiles?.length }) }}
       </div>
     </div>
     <div grid="~ cols-minmax-15rem" gap4>

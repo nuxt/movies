@@ -31,7 +31,7 @@ useHead({
   <div>
     <MediaHero :item="item" />
     <MediaDetails :item="item" :type="type" />
-    <CarouselBase v-if="recommendations?.results.length">
+    <CarouselBase v-if="recommendations?.results?.length">
       <template #title>
         {{ $t('More like this') }}
       </template>

@@ -88,7 +88,7 @@ const directors = computed(() => props.item.credits?.crew.filter(person => perso
               ${{ numberWithCommas(props.item.revenue) }}
             </div>
           </template>
-          <template v-if="props.item.genres && props.item.genres.length">
+          <template v-if="props.item?.genres?.length">
             <div>
               {{ $t('Genre') }}
             </div>
@@ -122,7 +122,7 @@ const directors = computed(() => props.item.credits?.crew.filter(person => perso
               {{ formatLang(props.item.original_language) }}
             </div>
           </template>
-          <template v-if="props.item.production_companies && props.item.production_companies.length">
+          <template v-if="props.item?.production_companies?.length">
             <div>
               {{ $t('Production') }}
             </div>

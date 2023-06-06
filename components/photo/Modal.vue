@@ -12,13 +12,13 @@ provideImageModal((img, idx) => {
 })
 
 function prev() {
-  if (!images.value)
+  if (!images.value?.length)
     return
   index.value = (index.value - 1 + images.value.length) % images.value.length
 }
 
 function next() {
-  if (!images.value)
+  if (!images.value?.length)
     return
   index.value = (index.value + 1) % images.value.length
 }
