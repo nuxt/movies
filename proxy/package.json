@@ -5,8 +5,8 @@
     "build": "nitropack build"
   },
   "devDependencies": {
-    "nitropack": "^2.3.3",
+    "nitropack": "^2.4.1",
     "ofetch": "^1.0.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3"
   }
 }
