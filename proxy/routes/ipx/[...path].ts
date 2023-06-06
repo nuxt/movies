@@ -16,6 +16,6 @@ const ipxMiddleware = createIPXMiddleware(ipx)
 const ipxHandler = fromNodeMiddleware(ipxMiddleware)
 
 export default eventHandler((event) => {
-  event.req.url = `/${event.context.params!.path}`
+  event.node.req.url = `/${event.context.params!.path}`
   return ipxHandler(event)
 })
