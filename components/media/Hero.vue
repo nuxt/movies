@@ -69,7 +69,7 @@ const mounted = useMounted()
             <button
               flex="~ gap2" items-center p="x6 y3"
               bg="gray/15 hover:gray/20" transition
-              title="Watch Trailer"
+              :title="$t('Watch Trailer')"
               @click="playTrailer()"
             >
               <div i-ph-play />
@@ -82,7 +82,7 @@ const mounted = useMounted()
     <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
       <button
         items-center p10 text-5xl op20 hover:op80 transition
-        title="Watch Trailer"
+        :title="$t('Watch Trailer')"
         @click="playTrailer()"
       >
         <div i-ph-play-circle-light />
