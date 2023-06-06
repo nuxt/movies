@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   ],
   experimental: {
     inlineSSRStyles: false,
+    viewTransition: true,
   },
   routeRules: {
     '/**': isDev ? {} : { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
@@ -34,6 +35,11 @@ export default defineNuxtConfig({
           baseURL: `${apiBaseUrl}/ipx`,
         },
       },
+    },
+  },
+  nitro: {
+    routeRules: {
+      '/**': { isr: false },
     },
   },
   i18n: {

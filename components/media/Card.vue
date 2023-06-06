@@ -8,7 +8,9 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="`/${item.media_type || type}/${item.id}`" pb2>
+  <NuxtLink
+    :to="`/${item.media_type || type}/${item.id}`" pb2
+  >
     <div
       block bg-gray4:10 p1
       class="aspect-10/16"
@@ -22,7 +24,8 @@ defineProps<{
         format="webp"
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
-        w-full h-full object-cover
+        w-full h-full object-cover contain-layout
+        :style="{ 'view-transition-name': `item-${item.id}` }"
       />
       <div v-else h-full op10 flex>
         <div i-ph:question ma text-4xl />

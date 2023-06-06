@@ -7,3 +7,4 @@ dist
 .nitro
 .DS_Store
 .idea
+.vercel
