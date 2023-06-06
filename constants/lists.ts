@@ -2,7 +2,6 @@ import type { QueryItem } from '~/types'
 
 export const QUERY_LIST = {
   movie: <QueryItem[]>([
-    // { type: 'movie', title: 'Trending Movies', query: 'trending' },
     { type: 'movie', title: 'Popular Movies', query: 'popular' },
     { type: 'movie', title: 'Top Rated Movies', query: 'top_rated' },
     { type: 'movie', title: 'Upcoming Movies', query: 'upcoming' },
