@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import type { Media, MediaType } from '~/types'
 
-const props = defineProps<{
-  items: Media[]
-  type: MediaType
-  fetch: (page: number) => Promise<void>
-  count?: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    items: Media[]
+    type: MediaType
+    fetch: (page: number) => Promise<void>
+    count?: number
+    blocking?: boolean
+  }>(),
+  {
+    blocking: true,
+  },
+)
 
 const tailEl = ref<HTMLDivElement>()
 
@@ -26,7 +32,10 @@ async function loadingNext() {
   }
 }
 
-await loadingNext()
+if (process.server || props.blocking)
+  await loadingNext()
+else
+  loadingNext()
 
 if (process.client) {
   useIntervalFn(() => {

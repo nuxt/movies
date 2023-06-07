@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Media } from '~/types'
 
+definePageMeta({
+  pageTransition: false,
+})
+
 const route = useRoute()
 const router = useRouter()
 const input = ref((route.query.s || '').toString())
@@ -77,6 +81,7 @@ watch(
       :fetch="fetch"
       :items="items"
       :count="count"
+      :blocking="false"
       type="movie"
     >
       <div>{{ $t('Search result for: {currentSearch}', { currentSearch }) }}</div>
