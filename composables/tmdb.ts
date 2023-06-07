@@ -10,15 +10,16 @@ const cache = new LRUCache<string, any>({
   ttl: 2000 * 60 * 60, // 2 hour
 })
 
-function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+async function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
   if (params.language == null) {
     const locale = useNuxtApp().$i18n.locale
     params.language = unref(locale)
   }
-  return $fetch(url, {
+  const result = await useFetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,
     params,
   })
+  return result.data.value
 }
 
 export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}): Promise<any> {
