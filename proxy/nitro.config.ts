@@ -1,9 +1,10 @@
-import { defineNitroConfig } from 'nitropack'
+import { defineNitroConfig } from 'nitropack/config'
 
 export default defineNitroConfig({
   routeRules: {
     '/**': { cors: true },
-    // '/tmdb/**': { },
+    // TODO: enable when Nitro on Vercel missing query bug is fixed
+    // '/tmdb/**': { swr: true },
   },
   runtimeConfig: {
     tmdb: {
