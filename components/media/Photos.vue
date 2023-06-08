@@ -36,7 +36,7 @@ const show = useImageModal()
         {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.posters?.length }) }}
       </div>
     </div>
-    <div grid="~ cols-minmax-15rem" gap4>
+    <div grid="~ cols-minmax-10rem lg:cols-minmax-15rem" gap4>
       <PhotoCard
         v-for="i, idx of item.images?.posters"
         :key="i.file_path"

@@ -23,7 +23,7 @@ const item = await listMedia(props.query.type, props.query.query, 1)
       :key="i.id"
       :item="i"
       :type="props.query.type"
-      flex-1 w-60
+      flex-1 w-40 md:w-60
     />
   </CarouselBase>
 </template>

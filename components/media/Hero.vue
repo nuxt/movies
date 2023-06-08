@@ -20,7 +20,7 @@ const mounted = useMounted()
 </script>
 
 <template>
-  <div :key="item.id" relative class="aspect-ratio-1/1 md:aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
+  <div :key="item.id" relative class="aspect-ratio-3/2 lg:aspect-ratio-25/9" bg-black>
     <div
       absolute top-0 right-0
       lt-lg="left-0"

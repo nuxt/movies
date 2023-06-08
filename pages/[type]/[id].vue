@@ -40,7 +40,7 @@ useHead({
         :key="i.id"
         :item="i"
         :type="type"
-        flex-1 w-60
+        flex-1 w-40 md:w-60
       />
     </CarouselBase>
     <TheFooter />

@@ -16,7 +16,7 @@ defineProps<{
         {{ $t('{numberOfImages} Images', { numberOfImages: item.images?.profiles?.length }) }}
       </div>
     </div>
-    <div grid="~ cols-minmax-15rem" gap4>
+    <div grid="~ cols-minmax-10rem lg:cols-minmax-15rem" gap4>
       <PhotoCard
         v-for="i of item.images?.profiles"
         :key="i.file_path"
