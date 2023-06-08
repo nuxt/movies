@@ -5,7 +5,7 @@ import type { Credits, Media, MediaType, PageResult, Person } from '../types'
 // const apiBaseUrl = 'http://localhost:3001'
 const apiBaseUrl = 'https://movies-proxy.vercel.app'
 
-const cache = new LRUCache<string, any>({
+const promiseCache = new LRUCache<string, any>({
   max: 500,
   ttl: 2000 * 60 * 60, // 2 hour
 })
@@ -15,26 +15,32 @@ async function _fetchTMDB(url: string, params: Record<string, string | number | 
     const locale = useNuxtApp().$i18n.locale
     params.language = unref(locale)
   }
-  const result = await useFetch(url, {
+  return await $fetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,
     params,
   })
-  return result.data.value
 }
 
 export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}): Promise<any> {
   const hash = ohash([url, params])
-  if (!cache.has(hash)) {
-    cache.set(
+  const state = useState<any>(hash, () => null)
+  if (state.value)
+    return state.value
+  if (!promiseCache.has(hash)) {
+    promiseCache.set(
       hash,
       _fetchTMDB(url, params)
+        .then((res) => {
+          state.value = res
+          return res
+        })
         .catch((e) => {
-          cache.delete(hash)
+          promiseCache.delete(hash)
           throw e
         }),
     )
   }
-  return cache.get(hash)!
+  return promiseCache.get(hash)!
 }
 
 export function listMedia(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
