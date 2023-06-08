@@ -69,6 +69,14 @@ export default defineNuxtConfig({
         code: 'zh-CN',
         file: 'zh-CN.json',
       },
+      {
+        code: 'pt-PT',
+        file: 'pt-PT.json',
+      },
+      {
+        code: 'pt-BR',
+        file: 'pt-BR.json',
+      },
     ],
     lazy: true,
     langDir: 'internationalization',

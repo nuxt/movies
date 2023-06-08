@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<{
     />
     <PersonCreditsList
       v-if="props.item.combined_credits?.crew?.length"
-      title="$t('Production Credits')"
+      :title="$t('Production Credits')"
       :items="props.item.combined_credits.crew"
     />
   </div>
