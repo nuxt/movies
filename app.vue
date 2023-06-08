@@ -31,7 +31,7 @@ useHead({
       grid="~ lt-lg:rows-[1fr_max-content] lg:cols-[max-content_1fr]"
       of-hidden view-transition-app transition duration-0
     >
-      <div of-x-hidden of-y-auto relative data-scroll>
+      <div id="app-scroller" of-x-hidden of-y-auto relative>
         <NuxtPage />
       </div>
       <NavBar lg:order-first />

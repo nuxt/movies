@@ -1,8 +1,9 @@
-// We cannot leverage vue-router scrollBehavior since the scroll is not on window
-export default defineNuxtPlugin(() => {
-  const nuxtApp = useNuxtApp()
+import { createRouterScroller } from 'vue-router-better-scroller'
 
-  nuxtApp.$router.afterEach(async () => {
-    document.querySelector('[data-scroll]')?.scrollTo({ top: 9 })
-  })
+export default defineNuxtPlugin(({ vueApp }) => {
+  vueApp.use(createRouterScroller({
+    selectors: {
+      '#app-scroller': true,
+    },
+  }))
 })
