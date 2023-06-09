@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   experimental: {
     inlineSSRStyles: false,
     viewTransition: true,
+    renderJsonPayloads: true,
   },
   routeRules: {
     '/**': isDev ? {} : { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
