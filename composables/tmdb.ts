@@ -10,7 +10,7 @@ const promiseCache = new LRUCache<string, any>({
   ttl: 2000 * 60 * 60, // 2 hour
 })
 
-async function _fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}) {
+async function _fetchTMDB(url: string, params: Record<string, string | number | boolean | undefined> = {}) {
   if (params.language == null) {
     const locale = useNuxtApp().$i18n.locale
     params.language = unref(locale)
@@ -21,7 +21,7 @@ async function _fetchTMDB(url: string, params: Record<string, string | number | 
   })
 }
 
-export function fetchTMDB(url: string, params: Record<string, string | number | undefined> = {}): Promise<any> {
+export function fetchTMDB(url: string, params: Record<string, string | number | boolean | undefined> = {}): Promise<any> {
   const hash = ohash([url, params])
   const state = useState<any>(hash, () => null)
   if (state.value)
@@ -115,5 +115,5 @@ export function getPerson(id: string): Promise<Person> {
  */
 
 export function searchShows(query: string, page = 1) {
-  return fetchTMDB('search/multi', { query, page })
+  return fetchTMDB('search/multi', { query, page, include_adult: false })
 }
