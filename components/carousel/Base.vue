@@ -2,14 +2,15 @@
 const scrollEl = ref<HTMLDivElement>()
 
 function scrollLeft() {
-  scrollEl.value?.scrollTo({
-    left: 0,
+  scrollEl.value?.scrollBy({
+    left: -window.innerWidth,
     behavior: 'smooth',
   })
 }
+
 function scrollRight() {
-  scrollEl.value?.scrollTo({
-    left: scrollEl.value?.scrollWidth - scrollEl.value?.clientWidth,
+  scrollEl.value?.scrollBy({
+    left: window.innerWidth,
     behavior: 'smooth',
   })
 }
