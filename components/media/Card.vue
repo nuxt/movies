@@ -24,7 +24,7 @@ defineProps<{
         format="webp"
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
-        w-full h-full object-cover contain-layout
+        w-full h-full object-cover
         :style="{ 'view-transition-name': `item-${item.id}` }"
       />
       <div v-else h-full op10 flex>

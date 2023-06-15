@@ -20,7 +20,7 @@ export default defineConfig({
     ['border-base', 'border-gray-400/20'],
   ],
   rules: [
-    [/^view-transition-([\w-]+)$/, ([, name]) => ({ 'view-transition-name': name, 'contain': 'layout' })],
+    [/^view-transition-([\w-]+)$/, ([, name]) => ({ 'view-transition-name': name })],
   ],
   theme: {
     colors: {

@@ -23,7 +23,7 @@ const directors = computed(() => props.item.credits?.crew.filter(person => perso
       :src="`/tmdb${props.item.poster_path}`"
       :alt="props.item.title || props.item.name"
       block border="4 gray4/10" w-79 lt-md:hidden
-      transition duration-400 object-cover contain-layout aspect="10/16"
+      transition duration-400 object-cover aspect="10/16"
       :style="{ 'view-transition-name': `item-${props.item.id}` }"
     />
     <div lt-md:w="[calc(100vw-2rem)]" flex="~ col" md:p4 gap6>
