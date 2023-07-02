@@ -27,7 +27,7 @@
         This project uses the TMDB API but is not endorsed or certified by TMDB.
       </p>
     </div>
-    <div>
+    <div flex gap4 items-center>
       <ExternalLinks
         :links="{
           twitter_id: 'nuxt_js',
@@ -38,6 +38,8 @@
           <IconVercel alt="Vercel" />
         </a>
       </ExternalLinks>
+
+      <LanguageSwitcher />
     </div>
   </footer>
 </template>
