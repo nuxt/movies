@@ -32,6 +32,5 @@ const AsyncWrapper = defineComponent({
       :key="query.type + query.query"
       :query="query"
     />
-    <TheFooter />
   </div>
 </template>
