@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxtjs/i18n',
   ],
+
+  
   experimental: {
     inlineSSRStyles: false,
     viewTransition: true,
