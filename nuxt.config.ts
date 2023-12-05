@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 const isDev = process.env.NODE_ENV === 'development'
 
 // const apiBaseUrl = 'http://localhost:3001'
@@ -7,7 +9,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxtjs/i18n',
   ],
   experimental: {

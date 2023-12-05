@@ -10,8 +10,8 @@
       <div op50 text-sm>
         Made with
       </div>
-      <a href="https://v3.nuxtjs.org/" target="_blank" title="Nuxt 3">
-        <IconNuxt3 h6 />
+      <a href="https://nuxt.com/" target="_blank" title="Nuxt 3">
+        <IconNuxt3 h5 />
       </a>
     </div>
     <div flex="~ row gap2" items-center>

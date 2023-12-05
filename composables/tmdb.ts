@@ -86,8 +86,8 @@ export function getMediaByGenre(media: string, genre: string, page = 1): Promise
 }
 
 /**
-* Get credits
-*/
+ * Get credits
+ */
 export function getCredits(id: string | number, type: string): Promise<Credits> {
   return fetchTMDB(`person/${id}/${type}`)
 }
@@ -95,7 +95,7 @@ export function getCredits(id: string | number, type: string): Promise<Credits> 
 /**
  * Get genre list
  */
-export function getGenreList(media: string): Promise<{ name: string; id: number }[]> {
+export function getGenreList(media: string): Promise<{ name: string, id: number }[]> {
   return fetchTMDB(`genre/${media}/list`).then(res => res.genres)
 }
 

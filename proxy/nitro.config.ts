@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { defineNitroConfig } from 'nitropack/config'
 
 export default defineNitroConfig({

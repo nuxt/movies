@@ -17,7 +17,9 @@ useHead({
   ],
   link: [
     {
-      rel: 'icon', type: 'image/webp', href: '/movies.webp',
+      rel: 'icon',
+      type: 'image/webp',
+      href: '/movies.webp',
     },
   ],
 })

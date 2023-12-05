@@ -1,21 +1,20 @@
-import { createIPX, createIPXMiddleware } from 'ipx'
+import { createIPX, createIPXH3Handler, ipxHttpStorage } from 'ipx'
+import { lazyEventHandler, useBase } from 'h3'
 
-const ipx = createIPX({
-  maxAge: 3600,
-  alias: {
-    '/tmdb': 'https://image.tmdb.org/t/p/original/',
-    '/youtube': 'https://img.youtube.com/',
-  },
-  domains: [
-    'image.tmdb.org',
-    'img.youtube.com',
-  ],
-})
+export default lazyEventHandler(() => {
+  const ipx = createIPX({
+    maxAge: 3600,
+    alias: {
+      '/tmdb': 'https://image.tmdb.org/t/p/original/',
+      '/youtube': 'https://img.youtube.com/',
+    },
+    storage: ipxHttpStorage({
+      domains: [
+        'image.tmdb.org',
+        'img.youtube.com',
+      ],
+    }),
+  })
 
-const ipxMiddleware = createIPXMiddleware(ipx)
-const ipxHandler = fromNodeMiddleware(ipxMiddleware)
-
-export default eventHandler((event) => {
-  event.node.req.url = `/${event.context.params!.path}`
-  return ipxHandler(event)
+  return useBase('/ipx', createIPXH3Handler(ipx))
 })

@@ -2,5 +2,8 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "strict": true
-  }
+  },
+  "exclude": [
+    "proxy/**"
+  ]
 }
