@@ -37,7 +37,7 @@ defineProps<{
     <div flex text-sm gap-2 items-center>
       <StarsRate w-20 :value="item.vote_average" />
       <div op60>
-        {{ item.vote_average }}
+        {{ formatVote(item.vote_average) }}
       </div>
     </div>
   </NuxtLink>

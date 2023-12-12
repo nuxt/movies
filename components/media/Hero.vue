@@ -47,25 +47,28 @@ const mounted = useMounted()
           <h1 mt-2 text-4xl lg:text-5xl line-clamp-2>
             {{ props.item.title || props.item.name }}
           </h1>
-          <div flex="~ row wrap" gap3 items-center mt4>
+          <div flex="~ row wrap" gap2 items-center mt4>
             <StarsRate w-25 :value="props.item.vote_average" />
-            <div op50 hidden md:block>
-              {{ props.item.vote_average }}
+            <div class="op50 hidden md:block">
+              {{ formatVote(props.item.vote_average) }}
             </div>
-            <div op50 hidden md:block>
-              {{ $t('{numberOfReviews} Reviews', { numberOfReviews: props.item.vote_count }) }}
+            <span class="op50 hidden md:block">·</span>
+            <div class="op50 hidden md:block">
+              {{ $t('{numberOfReviews} Reviews', { numberOfReviews: formatVote(props.item.vote_count) }) }}
             </div>
+            <span op50>·</span>
             <div v-if="props.item.release_date" op50>
               {{ props.item.release_date.slice(0, 4) }}
             </div>
+            <span op50>·</span>
             <div v-if="props.item.runtime" op50>
               {{ formatTime(props.item.runtime) }}
             </div>
           </div>
-          <p mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5 text-xs md:text-base>
+          <p class="mt-2 op80 leading-relaxed of-hidden line-clamp-3 md:line-clamp-5 text-xs md:text-base">
             {{ props.item.overview }}
           </p>
-          <div v-if="trailer" py5 display-none lg:block>
+          <div v-if="trailer" class="py5 display-none lg:block">
             <button
               flex="~ gap2" items-center p="x6 y3"
               bg="gray/15 hover:gray/20" transition
