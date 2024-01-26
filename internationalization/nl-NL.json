@@ -1,0 +1,60 @@
+{
+  "Popular Movies": "Populaire films",
+  "Top Rated Movies": "Beste beoordeelde films",
+  "Upcoming Movies": "Aankomende films",
+  "Now Playing Movies": "Nu in de bioscoop",
+  "Popular TV Shows": "Populaire tv-series",
+  "Top Rated TV Shows": "Beste beoordeelde tv-series",
+  "TV Shows Airing Today": "Tv-series die vandaag worden uitgezonden",
+
+  "Watch Trailer": "Bekijk trailer",
+  "Explore more": "Verder ontdekken",
+
+  "Overview": "Overzicht",
+  "Videos": "Video's",
+  "Media Photos": "Foto's",
+
+  "Cast": "Cast",
+  "More like this": "Vergelijkbaar",
+
+  "Storyline": "Verhaallijn",
+  "Release Date": "Releasedatum",
+  "Runtime": "Looptijd",
+  "Director": "Regisseur",
+  "Budget": "Budget",
+  "Revenue": "Opbrengst",
+  "Genre": "Genre",
+  "Status": "Status",
+  "Language": "Taal",
+  "Production": "Productie",
+
+  "Backdrops": "Achtergronden",
+  "Posters": "Posters",
+
+  "Known For": "Bekend van",
+  "Credits": "Credits",
+  "Person Photos": "Foto's",
+  "(no biography)": "(geen biografie)",
+  "Known for": "Bekend van",
+  "Place of birth": "Geboorteplaats",
+  "Birthday": "Geboortedatum",
+
+  "Acting Credits": "Acteercredits",
+  "Production Credits": "Productiecredits",
+
+  "Type to search...": "Typ om te zoeken...",
+  "Type something to search...": "Typ iets om te zoeken...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} Recensies",
+
+  "{numberOfImages} Images": "{numberOfImages} Afbeeldingen",
+  "{numberOfVideos} Videos": "{numberOfVideos} Video's",
+
+  "as {character}": "als {character}",
+
+  "{count} items": "{count} resultaten",
+  "Search result for: {currentSearch}": "Zoekresultaat voor: {currentSearch}",
+
+  "Error occurred on fetching": "Er is een fout opgetreden bij het ophalen",
+  "Retry": "Opnieuw proberen"
+}
