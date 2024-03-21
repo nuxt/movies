@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onKeyDown } from '@vueuse/core'
+import { onClickOutside, onKeyDown } from '@vueuse/core'
 
 const src = ref<string | null>(null)
 
