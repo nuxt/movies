@@ -56,11 +56,11 @@ const mounted = useMounted()
             <div class="op50 hidden md:block">
               {{ $t('{numberOfReviews} Reviews', { numberOfReviews: formatVote(props.item.vote_count) }) }}
             </div>
-            <span op50>·</span>
+            <span v-if="props.item.release_date" op50>·</span>
             <div v-if="props.item.release_date" op50>
               {{ props.item.release_date.slice(0, 4) }}
             </div>
-            <span op50>·</span>
+            <span v-if="props.item.runtime" op50>·</span>
             <div v-if="props.item.runtime" op50>
               {{ formatTime(props.item.runtime) }}
             </div>
