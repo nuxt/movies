@@ -47,12 +47,12 @@ useEventListener('keydown', (e) => {
       aria-hidden="true"
       max-w-full max-h-full object-contain
     />
-    <div absolute left-0 top="calc(1/2-58px)">
+    <div absolute left-0 top="1/2" translate="y--1/2">
       <button py10 px4 bg-black:30 op10 hover:op100 @click="prev()">
         <div i-ph-caret-left-light text-3xl text-white />
       </button>
     </div>
-    <div absolute right-0 top="calc(1/2-58px)">
+    <div absolute right-0 top="1/2" translate="y--1/2">
       <button py10 px4 bg-black:30 op10 hover:op100 @click="next()">
         <div i-ph-caret-right-light text-3xl text-white />
       </button>
