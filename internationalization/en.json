@@ -56,5 +56,10 @@
   "Search result for: {currentSearch}": "Search result for: {currentSearch}",
 
   "Error occurred on fetching": "Error occurred on fetching",
-  "Retry": "Retry"
+  "Retry": "Retry",
+
+  "Home": "Home",
+  "Movies": "Movies",
+  "TV Shows": "TV Shows",
+  "Search": "Search"
 }
