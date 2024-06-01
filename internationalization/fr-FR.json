@@ -55,5 +55,10 @@
   "Search result for: {currentSearch}": "Résutats pour: {currentSearch}",
 
   "Error occurred on fetching": "Une erreur s'est produite lors de la récupération des données.",
-  "Retry": "Réessayer"
+  "Retry": "Réessayer",
+
+  "Home": "Accueil",
+  "Movies": "Films",
+  "TV Shows": "Séries",
+  "Search": "Recherche"
 }
