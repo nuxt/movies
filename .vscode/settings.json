@@ -2,8 +2,5 @@
   "cSpell.words": [
     "TMDB"
   ],
-  "eslint.experimental.useFlatConfig": true,
-  "i18n-ally.localesPaths": [
-    "internationalization"
-  ]
+  "eslint.experimental.useFlatConfig": true
 }
