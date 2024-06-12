@@ -70,6 +70,7 @@ const mounted = useMounted()
           </p>
           <div v-if="trailer" class="py5 display-none lg:block">
             <button
+              type="button"
               flex="~ gap2" items-center p="x6 y3"
               bg="gray/15 hover:gray/20" transition
               :title="$t('Watch Trailer')"
@@ -84,6 +85,7 @@ const mounted = useMounted()
     </div>
     <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
       <button
+        type="button"
         items-center p10 text-5xl op20 hover:op80 transition
         :title="$t('Watch Trailer')"
         @click="playTrailer()"
