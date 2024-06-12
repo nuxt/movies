@@ -12,6 +12,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@nuxtjs/html-validator": "^1.8.2",
     "vue-router-better-scroller": "^0.0.0"
   },
   "devDependencies": {
