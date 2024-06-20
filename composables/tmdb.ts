@@ -43,11 +43,47 @@ export function fetchTMDB(url: string, params: Record<string, string | number | 
   return promiseCache.get(hash)!
 }
 
-export function listMedia(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
-  return fetchTMDB(`${type}/${query}`, { page })
+const blocked = new Set([
+  '66046',
+  '65143',
+  '120057',
+  '137215',
+  '127008',
+  '135272',
+  '152511',
+  '154887',
+  '1123136',
+  '209609',
+  '153496',
+  '214997',
+  '203552',
+  '735902',
+  '561996',
+  '198004',
+  '206239',
+  '210107',
+  '234282',
+  '203164',
+  '219651',
+  '599333',
+  '919207',
+  '606906',
+  '231268',
+])
+
+export async function listMedia(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
+  const r = await fetchTMDB(`${type}/${query}`, { page }) as PageResult<Media>
+  r.results = r.results.filter((m: Media) => !blocked.has(m.id.toString()))
+  return r
 }
 
-export function getMedia(type: MediaType, id: string): Promise<Media> {
+export async function getMedia(type: MediaType, id: string): Promise<Media> {
+  if (blocked.has(id).toString()) {
+    throw createError({
+      statusCode: 404,
+      message: 'This media is under copyright restriction and cannot be viewed.',
+    })
+  }
   return fetchTMDB(`${type}/${id}`, {
     append_to_response: 'videos,credits,images,external_ids,release_dates,combined_credits',
     include_image_language: 'en',
@@ -57,8 +93,10 @@ export function getMedia(type: MediaType, id: string): Promise<Media> {
 /**
  * Get recommended
  */
-export function getRecommendations(type: MediaType, id: string, page = 1): Promise<PageResult<Media>> {
-  return fetchTMDB(`${type}/${id}/recommendations`, { page })
+export async function getRecommendations(type: MediaType, id: string, page = 1): Promise<PageResult<Media>> {
+  const r = await fetchTMDB(`${type}/${id}/recommendations`, { page }) as PageResult<Media>
+  r.results = r.results.filter((m: Media) => !blocked.has(m.id.toString()))
+  return r
 }
 
 /**
@@ -78,11 +116,13 @@ export function getTrending(media: string, page = 1) {
 /**
  * Discover media by genre
  */
-export function getMediaByGenre(media: string, genre: string, page = 1): Promise<PageResult<Media>> {
-  return fetchTMDB(`discover/${media}`, {
+export async function getMediaByGenre(media: string, genre: string, page = 1): Promise<PageResult<Media>> {
+  const r = await fetchTMDB(`discover/${media}`, {
     with_genres: genre,
     page,
-  })
+  }) as PageResult<Media>
+  r.results = r.results.filter((m) => !blocked.has(m.id.toString()))
+  return r
 }
 
 /**
@@ -114,6 +154,8 @@ export function getPerson(id: string): Promise<Person> {
  * Search (searches movies, tv and people)
  */
 
-export function searchShows(query: string, page = 1) {
-  return fetchTMDB('search/multi', { query, page, include_adult: false })
+export async function searchShows(query: string, page = 1) {
+  const r = await fetchTMDB('search/multi', { query, page, include_adult: false })
+  r.results = r.results.filter((m: Media) => !blocked.has(m.id.toString()))
+  return r
 }
