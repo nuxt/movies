@@ -78,7 +78,7 @@ export async function listMedia(type: MediaType, query: string, page: number): P
 }
 
 export async function getMedia(type: MediaType, id: string): Promise<Media> {
-  if (blocked.has(id).toString()) {
+  if (blocked.has(id.toString())) {
     throw createError({
       statusCode: 404,
       message: 'This media is under copyright restriction and cannot be viewed.',
