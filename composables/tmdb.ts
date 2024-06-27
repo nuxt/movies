@@ -69,6 +69,10 @@ const blocked = new Set([
   '919207',
   '606906',
   '231268',
+  // next tranche
+  '119773',
+  '223890',
+  '229955',
 ])
 
 export async function listMedia(type: MediaType, query: string, page: number): Promise<PageResult<Media>> {
