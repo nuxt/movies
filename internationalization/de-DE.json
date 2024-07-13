@@ -53,5 +53,13 @@
   "as {character}": "Rolle: {character}",
 
   "{count} items": "{count} Ergebnisse ",
-  "Search result for: {currentSearch}": "Suchergebnis für {currentSearch}"
+  "Search result for: {currentSearch}": "Suchergebnis für {currentSearch}",
+  
+  "Error occurred on fetching": "Fehler beim Abrufen aufgetreten",
+  "Retry": "Erneut versuchen",
+
+  "Home": "Startseite",
+  "Movies": "Filme",
+  "TV Shows": "Fernsehserien",
+  "Search": "Suche"
 }

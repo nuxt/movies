@@ -53,5 +53,13 @@
   "as {character}": "饰 {character}",
 
   "{count} items": "{count}条结果",
-  "Search result for: {currentSearch}": "搜索 {currentSearch}"
+  "Search result for: {currentSearch}": "搜索 {currentSearch}",
+  
+  "Error occurred on fetching": "获取数据时出错",
+  "Retry": "重试",
+
+  "Home": "首页",
+  "Movies": "电影",
+  "TV Shows": "电视剧",
+  "Search": "搜索"
 }
