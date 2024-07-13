@@ -93,6 +93,11 @@ export default defineNuxtConfig({
         file: 'pt-BR.json',
       },
       {
+        code: 'ru-RU',
+        name: 'Русский',
+        file: 'ru-RU.json',
+      },
+      {
         code: 'fr-FR',
         name: 'Français',
         file: 'fr-FR.json',
