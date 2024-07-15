@@ -1,0 +1,65 @@
+{
+  "Popular Movies": "Популярні фільми",
+  "Top Rated Movies": "Фільми з високим рейтингом",
+  "Upcoming Movies": "Скоро в кіно",
+  "Now Playing Movies": "Зараз в кіно",
+  "Popular TV Shows": "Популярні серіали",
+  "Top Rated TV Shows": "Серіали з високим рейтингом",
+  "TV Shows Airing Today": "Сьогодні в ефірі",
+
+  "Watch Trailer": "Дивитися трейлер",
+  "Explore more": "Дізнатися більше",
+
+  "Overview": "Огляд",
+  "Videos": "Відео",
+  "Media Photos": "Зображення",
+
+  "Cast": "Акторський склад",
+  "More like this": "Схожі",
+
+  "Storyline": "Опис",
+  "Release Date": "Дата виходу",
+  "Runtime": "Тривалість",
+  "Director": "Режисер",
+  "Budget": "Бюджет",
+  "Revenue": "Збори",
+  "Genre": "Жанр",
+  "Status": "Статус",
+  "Language": "Мова",
+  "Production": "Кінокомпанія",
+
+  "Backdrops": "Фони",
+  "Posters": "Постери",
+
+  "Known For": "Фільми та серіали",
+  "Credits": "Фільмографія",
+  "Person Photos": "Фото",
+  "(no biography)": "(біографія відсутня)",
+  "Known for": "Відомий за",
+  "Place of birth": "Місце народження",
+  "Birthday": "Дата народження",
+
+  "Acting Credits": "Акторська гра",
+  "Production Credits": "Виробництво",
+
+  "Type to search...": "Почніть друкувати...",
+  "Type something to search...": "Введіть текст для пошуку...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} рецензій",
+
+  "{numberOfImages} Images": "{numberOfImages} зображень",
+  "{numberOfVideos} Videos": "{numberOfVideos} відео",
+
+  "as {character}": "в ролі {character}",
+
+  "{count} items": "{count} результат(ів)",
+  "Search result for: {currentSearch}": "Результати пошуку для «{currentSearch}»",
+
+  "Error occurred on fetching": "Помилка при завантаженні даних",
+  "Retry": "Повторити",
+
+  "Home": "Головна",
+  "Movies": "Фільми",
+  "TV Shows": "Серіали",
+  "Search": "Пошук"
+}
