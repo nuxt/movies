@@ -53,5 +53,13 @@
   "as {character}": "演 {character}",
 
   "{count} items": "{count}件",
-  "Search result for: {currentSearch}": "「{currentSearch}」の検索結果 "
+  "Search result for: {currentSearch}": "「{currentSearch}」の検索結果 ",
+  
+  "Error occurred on fetching": "取得中にエラーが発生しました",
+  "Retry": "再試行",
+
+  "Home": "ホーム",
+  "Movies": "映画",
+  "TV Shows": "テレビ番組",
+  "Search": "検索"
 }

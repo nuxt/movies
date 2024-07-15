@@ -1,0 +1,65 @@
+{
+  "Popular Movies": "Популярные фильмы",
+  "Top Rated Movies": "Фильмы с высоким рейтингом",
+  "Upcoming Movies": "Скоро в кино",
+  "Now Playing Movies": "Сейчас в кино",
+  "Popular TV Shows": "Популярные сериалы",
+  "Top Rated TV Shows": "Сериалы с высоким рейтингом",
+  "TV Shows Airing Today": "Сегодня в эфире",
+
+  "Watch Trailer": "Смотреть трейлер",
+  "Explore more": "Узнать больше",
+
+  "Overview": "Обзор",
+  "Videos": "Видео",
+  "Media Photos": "Изображения",
+
+  "Cast": "Актёрский состав",
+  "More like this": "Похожие",
+
+  "Storyline": "Описание",
+  "Release Date": "Дата выхода",
+  "Runtime": "Продолжительность",
+  "Director": "Режиссёр",
+  "Budget": "Бюджет",
+  "Revenue": "Сборы",
+  "Genre": "Жанр",
+  "Status": "Статус",
+  "Language": "Язык",
+  "Production": "Кинокомпания",
+
+  "Backdrops": "Фоны",
+  "Posters": "Постеры",
+
+  "Known For": "Фильмы и сериалы",
+  "Credits": "Фильмография",
+  "Person Photos": "Фото",
+  "(no biography)": "(биография отсутствует)",
+  "Known for": "Известен по",
+  "Place of birth": "Место рождения",
+  "Birthday": "Дата рождения",
+
+  "Acting Credits": "Актёрская игра",
+  "Production Credits": "Производство",
+
+  "Type to search...": "Начните печатать...",
+  "Type something to search...": "Введите текст для поиска...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} рецензий",
+
+  "{numberOfImages} Images": "{numberOfImages} изображений",
+  "{numberOfVideos} Videos": "{numberOfVideos} видео",
+
+  "as {character}": "в роли {character}",
+
+  "{count} items": "{count} результат(ов)",
+  "Search result for: {currentSearch}": "Результаты поиска для «{currentSearch}»",
+
+  "Error occurred on fetching": "Ошибка при загрузке данных",
+  "Retry": "Повторить",
+
+  "Home": "Главная",
+  "Movies": "Фильмы",
+  "TV Shows": "Сериалы",
+  "Search": "Поиск"
+}
