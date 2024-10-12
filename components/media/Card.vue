@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { Media, MediaType } from '~/types'
+import type { Media, MediaType, QueryItem } from '~/types'
 
 defineProps<{
   type: MediaType
-  item: Media
+  item: Media,
+  query?: QueryItem
 }>()
 </script>
 
@@ -25,7 +26,7 @@ defineProps<{
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
         w-full h-full object-cover
-        :style="{ 'view-transition-name': `item-${item.id}` }"
+        :style="{ 'view-transition-name': `item-${item.id}${query?.query ? `-${query.query}` : ''}` }"
       />
       <div v-else h-full op10 flex>
         <div i-ph:question ma text-4xl />
