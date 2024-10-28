@@ -22,6 +22,7 @@ const item = await listMedia(props.query.type, props.query.query, 1)
       v-for="i of item?.results || []"
       :key="i.id"
       :item="i"
+      :query="props.query"
       :type="props.query.type"
       flex-1 w-40 md:w-60
     />
