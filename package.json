@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.0.2",
+  "packageManager": "bun@1.1.31",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
