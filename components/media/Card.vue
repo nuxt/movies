@@ -3,7 +3,7 @@ import type { Media, MediaType, QueryItem } from '~/types'
 
 defineProps<{
   type: MediaType
-  item: Media,
+  item: Media
   query?: QueryItem
 }>()
 </script>

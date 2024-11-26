@@ -125,7 +125,7 @@ export async function getMediaByGenre(media: string, genre: string, page = 1): P
     with_genres: genre,
     page,
   }) as PageResult<Media>
-  r.results = r.results.filter((m) => !blocked.has(m.id.toString()))
+  r.results = r.results.filter(m => !blocked.has(m.id.toString()))
   return r
 }
 
