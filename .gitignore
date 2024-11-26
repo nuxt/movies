@@ -10,3 +10,4 @@ dist
 .vercel
 
 coverage
+test-results
