@@ -1,4 +1,4 @@
-name: Component tests
+name: Component Tests
 
 on:
   pull_request:
