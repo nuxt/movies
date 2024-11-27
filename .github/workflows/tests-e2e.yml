@@ -51,8 +51,8 @@ jobs:
       - name: Run Playwright tests
         run: bunx playwright test
 
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
