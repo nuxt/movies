@@ -1,4 +1,4 @@
-name: Test Unit
+name: Component tests
 
 on:
   pull_request:
@@ -22,8 +22,17 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Cache Bun dependencies
+        id: cache-bun
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
       - name: Install dependencies
         run: bun install
 
       - name: Run tests
-        run: bun run test:unit
+        run: bun run test:component
