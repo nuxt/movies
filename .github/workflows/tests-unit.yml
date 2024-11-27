@@ -1,4 +1,4 @@
-name: Component Tests
+name: Tests unit
 
 on:
   pull_request:
@@ -36,4 +36,4 @@ jobs:
         run: bun i --frozen-lockfile
 
       - name: Run tests
-        run: bun run test:component
+        run: bun run test:unit
