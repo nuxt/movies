@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { MediaType } from '~/types'
 import { QUERY_LIST } from '~/constants/lists'
+import type { MediaType } from '~/types'
 
 definePageMeta({
   key: route => route.fullPath,

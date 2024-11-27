@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
 import type { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import { describe, expect, it } from 'vitest'
 
-import PersonCard from './Card.vue'
 import type { Person } from '~/types'
+import PersonCard from './Card.vue'
 
 function mockPerson(overrides: Partial<Person> = {}): Person {
   return {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Media, MediaType } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
+import type { Media, MediaType } from '~/types'
 
 const props = withDefaults(defineProps<{
   item: Media

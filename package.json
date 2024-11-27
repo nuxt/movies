@@ -7,6 +7,7 @@
     "dev:proxy": "cd proxy && pnpm dev",
     "dev": "nuxi dev",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepare": "nuxi prepare",
     "start": "node .output/server/index.mjs",
     "test:unit": "vitest run",
@@ -24,7 +25,7 @@
     "vue-router-better-scroller": "^0.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.15.0",
+    "@antfu/eslint-config": "^3.10.0",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/cib": "^1.1.8",
     "@iconify-json/ph": "^1.1.12",
