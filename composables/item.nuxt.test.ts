@@ -65,7 +65,9 @@ describe('useSingleton', () => {
   let app: ReturnType<typeof createApp>
 
   beforeEach(() => {
-    app = createApp({})
+    app = createApp({
+      render: () => h('div'),
+    })
   })
 
   it('should provide and use singleton without issues', () => {
@@ -78,7 +80,7 @@ describe('useSingleton', () => {
         provideFn(mockFn)
         const usedFn = useFn()
         expect(usedFn).toBe(mockFn)
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
@@ -92,7 +94,7 @@ describe('useSingleton', () => {
     const TestComponent = defineComponent({
       setup() {
         expect(() => useFn()).toThrow('Singleton not provided')
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
@@ -105,7 +107,9 @@ describe('provideIframeModal and useIframeModal', () => {
   let app: ReturnType<typeof createApp>
 
   beforeEach(() => {
-    app = createApp({})
+    app = createApp({
+      render: () => h('div'),
+    })
   })
 
   it('should provide and use iframe modal without issues', () => {
@@ -116,7 +120,7 @@ describe('provideIframeModal and useIframeModal', () => {
         provideIframeModal(mockFn)
         const usedFn = useIframeModal()
         expect(usedFn).toBe(mockFn)
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
@@ -128,7 +132,7 @@ describe('provideIframeModal and useIframeModal', () => {
     const TestComponent = defineComponent({
       setup() {
         expect(() => useIframeModal()).toThrow('Singleton not provided')
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
@@ -141,7 +145,9 @@ describe('provideImageModal and useImageModal', () => {
   let app: ReturnType<typeof createApp>
 
   beforeEach(() => {
-    app = createApp({})
+    app = createApp({
+      render: () => h('div'),
+    })
   })
 
   it('should provide and use image modal without issues', () => {
@@ -152,7 +158,7 @@ describe('provideImageModal and useImageModal', () => {
         provideImageModal(mockFn)
         const usedFn = useImageModal()
         expect(usedFn).toBe(mockFn)
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
@@ -164,7 +170,7 @@ describe('provideImageModal and useImageModal', () => {
     const TestComponent = defineComponent({
       setup() {
         expect(() => useImageModal()).toThrow('Singleton not provided')
-        return () => h('div')
+        return () => h('div', 'TestComponent')
       },
     })
 
