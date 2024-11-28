@@ -13,9 +13,6 @@
     "test:unit": "vitest run",
     "test:unit-coverage": "vitest --coverage",
     "test:unit-coverage-ui": "vitest --coverage --ui",
-    "test:component": "vitest -c vitest.component.config",
-    "test:component-coverage": "vitest -c vitest.component.config --coverage",
-    "test:component-coverage-ui": "vitest -c vitest.component.config --coverage --ui",
     "test:e2e": "playwright test",
     "test:e2e-ui": "playwright test --ui",
     "typecheck": "vue-tsc --noEmit"
