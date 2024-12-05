@@ -10,6 +10,7 @@
     "lint:fix": "eslint . --fix",
     "prepare": "nuxi prepare",
     "start": "node .output/server/index.mjs",
+    "test:codegen": "bunx playwright codegen http://localhost:3000/",
     "test:unit": "vitest run",
     "test:unit-coverage": "vitest --coverage",
     "test:unit-coverage-ui": "vitest --coverage --ui",
