@@ -45,7 +45,7 @@ export function mockMedia(overrides: Partial<Media> = {}): Media {
     popularity: 0,
     poster_path: '',
     release_date: '',
-    title: 'Movie 1',
+    title: undefined,
     video: false,
     vote_average: 0,
     vote_count: 0,

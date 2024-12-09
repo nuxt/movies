@@ -27,7 +27,7 @@ describe('creditsList', () => {
   it('renders credit items correctly', async () => {
     const items = [
       mockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie' }),
-      mockMedia({ id: '2', title: 'TV Show 1', first_air_date: '2022-01-01', media_type: 'tv' }),
+      mockMedia({ id: '2', name: 'TV Show 1', first_air_date: '2022-01-01', media_type: 'tv' }),
     ]
 
     const wrapper = await mountSuspended(CreditsList, {
@@ -71,5 +71,47 @@ describe('creditsList', () => {
     expect(getCreditTitle(creditItems[1]).text()).toBe('Movie 1')
     expect(getCreditTitle(creditItems[2]).text()).toBe('Movie 4')
     expect(getCreditTitle(creditItems[3]).text()).toBe('Movie 3')
+  })
+
+  it('renders credit items with name instead of title', async () => {
+    const items = [
+      mockMedia({ id: '1', name: 'TV Show 1', first_air_date: '2022-01-01', media_type: 'tv' }),
+    ]
+
+    const wrapper = await mountSuspended(CreditsList, {
+      props: {
+        items,
+        title: 'Credits',
+      },
+    })
+
+    const creditItems = getCreditItems(wrapper)
+
+    expect(creditItems.length).toBe(1)
+
+    expect(getCreditDate(creditItems[0]).text()).toBe('2022')
+    expect(getCreditTitle(creditItems[0]).text()).toBe('TV Show 1')
+    expect(getCreditCharacter(creditItems[0]).text()).toBe('')
+  })
+
+  it('renders credit items with character', async () => {
+    const items = [
+      mockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie', character: 'Hero' }),
+    ]
+
+    const wrapper = await mountSuspended(CreditsList, {
+      props: {
+        items,
+        title: 'Credits',
+      },
+    })
+
+    const creditItems = getCreditItems(wrapper)
+
+    expect(creditItems.length).toBe(1)
+
+    expect(getCreditDate(creditItems[0]).text()).toBe('2023')
+    expect(getCreditTitle(creditItems[0]).text()).toBe('Movie 1')
+    expect(getCreditCharacter(creditItems[0]).text()).toBe('as Hero')
   })
 })
