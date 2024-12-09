@@ -36,9 +36,14 @@ describe('utils', () => {
       }
     })
 
-    it('should return the ISO code if the language is not found', () => {
+    it('should return "No Language" if the language is xx', () => {
       const iso = 'xx'
       expect(formatLang(iso)).toBe('No Language')
+    })
+
+    it('should handle if the language is not found', () => {
+      const iso = 'John Doe'
+      expect(formatLang(iso)).toBe('John Doe')
     })
   })
 
