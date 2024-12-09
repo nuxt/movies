@@ -5,5 +5,8 @@ export default defineVitestConfig({
     include: ['**/tests/unit/**/*.test.ts', '**/components/**/*.test.ts', '**/composables/**/*.test.ts'],
     name: 'unit',
     environment: 'node',
+    coverage: {
+      include: ['**/components/**/*.vue', '**/composables/**/*.ts'],
+    },
   },
 })
