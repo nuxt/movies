@@ -13,7 +13,7 @@ function initComponent(props: { item: Person }) {
 }
 
 describe('personCard', () => {
-  // Helpers
+  // Helper functions to get elements by data-testid
   const findImage = (wrapper: VueWrapper) => wrapper.find('[data-testid="person-image"]')
   const findName = (wrapper: VueWrapper) => wrapper.find('[data-testid="person-name"]')
   const findCharacter = (wrapper: VueWrapper) => wrapper.find('[data-testid="person-character"]')

@@ -1,29 +1,9 @@
 import type { DOMWrapper, VueWrapper } from '@vue/test-utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
-import type { Media } from '~/types'
-import CreditsList from './CreditsList.vue'
 
-// Helper function to create mock Media objects
-function createMockMedia(overrides: Partial<Media> = {}): Media {
-  return {
-    adult: false,
-    backdrop_path: '',
-    genre_ids: [],
-    id: '1',
-    original_language: 'en',
-    original_title: 'Movie 1',
-    overview: '',
-    popularity: 0,
-    poster_path: '',
-    title: 'Movie 1',
-    video: false,
-    vote_average: 0,
-    vote_count: 0,
-    media_type: 'movie',
-    ...overrides,
-  }
-}
+import { mockMedia } from '~/tests/unit/mocks'
+import CreditsList from './CreditsList.vue'
 
 describe('creditsList', () => {
   // Helper functions to get elements by data-testid
@@ -46,8 +26,8 @@ describe('creditsList', () => {
 
   it('renders credit items correctly', async () => {
     const items = [
-      createMockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie' }),
-      createMockMedia({ id: '2', title: 'TV Show 1', first_air_date: '2022-01-01', media_type: 'tv' }),
+      mockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie' }),
+      mockMedia({ id: '2', title: 'TV Show 1', first_air_date: '2022-01-01', media_type: 'tv' }),
     ]
 
     const wrapper = await mountSuspended(CreditsList, {
@@ -72,10 +52,10 @@ describe('creditsList', () => {
 
   it('sorts items by release date', async () => {
     const items = [
-      createMockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie' }),
-      createMockMedia({ id: '2', title: 'Movie 2', release_date: '2024-01-01', media_type: 'movie' }),
-      createMockMedia({ id: '3', title: 'Movie 3', release_date: undefined, first_air_date: '2022-03-01', media_type: 'movie' }),
-      createMockMedia({ id: '4', title: 'Movie 4', release_date: undefined, first_air_date: '2022-08-01', media_type: 'movie' }),
+      mockMedia({ id: '1', title: 'Movie 1', release_date: '2023-01-01', media_type: 'movie' }),
+      mockMedia({ id: '2', title: 'Movie 2', release_date: '2024-01-01', media_type: 'movie' }),
+      mockMedia({ id: '3', title: 'Movie 3', release_date: undefined, first_air_date: '2022-03-01', media_type: 'movie' }),
+      mockMedia({ id: '4', title: 'Movie 4', release_date: undefined, first_air_date: '2022-08-01', media_type: 'movie' }),
     ]
 
     const wrapper = await mountSuspended(CreditsList, {

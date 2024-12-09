@@ -6,7 +6,6 @@ import { mockMedia, mockPerson } from '~/tests/unit/mocks'
 import type { Person } from '~/types'
 import CreditsComponent from './Credits.vue'
 
-// Helper Functions
 async function createWrapper(item: Person) {
   const wrapper = await mountSuspended(CreditsComponent, {
     props: {
@@ -17,7 +16,7 @@ async function createWrapper(item: Person) {
 }
 
 describe('personCredits', () => {
-  // Helpers
+  // Helper functions to get elements by data-testid
   const findPersonCreditsContainer = (wrapper: VueWrapper) => wrapper.find('[data-testid="person-credits-container"]')
   const findActingCreditsList = (wrapper: VueWrapper) => wrapper.find('[data-testid="acting-credits-list"]')
   const findProductionCreditsList = (wrapper: VueWrapper) => wrapper.find('[data-testid="production-credits-list"]')
