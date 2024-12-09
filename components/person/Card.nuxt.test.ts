@@ -48,6 +48,17 @@ describe('personCard', () => {
     expect(findCharacter(wrapper).text()).toBe('Supporting Character')
   })
 
+  it('renders correctly with known_for_department when character is missing', async () => {
+    const personWithDepartment = mockPerson({ character: '', known_for_department: 'Acting', name: 'Jane Doe', id: 2 })
+    const wrapper = await initComponent({ item: personWithDepartment })
+
+    expect(findImage(wrapper).exists()).toBe(true)
+
+    expect(findName(wrapper).text()).toBe('Jane Doe')
+
+    expect(findCharacter(wrapper).text()).toBe('Acting')
+  })
+
   it('links to the correct URL', async () => {
     const personWithProfile = mockPerson()
     const wrapper = await initComponent({ item: personWithProfile })
