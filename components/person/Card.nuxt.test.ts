@@ -2,28 +2,9 @@ import type { VueWrapper } from '@vue/test-utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
+import { mockPerson } from '~/tests/unit/mocks'
 import type { Person } from '~/types'
 import PersonCard from './Card.vue'
-
-function mockPerson(overrides: Partial<Person> = {}): Person {
-  return {
-    adult: false,
-    gender: 0,
-    id: 1,
-    known_for_department: '',
-    name: 'John Doe',
-    profile_path: '/d81K0RH8UX7tZj49tZaQhZ9ewH.jpg',
-    original_name: '',
-    popularity: 0,
-    credit_id: '',
-    character: 'Main Character',
-    order: 0,
-    images: {
-      profiles: [{ aspect_ratio: 0.667, height: 900, iso_639_1: 'null', file_path: '/d81K0RH8UX7tZj49tZaQhZ9ewH.jpg', vote_average: 5.326, vote_count: 7, width: 600 }],
-    },
-    ...overrides,
-  }
-}
 
 function initComponent(props: { item: Person }) {
   return mountSuspended(PersonCard, {
