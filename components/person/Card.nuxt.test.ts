@@ -2,6 +2,7 @@ import type { VueWrapper } from '@vue/test-utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
+import { baseUrl } from '~/tests/unit/config'
 import { mockPerson } from '~/tests/unit/mocks'
 import type { Person } from '~/types'
 import PersonCard from './Card.vue'
@@ -27,7 +28,7 @@ describe('personCard', () => {
 
     expect(findImage(wrapper).exists()).toBe(true)
 
-    expect(findImage(wrapper).attributes('src')).toBe('https://movies-proxy.vercel.app/ipx/f_webp&s_500x800/tmdb/d81K0RH8UX7tZj49tZaQhZ9ewH.jpg')
+    expect(findImage(wrapper).attributes('src')).toBe(`${baseUrl}/ipx/f_webp&s_500x800/tmdb${personWithProfile.profile_path}`)
     expect(findImage(wrapper).attributes('alt')).toBe('John Doe')
 
     expect(findName(wrapper).text()).toBe('John Doe')
