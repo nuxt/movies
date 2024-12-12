@@ -1,4 +1,4 @@
-import type { Image, Media, Person } from '~/types'
+import type { Image, Media, Person, Video } from '~/types'
 
 export function mockPerson(overrides: Partial<Person> = {}): Person {
   return {
@@ -49,6 +49,22 @@ export function mockMedia(overrides: Partial<Media> = {}): Media {
     video: false,
     vote_average: 0,
     vote_count: 0,
+    ...overrides,
+  }
+}
+
+export function mockVideo(overrides: Partial<Video> = {}): Video {
+  return {
+    key: 'sampleKey',
+    name: 'Sample Video',
+    type: 'Trailer',
+    iso_639_1: 'en',
+    iso_3166_1: 'US',
+    site: 'YouTube',
+    size: 1080,
+    official: true,
+    published_at: '2023-01-01T00:00:00Z',
+    id: 'sampleId',
     ...overrides,
   }
 }
