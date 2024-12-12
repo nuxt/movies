@@ -40,7 +40,6 @@ describe('photoModal', () => {
   const findNextButton = (wrapper: VueWrapper) => wrapper.find('[data-testid="next-button"]')
   const findCounter = (wrapper: VueWrapper) => wrapper.find('[data-testid="photo-counter"]')
 
-  // Define the images array once
   const images = [
     mockImage({ file_path: '/path/to/image1.jpg' }),
     mockImage({ file_path: '/path/to/image2.jpg' }),

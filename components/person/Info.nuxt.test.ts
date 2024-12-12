@@ -67,7 +67,7 @@ describe('personInfo', () => {
     expect(getPlaceOfBirthLabel(wrapper).text()).toBe('Place of birth')
     expect(getPlaceOfBirth(wrapper).text()).toBe(item.place_of_birth)
     expect(getBirthdayLabel(wrapper).text()).toBe('Birthday')
-    expect(getBirthday(wrapper).text()).toBe('1/1/1980') // Adjusted the date format to match the actual format
+    expect(getBirthday(wrapper).text()).toBe('1/1/1980')
   })
 
   it('renders external links', async () => {
