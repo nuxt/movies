@@ -28,3 +28,6 @@ jobs:
 
       - name: Lint project
         run: pnpm run lint
+
+      - name: Typecheck project
+        run: pnpm run typecheck
