@@ -1,8 +1,8 @@
-import { mount } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
-
-import { mockVideo } from '~/tests/unit/mocks'
 import type { Video } from '~/types'
+import { mount } from '@vue/test-utils'
+
+import { describe, expect, it, vi } from 'vitest'
+import { mockVideo } from '~/tests/unit/mocks'
 import Card from './Card.vue'
 
 // Mock the useIframeModal function

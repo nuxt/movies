@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { formatDate } from '~/composables/utils'
 import type { Person } from '~/types'
+import { formatDate } from '~/composables/utils'
 
 const props = defineProps<{
   item: Person

@@ -1,11 +1,11 @@
 import type { VueWrapper } from '@vue/test-utils'
+import type { Image } from '~/types'
 import { mockNuxtImport, mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
-import { nextTick } from 'vue'
 
+import { nextTick } from 'vue'
 import { baseUrl } from '~/tests/unit/config'
 import { mockImage } from '~/tests/unit/mocks'
-import type { Image } from '~/types'
 import PhotoModal from './Modal.vue'
 
 // Define mocks using vi.hoisted

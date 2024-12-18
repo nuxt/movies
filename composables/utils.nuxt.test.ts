@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { createApp, defineComponent, h } from 'vue'
 import LANGUAGES from '~/constants/languages'
 import { formatDate, formatLang, formatTime, formatVote, numberWithCommas, useSingleton } from './utils'

@@ -1,9 +1,9 @@
 import type { VueWrapper } from '@vue/test-utils'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { describe, expect, it } from 'vitest'
-
-import { mockMedia, mockPerson } from '~/tests/unit/mocks'
 import type { Person } from '~/types'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+
+import { describe, expect, it } from 'vitest'
+import { mockMedia, mockPerson } from '~/tests/unit/mocks'
 import CreditsComponent from './Credits.vue'
 
 async function createWrapper(item: Person) {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { QUERY_LIST } from '~/constants/lists'
 import type { MediaType } from '~/types'
+import { QUERY_LIST } from '~/constants/lists'
 
 const route = useRoute()
 const type = computed(() => route.params.type as MediaType || 'movie')

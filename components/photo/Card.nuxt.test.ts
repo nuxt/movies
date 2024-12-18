@@ -1,10 +1,10 @@
 import type { VueWrapper } from '@vue/test-utils'
+import type { Image } from '~/types'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { describe, expect, it } from 'vitest'
 
+import { describe, expect, it } from 'vitest'
 import { baseUrl } from '~/tests/unit/config'
 import { mockImage } from '~/tests/unit/mocks'
-import type { Image } from '~/types'
 import PhotoCard from './Card.vue'
 
 function initComponent(props: { item: Image }) {

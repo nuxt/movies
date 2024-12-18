@@ -1,8 +1,8 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { createApp, defineComponent, h } from 'vue'
-
-import { mockMedia } from '~/tests/unit/mocks'
 import type { Video } from '~/types'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+
+import { createApp, defineComponent, h } from 'vue'
+import { mockMedia } from '~/tests/unit/mocks'
 import { getTrailer, getVideoLink, provideIframeModal, provideImageModal, useIframeModal, useImageModal } from './item'
 import { useSingleton } from './utils'
 
