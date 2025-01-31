@@ -1,0 +1,64 @@
+{
+  "Popular Movies": "فیلم‌های محبوب",
+  "Top Rated Movies": "فیلم‌های با امتیاز بالا",
+  "Upcoming Movies": "فیلم‌های آینده",
+  "Now Playing Movies": "فیلم‌های در حال پخش",
+  "Popular TV Shows": "برنامه های تلویزیونی محبوب",
+  "Top Rated TV Shows": "برنامه های تلویزیونی با امتیاز بالا",
+  "TV Shows Airing Today": "برنامه های تلویزیونی امروز",
+
+  "Watch Trailer": "تماشای تریلر",
+  "Explore more": "کشف بیشتر",
+
+  "Overview": "خلاصه",
+  "Videos": "ویدئوها",
+  "Media Photos": "عکس‌ها",
+
+  "Cast": "بازیگران",
+  "More like this": "مشابه‌ها",
+
+  "Storyline": "داستان",
+  "Release Date": "تاریخ انتشار",
+  "Runtime": "مدت زمان",
+  "Director": "کارگردان",
+  "Budget": "بودجه",
+  "Revenue": "درآمد",
+  "Genre": "ژانر",
+  "Status": "وضعیت",
+  "Language": "زبان",
+  "Production": "تولید",
+
+  "Backdrops": "تصاویر پس‌زمینه",
+  "Posters": "پوسترها",
+
+  "Known For": "معروف برای",
+  "Credits": "اعتبارات",
+  "Person Photos": "عکس‌ها",
+  "(no biography)": "(بیوگرافی موجود نیست)",
+  "Known for": "معروف برای",
+  "Place of birth": "محل تولد",
+  "Birthday": "تاریخ تولد",
+
+  "Acting Credits": "بازیگری",
+  "Production Credits": "تولید",
+
+  "Type to search...": "برای جستجو تایپ کنید...",
+  "Type something to search...": "چیزی برای جستجو تایپ کنید...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} نقد و بررسی",
+  "{numberOfImages} Images": "{numberOfImages} تصویر",
+  "{numberOfVideos} Videos": "{numberOfVideos} ویدئو",
+
+  "as {character}": "در نقش {character}",
+
+  "{count} items": "{count} مورد",
+  "Search result for: {currentSearch}": "نتایج جستجو برای: {currentSearch}",
+
+  "Error occurred on fetching": "خطا در دریافت اطلاعات",
+  "Retry": "تلاش مجدد",
+
+  "Home": "خانه",
+  "Movies": "فیلم‌ها",
+  "TV Shows": "سریال‌ها",
+  "Search": "جستجو"
+}
