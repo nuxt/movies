@@ -3,7 +3,7 @@ import type { Media, MediaType, QueryItem } from '~/types'
 
 defineProps<{
   type: MediaType
-  item: Media,
+  item: Media
   query?: QueryItem
 }>()
 </script>
@@ -13,8 +13,7 @@ defineProps<{
     :to="`/${item.media_type || type}/${item.id}`" pb2
   >
     <div
-      block bg-gray4:10 p1
-      class="aspect-10/16"
+      block bg-gray4:10 p1 class="aspect-10/16"
       transition duration-400
       hover="scale-105 z10"
     >

@@ -22,7 +22,7 @@ export function formatTime(minutes: number) {
   const mins = Math.floor(secondsLeft / 60)
   secondsLeft = secondsLeft % 60
 
-  return `${hours ? `${hours}h` : ''} ${mins}min`
+  return `${hours ? `${hours}h ` : ''}${mins}min`
 }
 
 export function numberWithCommas(number: number) {
@@ -51,4 +51,17 @@ export function useSingleton<T>() {
   ] as const
 }
 
-export const { format: formatVote } = Intl.NumberFormat('en-GB', { notation: 'compact', maximumFractionDigits: 1 })
+export function formatVote(number?: number): string {
+  if (number === undefined) {
+    number = 0
+  }
+
+  const formatter = new Intl.NumberFormat('en-GB', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  })
+
+  const formattedNumber = formatter.format(number)
+
+  return formattedNumber
+}

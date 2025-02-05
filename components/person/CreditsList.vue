@@ -12,8 +12,8 @@ const credits = [...props.items]
 </script>
 
 <template>
-  <div flex="~ col" gap1>
-    <h2 text-2xl pb4>
+  <div flex="~ col" gap1 data-testid="credits-container">
+    <h2 text-2xl pb4 data-testid="credits-title">
       {{ title }}
     </h2>
     <NuxtLink
@@ -21,12 +21,15 @@ const credits = [...props.items]
       :key="i.id"
       :to="`/${i.media_type}/${i.id}`"
       flex="col" gap2 px2 py3 bg-gray:5
+      data-testid="credit-item"
     >
-      <div text-center w-20 tabular-nums>
+      <div text-center w-20 tabular-nums data-testid="credit-date">
         {{ i.release_date ? i.release_date.slice(0, 4) : i.first_air_date ? i.first_air_date.slice(0, 4) : '-' }}
       </div>
-      <div>{{ i.title || i.name }}</div>
-      <div op50>
+      <div data-testid="credit-title">
+        {{ i.title || i.name }}
+      </div>
+      <div op50 data-testid="credit-character">
         {{ i.character ? $t('as {character}', { character: i.character }) : '' }}
       </div>
     </NuxtLink>
