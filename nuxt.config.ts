@@ -58,6 +58,11 @@ export default defineNuxtConfig({
         file: 'en.json',
       },
       {
+        code: 'fa-IR',
+        name: 'فارسی',
+        file: 'fa-IR.json',
+      },
+      {
         code: 'de-DE',
         name: 'Deutsch',
         file: 'de-DE.json',
