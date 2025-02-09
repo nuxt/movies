@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Media } from "~/types";
+import type {Media} from "~/types";
 
 defineProps<{
-  item: Media
-}>()
+  item: Media;
+}>();
 </script>
 
 <template>
@@ -20,14 +20,15 @@ defineProps<{
           w-full
           h-full
           object-cover
-          :style="{'view-transition-name': `item-${item.id}${query?.query ? `-${query.query}` : ''}`}" />
+          :style="{'view-transition-name': `item-${item.id}${query?.query ? `-${query.query}` : ''}`}"
+          placeholder="/tmdb.svg" />
         <div v-else h-full op10 flex>
           <div i-ph:question ma text-4xl />
         </div>
       </div>
       <div class="w-1/2" flex gap-2 flex-col h-full>
         <p text-2xl font-bold>
-          {{ item.title }}
+          {{ item.title || item.name }}
         </p>
         <p line-clamp-9 class="leading-[28px]">
           {{ item.overview }}
@@ -47,7 +48,6 @@ defineProps<{
             {{ $t("{numberOfReviews} Reviews", {numberOfReviews: formatVote(item.vote_count)}) }}
           </div>
         </div>
-        {{ console.log(item) }}
       </div>
     </div>
   </div>
