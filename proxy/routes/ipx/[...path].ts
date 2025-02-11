@@ -1,5 +1,5 @@
-import { createIPX, createIPXH3Handler, ipxHttpStorage } from 'ipx'
 import { lazyEventHandler, useBase } from 'h3'
+import { createIPX, createIPXH3Handler, ipxHttpStorage } from 'ipx'
 
 export default lazyEventHandler(() => {
   const ipx = createIPX({

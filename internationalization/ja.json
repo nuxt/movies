@@ -54,7 +54,7 @@
 
   "{count} items": "{count}件",
   "Search result for: {currentSearch}": "「{currentSearch}」の検索結果 ",
-  
+
   "Error occurred on fetching": "取得中にエラーが発生しました",
   "Retry": "再試行",
 
