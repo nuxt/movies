@@ -112,6 +112,11 @@ export default defineNuxtConfig({
         name: 'Українська',
         file: 'uk-UA.json',
       },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        file: 'vi.json',
+      },
     ],
     lazy: true,
     langDir: 'internationalization',

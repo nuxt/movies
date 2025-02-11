@@ -1,0 +1,65 @@
+{
+  "Popular Movies": "Phim Phổ biến",
+  "Top Rated Movies": "Phim Được Đánh Giá Cao",
+  "Upcoming Movies": "Phim Sắp Chiếu",
+  "Now Playing Movies": "Phim Đang Chiếu",
+  "Popular TV Shows": "Chương Trình TV Phổ biến",
+  "Top Rated TV Shows": "Chương Trình TV Được Đánh Giá Cao",
+  "TV Shows Airing Today": "Chương Trình TV Phát Sóng Hôm Nay",
+
+  "Watch Trailer": "Xem Trailer",
+  "Explore more": "Khám phá thêm",
+
+  "Overview": "Tổng quan",
+  "Videos": "Video",
+  "Media Photos": "Hình ảnh",
+
+  "Cast": "Diễn viên",
+  "More like this": "Phim tương tự",
+
+  "Storyline": "Nội dung",
+  "Release Date": "Ngày phát hành",
+  "Runtime": "Thời lượng",
+  "Director": "Đạo diễn",
+  "Budget": "Ngân sách",
+  "Revenue": "Doanh thu",
+  "Genre": "Thể loại",
+  "Status": "Trạng thái",
+  "Language": "Ngôn ngữ",
+  "Production": "Sản xuất",
+
+  "Backdrops": "Hình nền",
+  "Posters": "Áp phích",
+
+  "Known For": "Nổi tiếng với",
+  "Credits": "Danh đề",
+  "Person Photos": "Hình ảnh",
+  "(no biography)": "(không có tiểu sử)",
+  "Known for": "Nổi tiếng với",
+  "Place of birth": "Nơi sinh",
+  "Birthday": "Ngày sinh",
+
+  "Acting Credits": "Diễn xuất",
+  "Production Credits": "Sản xuất",
+
+  "Type to search...": "Nhập để tìm kiếm...",
+  "Type something to search...": "Nhập nội dung để tìm kiếm...",
+
+  "{numberOfReviews} Reviews": "{numberOfReviews} Đánh giá",
+
+  "{numberOfImages} Images": "{numberOfImages} Hình ảnh",
+  "{numberOfVideos} Videos": "{numberOfVideos} Video",
+
+  "as {character}": "vai {character}",
+
+  "{count} items": "{count} mục",
+  "Search result for: {currentSearch}": "Kết quả tìm kiếm cho: {currentSearch}",
+
+  "Error occurred on fetching": "Đã xảy ra lỗi khi tải dữ liệu",
+  "Retry": "Thử lại",
+
+  "Home": "Trang chủ",
+  "Movies": "Phim",
+  "TV Shows": "Chương Trình TV",
+  "Search": "Tìm kiếm"
+}
