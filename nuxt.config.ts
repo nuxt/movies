@@ -58,6 +58,11 @@ export default defineNuxtConfig({
         file: 'en.json',
       },
       {
+        code: 'fa-IR',
+        name: 'فارسی',
+        file: 'fa-IR.json',
+      },
+      {
         code: 'de-DE',
         name: 'Deutsch',
         file: 'de-DE.json',
@@ -106,6 +111,11 @@ export default defineNuxtConfig({
         code: 'uk-UA',
         name: 'Українська',
         file: 'uk-UA.json',
+      },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        file: 'vi.json',
       },
     ],
     lazy: true,
