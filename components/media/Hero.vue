@@ -44,7 +44,7 @@ const mounted = useMounted()
     >
       <Transition appear name="hero">
         <div v-show="mounted">
-          <h1 mt-2 text-4xl lg:text-5xl line-clamp-2>
+          <h1 mt-2 text-4xl lg:text-5xl line-clamp-2 overflow-visible>
             {{ props.item.title || props.item.name }}
           </h1>
           <div flex="~ row wrap" gap2 items-center mt4>

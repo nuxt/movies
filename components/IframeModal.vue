@@ -2,9 +2,14 @@
 import { onKeyDown } from '@vueuse/core'
 
 const src = ref<string | null>(null)
+const loading = ref(true)
 
 function showModal(link: string) {
   src.value = link
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+  }, 7000)
 }
 const el = ref<HTMLIFrameElement>()
 
@@ -34,6 +39,8 @@ onClickOutside(el, () => {
       allow="autoplay; encrypted-media"
       allowfullscreen
       :src="src" w-full m5 lg:m20 border-none
+      @load="loading = false"
     />
+    <Loading v-if="loading" />
   </div>
 </template>
