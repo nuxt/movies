@@ -30,14 +30,16 @@ function scrollRight() {
         <slot />
       </div>
     </div>
-    <button type="button"
+    <button
+      type="button"
       flex="~ col" absolute top-0 left-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       title="Scroll left"
       @click="scrollLeft()"
     >
       <div i-ph-caret-left-light text-3xl text-white />
     </button>
-    <button type="button"
+    <button
+      type="button"
       flex="~ col" absolute top-0 right-0 bottom-0 bg-black:50 p3 items-center justify-center op0 hover:op100 transition
       title="Scroll right"
       @click="scrollRight()"

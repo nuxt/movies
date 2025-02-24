@@ -54,7 +54,7 @@
 
   "{count} items": "{count} Ergebnisse ",
   "Search result for: {currentSearch}": "Suchergebnis für {currentSearch}",
-  
+
   "Error occurred on fetching": "Fehler beim Abrufen aufgetreten",
   "Retry": "Erneut versuchen",
 

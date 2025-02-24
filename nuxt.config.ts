@@ -6,29 +6,28 @@ const isDev = process.env.NODE_ENV === 'development'
 const apiBaseUrl = 'https://movies-proxy.vercel.app'
 
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-    '@nuxt/image',
-    '@nuxtjs/i18n',
-    '@nuxtjs/html-validator',
-  ],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/html-validator', '@nuxt/test-utils/module'],
+
   experimental: {
-    inlineSSRStyles: false,
+    // inlineSSRStyles: false,
     viewTransition: true,
     renderJsonPayloads: true,
   },
+
   routeRules: {
     '/**': isDev ? {} : { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
   },
+
   runtimeConfig: {
     public: {
       apiBaseUrl,
     },
   },
+
   devtools: {
     enabled: true,
   },
+
   image: {
     provider: 'proxy',
     providers: {
@@ -40,11 +39,13 @@ export default defineNuxtConfig({
       },
     },
   },
+
   nitro: {
     routeRules: {
       '/**': { isr: false },
     },
   },
+
   i18n: {
     detectBrowserLanguage: {
       useCookie: true,
@@ -122,6 +123,7 @@ export default defineNuxtConfig({
     langDir: 'internationalization',
     defaultLocale: 'en',
   },
+
   htmlValidator: {
     usePrettier: false,
     logLevel: 'verbose',
@@ -129,11 +131,7 @@ export default defineNuxtConfig({
     /** A list of routes to ignore (that is, not check validity for). */
     ignore: [/\.(xml|rss|json)$/],
     options: {
-      extends: [
-        'html-validate:document',
-        'html-validate:recommended',
-        'html-validate:standard'
-      ],
+      extends: ['html-validate:document', 'html-validate:recommended', 'html-validate:standard'],
       rules: {
         'svg-focusable': 'off',
         'no-unknown-elements': 'error',
@@ -145,8 +143,10 @@ export default defineNuxtConfig({
         'attribute-boolean-style': 'off',
         'doctype-style': 'off',
         // Unreasonable rule
-        'no-inline-style': 'off'
-      }
-    }
+        'no-inline-style': 'off',
+      },
+    },
   },
+
+  compatibilityDate: '2024-11-22',
 })
