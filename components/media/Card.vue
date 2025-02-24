@@ -6,11 +6,15 @@ defineProps<{
   item: Media,
   query?: QueryItem
 }>()
+
+const isHover = ref()
 </script>
 
 <template>
   <NuxtLink
     :to="`/${item.media_type || type}/${item.id}`" pb2
+    @mouseover="isHover = true"
+    @mouseleave="isHover = false"
   >
     <div
       block bg-gray4:10 p1
@@ -18,6 +22,9 @@ defineProps<{
       transition duration-400
       hover="scale-105 z10"
     >
+      <Transition>
+        <MediaCardHover v-if="isHover" :item="item" />
+      </Transition>
       <NuxtImg
         v-if="item.poster_path"
         width="400"
@@ -43,3 +50,14 @@ defineProps<{
     </div>
   </NuxtLink>
 </template>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
