@@ -48,4 +48,19 @@ body,
   color: white;
   color-scheme: dark;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #2d2b2b;
+}
+::-webkit-scrollbar-thumb {
+  background: #959595;
+  border-radius: 10px;
+}
 </style>
