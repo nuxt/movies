@@ -8,6 +8,7 @@ definePageMeta({
   },
 })
 
+const loadingIndicator = useLoadingIndicator()
 const route = useRoute()
 const type = computed(() => route.params.type as MediaType || 'movie')
 const id = computed(() => route.params.id as string)
@@ -29,6 +30,7 @@ useHead({
 
 <template>
   <div>
+    <Loading v-if="loadingIndicator.isLoading.value" />
     <MediaHero :item="item" />
     <MediaDetails :item="item" :type="type" />
     <CarouselBase v-if="recommendations?.results?.length">
