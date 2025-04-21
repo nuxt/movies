@@ -1,5 +1,5 @@
-import { useSingleton } from './utils'
 import type { Image, Media, Video } from '~/types'
+import { useSingleton } from './utils'
 
 export function getTrailer(item: Media) {
   const trailer = item.videos?.results?.find(video => video.type === 'Trailer')
@@ -23,8 +23,8 @@ const [
 ] = useSingleton<(photos: Image[], index: number) => void>()
 
 export {
-  useIframeModal,
   provideIframeModal,
-  useImageModal,
   provideImageModal,
+  useIframeModal,
+  useImageModal,
 }

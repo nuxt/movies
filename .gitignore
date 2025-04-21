@@ -8,3 +8,9 @@ dist
 .DS_Store
 .idea
 .vercel
+
+coverage
+test-results
+/playwright-report/
+/blob-report/
+/playwright/.cache/

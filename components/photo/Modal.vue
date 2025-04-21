@@ -36,8 +36,8 @@ useEventListener('keydown', (e) => {
 </script>
 
 <template>
-  <div v-if="images && current" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90 p5 flex items-center justify-center>
-    <button type="button" absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full @click="images = null">
+  <div v-if="images && current" fixed top-0 left-0 right-0 bottom-0 z-10 bg-black:90 p5 flex items-center justify-center data-testid="photo-modal">
+    <button type="button" absolute top-1 right-1 z-100 p3 text-3xl n-link bg-black:60 rounded-full data-testid="close-button" @click="images = null">
       <div i-carbon-close />
     </button>
     <NuxtImg
@@ -46,19 +46,20 @@ useEventListener('keydown', (e) => {
       :src="`/tmdb${current.file_path}`"
       aria-hidden="true"
       max-w-full max-h-full object-contain
+      data-testid="photo-image"
     />
-    <div absolute left-0 top="1/2" translate="y--1/2">
-      <button type="button" py10 px4 bg-black:30 op10 hover:op100 @click="prev()">
+    <div absolute left-0 top="1/2" un-translate="y--1/2">
+      <button type="button" py10 px4 bg-black:30 op10 hover:op100 data-testid="prev-button" @click="prev()">
         <div i-ph-caret-left-light text-3xl text-white />
       </button>
     </div>
-    <div absolute right-0 top="1/2" translate="y--1/2">
-      <button type="button" py10 px4 bg-black:30 op10 hover:op100 @click="next()">
+    <div absolute right-0 top="1/2" un-translate="y--1/2">
+      <button type="button" py10 px4 bg-black:30 op10 hover:op100 data-testid="next-button" @click="next()">
         <div i-ph-caret-right-light text-3xl text-white />
       </button>
     </div>
     <div absolute bottom-2 left-0 right-0 items-center>
-      <div bg-black:50 px4 py2>
+      <div bg-black:50 px4 py2 data-testid="photo-counter">
         {{ index + 1 }} / {{ images.length }}
       </div>
     </div>

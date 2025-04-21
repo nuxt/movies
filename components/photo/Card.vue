@@ -12,6 +12,7 @@ const props = defineProps<{
     bg-gray4:10 transition
     duration-400 relative hover="scale-102 z10"
     title="View photo"
+    data-testid="photo-button"
   >
     <NuxtImg
       width="400"
@@ -20,6 +21,7 @@ const props = defineProps<{
       :src="`/tmdb${props.item.file_path}`"
       alt="Photo"
       w-full h-full object-cover
+      data-testid="photo-image"
     />
   </button>
 </template>

@@ -54,7 +54,7 @@
 
   "{count} items": "{count}条结果",
   "Search result for: {currentSearch}": "搜索 {currentSearch}",
-  
+
   "Error occurred on fetching": "获取数据时出错",
   "Retry": "重试",
 
