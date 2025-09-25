@@ -118,6 +118,11 @@ export default defineNuxtConfig({
         name: 'Tiếng Việt',
         file: 'vi.json',
       },
+      {
+        code: 'km',
+        name: 'ភាសាខ្មែរ',
+        file: 'km-KH.json',
+      },
     ],
     lazy: true,
     langDir: 'internationalization',
