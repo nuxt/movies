@@ -1,4 +1,4 @@
-import type { Image, Media, Person, Video } from '~/types'
+import type { Image, Media, Person, Video } from '#shared/types'
 
 export function mockPerson(overrides: Partial<Person> = {}): Person {
   return {

@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     compatibilityVersion: 5,
   },
 
+  typescript: {
+    appTsConfig: {
+      exclude: ['../proxy/**'],
+    },
+  },
+
   experimental: {
     prefetchPreloadTags: true,
     viewTransition: true,

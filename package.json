@@ -16,7 +16,7 @@
     "test:unit-web": "vitest --coverage --ui",
     "test:e2e": "playwright test",
     "test:e2e-ui": "playwright test --ui",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
     "@nuxtjs/html-validator": "^2.1.0",
