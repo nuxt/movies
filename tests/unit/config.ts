@@ -1,3 +1,1 @@
-const config = useRuntimeConfig()
-
-export const baseUrl = config.public.apiBaseUrl
+export const baseUrl = 'https://movies-proxy.vercel.app'

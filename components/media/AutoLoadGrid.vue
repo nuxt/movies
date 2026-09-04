@@ -61,10 +61,11 @@ if (process.client) {
     </div>
     <MediaGrid>
       <MediaCard
-        v-for="item of items"
+        v-for="(item, index) of items"
         :key="item.id"
         :type="type"
         :item="item"
+        :priority="index < 10"
       />
     </MediaGrid>
     <div ref="tailEl" />

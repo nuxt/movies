@@ -1,11 +1,12 @@
+strictPeerDependencies: false
+shamefullyHoist: true
+shellEmulator: true
+
 packages:
   - proxy
 
-shamefullyHoist: true
-
-strictPeerDependencies: false
-
-shellEmulator: true
+patchedDependencies:
+  nuxt-nightly@4.6.0-29803612.ea5d49fb: patches/nuxt-nightly@4.6.0-29803612.ea5d49fb.patch
 
 allowBuilds:
   '@parcel/watcher': false

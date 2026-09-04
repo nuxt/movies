@@ -28,17 +28,15 @@ describe('card.vue', () => {
     expect(wrapper.find('[data-testid="video-image"]').attributes('src')).toContain(mockVideo().key)
   })
 
-  it('calls play method when play button is clicked', async () => {
+  it('opens the video when the play button is clicked', async () => {
     const wrapper = mount(Card, {
       props: {
         item: mockVideo(),
       },
     })
 
-    const playMock = vi.spyOn(wrapper.vm, 'play')
     await wrapper.find('[data-testid="play-button"]').trigger('click')
 
-    expect(playMock).toHaveBeenCalled()
     expect(showModalMock).toHaveBeenCalledWith(`https://www.youtube.com/embed/${mockVideo().key}?rel=0&showinfo=0&autoplay=0`)
   })
 })

@@ -3,7 +3,7 @@ import type { Media } from '~/types'
 import { formatTime } from '~/composables/utils'
 
 const props = withDefaults(defineProps<{
-  item: Media
+  item?: Media
 }>(), {
   item: () => ({} as Media),
 })
@@ -32,6 +32,8 @@ const mounted = useMounted()
         format="webp"
         :src="`/tmdb${props.item.backdrop_path}`"
         :alt="props.item.title || props.item.name"
+        loading="eager"
+        preload
         h-full w-full object-cover
       />
     </div>

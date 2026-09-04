@@ -69,7 +69,7 @@ describe('personPhotos', () => {
     const photoCards = getPhotoCards(wrapper)
 
     expect(photoCards.length).toBe(2)
-    expect(photoCards[0].attributes('data-testid')).toBe('photo-card')
-    expect(photoCards[1].attributes('data-testid')).toBe('photo-card')
+    expect(photoCards[0]!.attributes('data-testid')).toBe('photo-card')
+    expect(photoCards[1]!.attributes('data-testid')).toBe('photo-card')
   })
 })

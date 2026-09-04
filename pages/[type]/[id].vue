@@ -4,12 +4,12 @@ import type { MediaType } from '~/types'
 definePageMeta({
   key: route => route.fullPath,
   validate: ({ params }) => {
-    return ['movie', 'tv'].includes(params.type as MediaType)
+    return 'type' in params && ['movie', 'tv'].includes(params.type as MediaType)
   },
 })
 
-const route = useRoute()
-const type = computed(() => route.params.type as MediaType || 'movie')
+const route = useRoute('type-id')
+const type = computed(() => route.params.type as MediaType)
 const id = computed(() => route.params.id as string)
 
 const [item, recommendations] = await Promise.all([

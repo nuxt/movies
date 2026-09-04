@@ -41,13 +41,13 @@ describe('creditsList', () => {
 
     expect(creditItems.length).toBe(2)
 
-    expect(getCreditDate(creditItems[0]).text()).toBe('2023')
-    expect(getCreditTitle(creditItems[0]).text()).toBe('Movie 1')
-    expect(getCreditCharacter(creditItems[0]).text()).toBe('')
+    expect(getCreditDate(creditItems[0]!).text()).toBe('2023')
+    expect(getCreditTitle(creditItems[0]!).text()).toBe('Movie 1')
+    expect(getCreditCharacter(creditItems[0]!).text()).toBe('')
 
-    expect(getCreditDate(creditItems[1]).text()).toBe('2022')
-    expect(getCreditTitle(creditItems[1]).text()).toBe('TV Show 1')
-    expect(getCreditCharacter(creditItems[1]).text()).toBe('')
+    expect(getCreditDate(creditItems[1]!).text()).toBe('2022')
+    expect(getCreditTitle(creditItems[1]!).text()).toBe('TV Show 1')
+    expect(getCreditCharacter(creditItems[1]!).text()).toBe('')
   })
 
   it('sorts items by release date', async () => {
@@ -67,10 +67,10 @@ describe('creditsList', () => {
 
     const creditItems = getCreditItems(wrapper)
 
-    expect(getCreditTitle(creditItems[0]).text()).toBe('Movie 2')
-    expect(getCreditTitle(creditItems[1]).text()).toBe('Movie 1')
-    expect(getCreditTitle(creditItems[2]).text()).toBe('Movie 4')
-    expect(getCreditTitle(creditItems[3]).text()).toBe('Movie 3')
+    expect(getCreditTitle(creditItems[0]!).text()).toBe('Movie 2')
+    expect(getCreditTitle(creditItems[1]!).text()).toBe('Movie 1')
+    expect(getCreditTitle(creditItems[2]!).text()).toBe('Movie 4')
+    expect(getCreditTitle(creditItems[3]!).text()).toBe('Movie 3')
   })
 
   it('renders credit items with name instead of title', async () => {
@@ -89,9 +89,9 @@ describe('creditsList', () => {
 
     expect(creditItems.length).toBe(1)
 
-    expect(getCreditDate(creditItems[0]).text()).toBe('2022')
-    expect(getCreditTitle(creditItems[0]).text()).toBe('TV Show 1')
-    expect(getCreditCharacter(creditItems[0]).text()).toBe('')
+    expect(getCreditDate(creditItems[0]!).text()).toBe('2022')
+    expect(getCreditTitle(creditItems[0]!).text()).toBe('TV Show 1')
+    expect(getCreditCharacter(creditItems[0]!).text()).toBe('')
   })
 
   it('renders credit items with character', async () => {
@@ -110,8 +110,8 @@ describe('creditsList', () => {
 
     expect(creditItems.length).toBe(1)
 
-    expect(getCreditDate(creditItems[0]).text()).toBe('2023')
-    expect(getCreditTitle(creditItems[0]).text()).toBe('Movie 1')
-    expect(getCreditCharacter(creditItems[0]).text()).toBe('as Hero')
+    expect(getCreditDate(creditItems[0]!).text()).toBe('2023')
+    expect(getCreditTitle(creditItems[0]!).text()).toBe('Movie 1')
+    expect(getCreditCharacter(creditItems[0]!).text()).toBe('as Hero')
   })
 })

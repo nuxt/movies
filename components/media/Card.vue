@@ -5,6 +5,7 @@ const props = defineProps<{
   type: MediaType
   item: Media
   query?: QueryItem
+  priority?: boolean
 }>()
 
 const activeViewTransition = useState<string | null>('media-view-transition', () => null)
@@ -29,6 +30,8 @@ const viewTransitionName = computed(() => `item-${props.item.media_type || props
         format="webp"
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
+        :loading="priority ? 'eager' : 'lazy'"
+        :preload="priority"
         w-full h-full object-cover
         :style="{ viewTransitionName: activeViewTransition === viewTransitionName ? viewTransitionName : 'none' }"
       />

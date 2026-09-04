@@ -1,0 +1,14 @@
+diff --git a/dist/app/plugins/payload.client.js b/dist/app/plugins/payload.client.js
+index 98e0ece07aac4cb2f98955abaf2afb40456f7551..31eff18575899b2aecf6b91679296392f394183c 100644
+--- a/dist/app/plugins/payload.client.js
++++ b/dist/app/plugins/payload.client.js
+@@ -46,7 +46,8 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
+ 						const { rel: _rel, ...rest } = link;
+ 						return {
+ 							...rest,
+-							rel: "prefetch"
++							rel: link.as === "image" ? _rel : "prefetch",
++							...(link.as === "image" ? { fetchpriority: "low" } : {})
+ 						};
+ 					}) });
+ 					forwardedPrefetchEntries.set(pathname, entry);

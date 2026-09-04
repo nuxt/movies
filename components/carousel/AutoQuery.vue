@@ -3,6 +3,7 @@ import type { QueryItem } from '~/types'
 
 const props = defineProps<{
   query: QueryItem
+  priority?: boolean
 }>()
 
 const item = await listMedia(props.query.type, props.query.query, 1)
@@ -19,11 +20,12 @@ const item = await listMedia(props.query.type, props.query.query, 1)
       </NuxtLink>
     </template>
     <MediaCard
-      v-for="i of item?.results || []"
+      v-for="(i, index) of item?.results || []"
       :key="i.id"
       :item="i"
       :query="props.query"
       :type="props.query.type"
+      :priority="props.priority && index < 10"
       flex-1 w-40 md:w-60
     />
   </CarouselBase>

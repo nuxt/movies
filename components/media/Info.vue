@@ -3,8 +3,8 @@ import type { Media, MediaType } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
 
 const props = withDefaults(defineProps<{
-  item: Media
-  type: MediaType
+  item?: Media
+  type?: MediaType
 }>(), {
   item: () => ({} as Media),
   type: 'movie',
@@ -22,6 +22,8 @@ const directors = computed(() => props.item.credits?.crew.filter(person => perso
       format="webp"
       :src="`/tmdb${props.item.poster_path}`"
       :alt="props.item.title || props.item.name"
+      loading="eager"
+      preload
       block border="4 gray4/10" w-79 lt-md:hidden
       transition duration-400 object-cover aspect="10/16"
       :style="{ viewTransitionName: `item-${props.type}-${props.item.id}` }"

@@ -6,16 +6,19 @@ const isDev = process.env.NODE_ENV === 'development'
 const apiBaseUrl = 'https://movies-proxy.vercel.app'
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/html-validator', '@nuxt/test-utils/module'],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/html-validator'],
+
+  future: {
+    compatibilityVersion: 5,
+  },
 
   experimental: {
-    // inlineSSRStyles: false,
+    prefetchPreloadTags: true,
     viewTransition: true,
-    renderJsonPayloads: true,
   },
 
   routeRules: {
-    '/**': isDev ? {} : { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
+    '/**': { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
   },
 
   runtimeConfig: {
@@ -40,13 +43,8 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    routeRules: {
-      '/**': { isr: false },
-    },
-  },
-
   i18n: {
+    restructureDir: '.',
     detectBrowserLanguage: {
       useCookie: true,
       fallbackLocale: 'en',
@@ -119,7 +117,6 @@ export default defineNuxtConfig({
         file: 'vi.json',
       },
     ],
-    lazy: true,
     langDir: 'internationalization',
     defaultLocale: 'en',
   },

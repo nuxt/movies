@@ -2,7 +2,7 @@
 import type { Person } from '~/types'
 
 const props = withDefaults(defineProps<{
-  item: Person
+  item?: Person
 }>(), {
   item: () => ({} as Person),
 })
