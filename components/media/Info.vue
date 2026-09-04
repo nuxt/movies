@@ -3,10 +3,9 @@ import type { Media, MediaType } from '~/types'
 import { formatDate, formatLang, formatTime, numberWithCommas } from '~/composables/utils'
 
 const props = withDefaults(defineProps<{
-  item?: Media
+  item: Media
   type?: MediaType
 }>(), {
-  item: () => ({} as Media),
   type: 'movie',
 })
 

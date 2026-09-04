@@ -31,7 +31,6 @@ const viewTransitionName = computed(() => `item-${props.item.media_type || props
         :src="`/tmdb${item.poster_path}`"
         :alt="item.title || item.name"
         :loading="priority ? 'eager' : 'lazy'"
-        :preload="priority"
         w-full h-full object-cover
         :style="{ viewTransitionName: activeViewTransition === viewTransitionName ? viewTransitionName : 'none' }"
       />

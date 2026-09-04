@@ -2,11 +2,9 @@
 import type { Media } from '~/types'
 import { formatTime } from '~/composables/utils'
 
-const props = withDefaults(defineProps<{
-  item?: Media
-}>(), {
-  item: () => ({} as Media),
-})
+const props = defineProps<{
+  item: Media
+}>()
 
 const trailer = computed(() => getTrailer(props.item))
 
