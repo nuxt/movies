@@ -1,20 +1,23 @@
-import { lazyEventHandler, useBase } from 'h3'
-import { createIPX, createIPXH3Handler, ipxHttpStorage } from 'ipx'
+import { fromWebHandler, lazyEventHandler } from 'h3'
+import { createIPX, createIPXFetchHandler, ipxHttpStorage } from 'ipx'
 
-export default lazyEventHandler(() => {
-  const ipx = createIPX({
-    maxAge: 3600,
-    alias: {
-      '/tmdb': 'https://image.tmdb.org/t/p/original/',
-      '/youtube': 'https://img.youtube.com/',
-    },
-    storage: ipxHttpStorage({
-      domains: [
-        'image.tmdb.org',
-        'img.youtube.com',
-      ],
-    }),
-  })
+const ipx = createIPX({
+  maxAge: 3600,
+  alias: {
+    '/tmdb': 'https://image.tmdb.org/t/p/original/',
+    '/youtube': 'https://img.youtube.com/',
+  },
+  storage: ipxHttpStorage({
+    domains: [
+      'image.tmdb.org',
+      'img.youtube.com',
+    ],
+  }),
+})
 
-  return useBase('/ipx', createIPXH3Handler(ipx))
+const handler = createIPXFetchHandler(ipx)
+export default fromWebHandler((request) => {
+  const url = new URL(request.url)
+  url.pathname = url.pathname.replace(/^\/ipx(?=\/|$)/, '')
+  return handler(new Request(url, request))
 })

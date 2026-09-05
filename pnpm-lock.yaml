@@ -98,6 +98,13 @@ importers:
         version: 3.3.11(typescript@6.0.3)
 
   proxy:
+    dependencies:
+      h3:
+        specifier: ^1.15.11
+        version: 1.15.11
+      ipx:
+        specifier: 4.0.0-beta.1
+        version: 4.0.0-beta.1(@types/node@26.4.1)(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))
     devDependencies:
       nitropack:
         specifier: ^2.13.4

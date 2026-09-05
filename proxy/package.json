@@ -5,6 +5,10 @@
     "prepare": "nitropack prepare",
     "build": "nitropack build"
   },
+  "dependencies": {
+    "h3": "^1.15.11",
+    "ipx": "4.0.0-beta.1"
+  },
   "devDependencies": {
     "nitropack": "^2.13.4",
     "ofetch": "^1.5.1",
