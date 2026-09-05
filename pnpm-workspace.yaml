@@ -1,11 +1,9 @@
+strictPeerDependencies: false
+shamefullyHoist: true
+shellEmulator: true
+
 packages:
   - proxy
-
-shamefullyHoist: true
-
-strictPeerDependencies: false
-
-shellEmulator: true
 
 allowBuilds:
   '@parcel/watcher': false

@@ -5,7 +5,7 @@ import { defineConfig, devices } from '@playwright/test'
 export default defineConfig<ConfigOptions>({
   testMatch: '**/tests/e2e/*.spec.ts',
   use: {
-    baseURL: process.env.BASE_URL,
+    nuxt: process.env.BASE_URL ? { host: process.env.BASE_URL } : undefined,
   },
   /* Configure projects for major browsers */
   projects: [
