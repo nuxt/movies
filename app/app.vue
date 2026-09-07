@@ -27,7 +27,7 @@ useHead({
 
 <template>
   <div h-full w-full font-sans grid="~ lt-lg:rows-[1fr_max-content] lg:cols-[max-content_1fr]" of-hidden>
-    <div of-x-hidden of-y-auto relative>
+    <div id="app-scroller" of-x-hidden of-y-auto relative>
       <NuxtPage />
     </div>
     <NavBar lg:order-first />
