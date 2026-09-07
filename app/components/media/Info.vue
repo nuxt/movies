@@ -24,7 +24,7 @@ const directors = computed(() => props.item.credits?.crew.filter(person => perso
       loading="eager"
       preload
       block border="4 gray4/10" w-79 lt-md:hidden
-      transition duration-400 object-cover aspect="10/16"
+      object-cover aspect="10/16"
     />
     <div lt-md:w="[calc(100vw-2rem)]" flex="~ col" md:p4 gap6>
       <div v-if="props.item.overview">

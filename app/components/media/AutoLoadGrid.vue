@@ -32,12 +32,12 @@ async function loadingNext() {
   }
 }
 
-if (process.server || props.blocking)
+if (import.meta.server || props.blocking)
   await loadingNext()
 else
   loadingNext()
 
-if (process.client) {
+if (import.meta.client) {
   useIntervalFn(() => {
     if (!tailEl.value || isLoading.value)
       return

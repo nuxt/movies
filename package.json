@@ -43,7 +43,7 @@
     "eslint": "^10.9.1",
     "happy-dom": "^20.13.2",
     "lru-cache": "^11.5.2",
-    "nuxt": "npm:nuxt-nightly@latest",
+    "nuxt": "npm:nuxt-nightly@4.6.0-29812804.e29b3dd9",
     "ohash": "^2.0.12",
     "oxc-parser": "^0.148.0",
     "playwright-core": "^1.62.1",

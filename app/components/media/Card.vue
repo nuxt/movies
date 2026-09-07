@@ -15,7 +15,7 @@ defineProps<{
   >
     <div
       block bg-gray4:10 p1 class="aspect-10/16"
-      transition duration-400
+      transition duration-100
       hover="scale-105 z10"
     >
       <NuxtImg

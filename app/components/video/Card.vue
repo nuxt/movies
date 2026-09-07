@@ -16,7 +16,7 @@ function play() {
     <div
       block bg-gray4:10 p1 flex
       class="aspect-16/9"
-      transition duration-400 relative
+      transition duration-100 relative
       hover="scale-102 z10"
       data-testid="video-thumbnail"
     >

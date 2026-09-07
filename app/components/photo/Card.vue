@@ -10,7 +10,7 @@ const props = defineProps<{
   <button
     text-left block
     bg-gray4:10 transition
-    duration-400 relative hover="scale-102 z10"
+    duration-100 relative hover="scale-102 z10"
     title="View photo"
     data-testid="photo-button"
   >
