@@ -16,7 +16,6 @@ export default defineNuxtConfig({
 
   experimental: {
     prefetchPreloadTags: true,
-    viewTransition: true,
   },
 
   routeRules: {
