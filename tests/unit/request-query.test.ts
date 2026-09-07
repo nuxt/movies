@@ -22,4 +22,19 @@ describe('getRequestQuery', () => {
       page: '2',
     })
   })
+
+  it('preserves repeated and prototype-sensitive parameters', () => {
+    const query = getRequestQuery(new URLSearchParams([
+      ['tag', 'first'],
+      ['tag', 'second'],
+      ['tag', 'third'],
+      ['constructor', 'constructor-value'],
+      ['__proto__', 'prototype-value'],
+    ]))
+
+    expect(Object.getPrototypeOf(query)).toBeNull()
+    expect(query.tag).toEqual(['first', 'second', 'third'])
+    expect(query.constructor).toBe('constructor-value')
+    expect(Reflect.get(query, '__proto__')).toBe('prototype-value')
+  })
 })
