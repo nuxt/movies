@@ -1,8 +1,4 @@
-import type { H3Event } from 'h3'
-
-export function getRequestQuery(event: H3Event) {
-  const rawUrl = event.node.req.originalUrl || event.node.req.url || ''
-  const searchParams = new URL(rawUrl, 'http://localhost').searchParams
+export function getRequestQuery(searchParams: URLSearchParams) {
   const query: Record<string, string | string[]> = {}
 
   for (const [key, value] of searchParams) {

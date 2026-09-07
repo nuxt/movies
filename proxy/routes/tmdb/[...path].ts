@@ -3,7 +3,7 @@ import { getRequestQuery } from '../../utils/request-query'
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
 export default defineEventHandler(async (event) => {
-  const query = getRequestQuery(event)
+  const query = getRequestQuery(getRequestURL(event).searchParams)
   // eslint-disable-next-line no-console
   console.log(
     'Fetching TMDB API',
