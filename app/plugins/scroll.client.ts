@@ -5,6 +5,6 @@ export default defineNuxtPlugin(({ vueApp }) => {
     selectors: {
       '#app-scroller': true,
     },
-    behavior: 'smooth'
+    behavior: 'smooth',
   }))
 })
