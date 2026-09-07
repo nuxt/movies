@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
   experimental: {
     prefetchPreloadTags: true,
-    early404: true
+    early404: true,
   },
 
   routeRules: {
