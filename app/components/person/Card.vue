@@ -10,8 +10,8 @@ defineProps<{
   <NuxtLink :to="`/person/${item.id}`" data-testid="person-link">
     <div block bg-gray4:10 p1 class="aspect-10/16" data-testid="person-container">
       <NuxtImg v-if="item.profile_path" width="500" height="800" format="webp" :src="`/tmdb${item.profile_path}`" :alt="item.name" w-full h-full object-cover data-testid="person-image" />
-      <div v-else h-full op10 data-testid="person-placeholder">
-        <div i-ph:user ma text-4xl />
+      <div v-else h-full grid place-items-center op10 data-testid="person-placeholder">
+        <div i-ph:user text-4xl />
       </div>
     </div>
     <div mt-2 data-testid="person-name">
