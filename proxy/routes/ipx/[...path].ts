@@ -1,4 +1,4 @@
-import { fromWebHandler, lazyEventHandler } from 'h3'
+import { fromWebHandler } from 'h3'
 import { createIPX, createIPXFetchHandler, ipxHttpStorage } from 'ipx'
 
 const ipx = createIPX({
