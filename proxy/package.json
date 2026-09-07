@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "h3": "^1.15.11",
-    "ipx": "4.0.0-beta.1"
+    "ipx": "4.0.0-beta.1",
+    "ufo": "^1.6.4"
   },
   "devDependencies": {
     "nitropack": "^2.13.4",
