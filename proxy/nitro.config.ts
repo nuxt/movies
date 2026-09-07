@@ -5,6 +5,7 @@ export default defineNitroConfig({
   compatibilityDate: '2024-11-22',
   routeRules: {
     '/**': { cors: true, swr: 3600 },
+    '/tmdb/**': { cors: true, cache: false },
     '/ipx/**': { cache: false },
   },
   runtimeConfig: {

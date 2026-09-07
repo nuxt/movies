@@ -2,7 +2,7 @@ import { parseQuery } from 'ufo'
 
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   const query = parseQuery(getRequestURL(event).search)
   // eslint-disable-next-line no-console
   console.log(
@@ -36,4 +36,7 @@ export default defineEventHandler(async (event) => {
       error: String(e)?.replace(config.tmdb.apiKey, '***'),
     }
   }
+}, {
+  maxAge: 3600,
+  swr: true,
 })
