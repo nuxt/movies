@@ -1,9 +1,9 @@
-import { getRequestQuery } from '../../utils/request-query'
+import { parseQuery } from 'ufo'
 
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
 export default defineEventHandler(async (event) => {
-  const query = getRequestQuery(getRequestURL(event).searchParams)
+  const query = parseQuery(getRequestURL(event).search)
   // eslint-disable-next-line no-console
   console.log(
     'Fetching TMDB API',

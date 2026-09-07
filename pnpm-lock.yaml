@@ -105,6 +105,9 @@ importers:
       ipx:
         specifier: 4.0.0-beta.1
         version: 4.0.0-beta.1(@types/node@26.4.1)(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))
+      ufo:
+        specifier: ^1.6.4
+        version: 1.6.4
     devDependencies:
       nitropack:
         specifier: ^2.13.4
