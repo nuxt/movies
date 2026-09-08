@@ -4,7 +4,6 @@ const { locale, locales, setLocale } = useI18n()
 async function updateLocale(event: Event) {
   const selectedLocale = (event.currentTarget as HTMLSelectElement).value as typeof locale.value
   await setLocale(selectedLocale)
-  window.location.reload()
 }
 </script>
 
