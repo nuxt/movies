@@ -34,14 +34,14 @@ function playTrailer() {
       />
     </div>
     <div
-      absolute bottom-0 left-0 top-0 px-10
-      flex="~ col" justify-center
+      absolute bottom-0 left-0 top-0 px-10 justify-center
+      flex="~ col"
       lt-lg="bg-gradient-to-t right-0 p10"
       lg="px25 w-2/3 bg-gradient-to-r"
       from-black via-black to-transparent
     >
       <div>
-        <h1 mt-2 text-4xl lg:text-5xl line-clamp-2>
+        <h1 mt-2 text-3xl md:text-4xl lg:text-5xl line-clamp-2>
           {{ props.item.title || props.item.name }}
         </h1>
         <div flex="~ row wrap" gap2 items-center mt4>
@@ -68,8 +68,9 @@ function playTrailer() {
         <div v-if="trailer" class="py5 display-none lg:block">
           <button
             type="button"
-            flex="~ gap2" items-center p="x6 y3"
+            flex="~ gap2" items-center p="x3 y1" lg:p="x6 y3"
             bg="gray/15 hover:gray/20"
+            border
             :title="$t('Watch Trailer')"
             @click="playTrailer()"
           >
