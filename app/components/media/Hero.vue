@@ -68,9 +68,9 @@ function playTrailer() {
         <div v-if="trailer" class="py5 display-none lg:block">
           <button
             type="button"
-            flex="~ gap2" items-center p="x3 y1" lg:p="x6 y3"
+            flex="~ gap2" items-center p="x2 y1" lg:p="x4 y2"
             bg="gray/15 hover:gray/20"
-            border
+            border border-base
             :title="$t('Watch Trailer')"
             @click="playTrailer()"
           >
