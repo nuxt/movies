@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': {
-      headers: { 'cache-control': 'private, no-store' },
+      cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true, allowCookies: ['i18n_redirected']  }
     },
   },
 
@@ -154,5 +154,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-22',
+  compatibilityDate: '2026-09-01',
 })
