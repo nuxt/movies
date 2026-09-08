@@ -80,15 +80,5 @@ function playTrailer() {
         </div>
       </div>
     </div>
-    <div v-if="trailer" lg:hidden absolute left-0 top-0 right-0 h="2/3" items-center justify-center>
-      <button
-        type="button"
-        items-center p10 text-5xl op20 hover:op80
-        :title="$t('Watch Trailer')"
-        @click="playTrailer()"
-      >
-        <div i-ph-play-circle-light />
-      </button>
-    </div>
   </div>
 </template>
