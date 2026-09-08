@@ -1,3 +1,4 @@
+blockExoticSubdeps: false
 strictPeerDependencies: false
 shamefullyHoist: true
 shellEmulator: true
