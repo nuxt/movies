@@ -8,9 +8,9 @@ async function updateLocale(event: Event) {
 </script>
 
 <template>
-  <div flex gap2 items-center mt-5>
-    {{ $t('Language') }}:
-    <select id="langSwitcher" :value="locale" rounded-md text-sm p-1 @change="updateLocale">
+  <div flex="~ row wrap" gap2 items-center mt-5 max-w-full>
+    <label for="langSwitcher">{{ $t('Language') }}:</label>
+    <select id="langSwitcher" :value="locale" max-w-full rounded-md text-sm p-1 @change="updateLocale">
       <option v-for="loc in locales" :key="loc.code" :value="loc.code" p-1>
         {{ loc.name }}
       </option>

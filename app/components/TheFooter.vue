@@ -1,5 +1,5 @@
 <template>
-  <footer p="y15 x15" flex="~ col gap4">
+  <footer p="y10 x6 sm:y15 sm:x15" flex="~ col gap4">
     <div flex="~ row gap2" items-center my2>
       <img src="/movies-sm.webp" width="25" height="25" alt="Logo">
       <div text-xl>
@@ -27,7 +27,7 @@
         This project uses the TMDB API but is not endorsed or certified by TMDB.
       </p>
     </div>
-    <div flex gap4 items-center>
+    <div flex="~ row wrap" gap4 items-center>
       <ExternalLinks
         :links="{
           twitter_id: 'nuxt_js',

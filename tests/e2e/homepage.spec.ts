@@ -17,6 +17,23 @@ test('homepage links to the movie catalogue', async ({ page, goto }) => {
   await expect(page.getByRole('heading', { level: 2, name: 'Top Rated Movies' })).toBeVisible()
 })
 
+test('keeps mobile navigation and language controls within the viewport', async ({ page, goto }) => {
+  await page.setViewportSize({ width: 320, height: 568 })
+  await goto('', { waitUntil: 'hydration' })
+
+  const navigation = page.getByRole('navigation', { name: 'Primary' })
+  const navigationBox = await navigation.boundingBox()
+  expect(navigationBox).not.toBeNull()
+  expect(navigationBox!.y + navigationBox!.height).toBeLessThanOrEqual(568)
+
+  const languageSwitcher = page.locator('#langSwitcher')
+  await languageSwitcher.scrollIntoViewIfNeeded()
+  await expect(languageSwitcher).toBeInViewport()
+
+  const footerFitsViewport = await page.locator('footer').evaluate(element => element.scrollWidth <= element.clientWidth)
+  expect(footerFitsViewport).toBe(true)
+})
+
 test('switches the UI and TMDB content language without reloading', async ({ page, goto }) => {
   const hydrationWarnings: string[] = []
   page.on('console', (message) => {

@@ -1,5 +1,7 @@
 <template>
-  <div
+  <nav
+    class="app-navigation"
+    aria-label="Primary"
     flex="~ row lg:col"
     justify-evenly items-center
     py5 lg:px5
@@ -30,5 +32,15 @@
         :class="isActive ? 'i-ph-magnifying-glass-fill text-primary' : 'i-ph-magnifying-glass'"
       />
     </NuxtLink>
-  </div>
+  </nav>
 </template>
+
+<style scoped>
+@media (max-width: 1023.9px) {
+  .app-navigation {
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  }
+}
+</style>

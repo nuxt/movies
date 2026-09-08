@@ -11,6 +11,7 @@ useHead(() => ({
   title: 'Nuxt Movies',
   titleTemplate: title => (title !== 'Nuxt Movies' ? `${title} · Nuxt Movies` : title),
   meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
     { name: 'description', content: 'A TMDB client built with Nuxt Image to show the potential of it ✨' },
     { property: 'og:image', content: 'https://movies.nuxt.space/social-card.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -28,8 +29,8 @@ useHead(() => ({
 </script>
 
 <template>
-  <div h-svh w-full font-sans grid="~ lt-lg:rows-[1fr_max-content] lg:cols-[max-content_1fr]" of-hidden>
-    <div id="app-scroller" of-x-hidden of-y-auto relative>
+  <div class="app-shell" w-full font-sans grid="~ lt-lg:rows-[minmax(0,1fr)_auto] lg:cols-[max-content_1fr]" of-hidden>
+    <div id="app-scroller" min-h-0 of-x-hidden of-y-auto relative>
       <NuxtPage :key="locale" />
     </div>
     <NavBar lg:order-first />
@@ -39,12 +40,19 @@ useHead(() => ({
 </template>
 
 <style>
+.app-shell {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+}
+
 html,
 body,
 #__nuxt {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   background: #111;
   color: white;
   color-scheme: dark;
