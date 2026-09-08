@@ -2,7 +2,6 @@
 const apiBaseUrl = 'https://movies-proxy.vercel.app'
 const routeRules = {
   '/**': {
-    ssr: true,
     cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true, allowCookies: ['i18n_redirected'] },
   },
 }
