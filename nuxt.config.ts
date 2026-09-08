@@ -20,7 +20,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/**': { cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true } },
+    '/**': {
+      cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true },
+      headers: { vary: 'Cookie, Accept-Language' },
+    },
   },
 
   runtimeConfig: {

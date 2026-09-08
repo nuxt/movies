@@ -1,9 +1,11 @@
 <script setup>
 import '@unocss/reset/tailwind.css'
 
-useHead({
+const { locale } = useI18n()
+
+useHead(() => ({
   htmlAttrs: {
-    lang: 'en',
+    lang: locale.value,
   },
   charset: 'utf-8',
   title: 'Nuxt Movies',
@@ -22,7 +24,7 @@ useHead({
       href: '/movies.webp',
     },
   ],
-})
+}))
 </script>
 
 <template>
