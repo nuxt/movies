@@ -17,13 +17,23 @@ const imdbType = computed(() => {
   <div flex="~ row gap5" items-center text-lg mt-5>
     <a
       v-if="links.twitter_id"
-      :href="`https://twitter.com/${links.twitter_id}`"
+      :href="`https://x.com/${links.twitter_id}`"
       target="_blank"
-      aria-label="Link to Twitter account"
+      aria-label="Link to X account"
       rel="noopener"
       n-link
     >
-      <div i-simple-icons:twitter />
+      <div i-simple-icons:x />
+    </a>
+    <a
+      v-if="links.bluesky_id"
+      :href="`https://bsky.app/profile/${links.bluesky_id}`"
+      target="_blank"
+      aria-label="Link to Bluesky account"
+      rel="noopener"
+      n-link
+    >
+      <div i-simple-icons:bluesky />
     </a>
     <a
       v-if="links.facebook_id"
