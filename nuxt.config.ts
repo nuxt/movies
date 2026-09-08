@@ -1,5 +1,10 @@
 // const apiBaseUrl = 'http://localhost:3001'
 const apiBaseUrl = 'https://movies-proxy.vercel.app'
+const routeRules = {
+  '/**': {
+    cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true, allowCookies: ['i18n_redirected'] },
+  },
+}
 
 export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/html-validator'],
@@ -19,11 +24,7 @@ export default defineNuxtConfig({
     early404: true,
   },
 
-  routeRules: {
-    '/**': {
-      headers: { 'cache-control': 'private, no-store' },
-    },
-  },
+  routeRules,
 
   runtimeConfig: {
     public: {
@@ -154,5 +155,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-22',
+  compatibilityDate: '2026-09-01',
 })
