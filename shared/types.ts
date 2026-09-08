@@ -100,6 +100,7 @@ export interface ExternalIds {
   facebook_id?: string
   instagram_id?: string
   twitter_id?: string
+  bluesky_id?: string
   linkedin_id?: string
   github_id?: string
   email?: string

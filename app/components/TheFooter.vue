@@ -31,6 +31,7 @@
       <ExternalLinks
         :links="{
           twitter_id: 'nuxt_js',
+          bluesky_id: 'nuxt.com',
           github_id: 'nuxt/movies',
         }"
       >
