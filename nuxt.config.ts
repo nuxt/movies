@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': {
-      cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true, allowCookies: ['i18n_redirected']  }
+      cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true, allowCookies: ['i18n_redirected'] },
     },
   },
 
