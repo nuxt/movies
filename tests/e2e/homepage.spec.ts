@@ -1,13 +1,20 @@
 import { expect, test } from '@nuxt/test-utils/playwright'
 
-test('homepage displays correctly 1', async ({ page, goto }) => {
+test('homepage displays its movie and TV sections', async ({ page, goto }) => {
   await goto('', { waitUntil: 'hydration' })
-  await expect(page.getByRole('heading')).toContainText('', { ignoreCase: true })
+
+  await expect(page.getByRole('heading', { level: 2, name: 'Popular Movies' })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 2, name: 'Popular TV Shows' })).toBeVisible()
 })
 
-test('homepage displays correctly 2', async ({ page, goto }) => {
+test('homepage links to the movie catalogue', async ({ page, goto }) => {
   await goto('', { waitUntil: 'hydration' })
-  await expect(page.getByRole('heading')).toContainText('', { ignoreCase: true })
+
+  await page.getByTitle('Movies').click()
+
+  await expect(page).toHaveURL(/\/movie$/)
+  await expect(page).toHaveTitle('Movies · Nuxt Movies')
+  await expect(page.getByRole('heading', { level: 2, name: 'Top Rated Movies' })).toBeVisible()
 })
 
 test('switches the UI and TMDB content language without reloading', async ({ page, goto }) => {
