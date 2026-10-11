@@ -40,7 +40,7 @@ async function fetch(page: number) {
 const throttledSearch = useDebounceFn(search, 200)
 
 const vFocus = {
-  mounted: (el: HTMLElement) => el.focus(),
+  mounted: (el: HTMLElement) => el.focus({ preventScroll: true }),
 }
 
 useHead({
