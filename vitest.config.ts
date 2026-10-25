@@ -1,12 +1,26 @@
-import { defineVitestConfig } from '@nuxt/test-utils/config'
+import { defineVitestProject } from '@nuxt/test-utils/config'
+import { defineConfig } from 'vitest/config'
 
-export default defineVitestConfig({
+export default defineConfig({
   test: {
-    include: ['**/tests/unit/**/*.test.ts', '**/components/**/*.test.ts', '**/composables/**/*.test.ts'],
-    name: 'unit',
-    environment: 'node',
     coverage: {
       include: ['**/components/**/*.vue', '**/composables/**/*.ts'],
     },
+    projects: [
+      await defineVitestProject({
+        test: {
+          name: 'nuxt',
+          include: ['**/components/**/*.test.ts', '**/composables/**/*.test.ts'],
+        },
+      }),
+      {
+        test: {
+          name: 'proxy',
+          root: './proxy',
+          include: ['tests/**/*.test.ts'],
+          environment: 'node',
+        },
+      },
+    ],
   },
 })

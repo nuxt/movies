@@ -9,7 +9,7 @@ vi.stubGlobal('getRequestURL', () => new URL('http://localhost:3001/tmdb/trendin
 vi.stubGlobal('setResponseStatus', vi.fn())
 vi.stubGlobal('createError', (opts: any) => Object.assign(new Error(opts.statusMessage), opts))
 
-const handler = (await import('../../proxy/routes/tmdb/[...path].ts')).default
+const handler = (await import('../routes/tmdb/[...path]')).default
 
 const event = (path: string) => ({ context: { params: { path } } }) as any
 
