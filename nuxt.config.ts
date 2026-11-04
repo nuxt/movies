@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': {
-      cache: { maxAge: 120, staleMaxAge: 60, headersOnly: true },
+      headers: { 'cache-control': 'private, no-store' },
     },
   },
 
