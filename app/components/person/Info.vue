@@ -21,6 +21,7 @@ const externalIds = computed(() => ({ ...props.item.external_ids, homepage: prop
       block border="4 gray4/10" w-70 md:90 self-start mt-5 mx-auto
       object-cover aspect="3/4"
       data-testid="profile-image"
+      preload
     />
     <div p4 gap8>
       <div>
