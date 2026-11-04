@@ -13,7 +13,7 @@ const promiseCache = new LRUCache<string, any>({
 async function _fetchTMDB(url: string, params: Record<string, string | number | boolean | undefined>) {
   return await $fetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,
-    params,
+    query: params,
   })
 }
 

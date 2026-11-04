@@ -17,6 +17,8 @@ export default defineNuxtConfig({
   experimental: {
     prefetchPreloadTags: true,
     early404: true,
+    // `@nuxt/image` server utils still import `useRuntimeConfig` from `#imports`
+    nitroAutoImports: true,
   },
 
   routeRules: {
@@ -154,5 +156,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-22',
+  compatibilityDate: '2026-09-01',
 })
