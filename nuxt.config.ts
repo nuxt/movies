@@ -17,6 +17,8 @@ export default defineNuxtConfig({
   experimental: {
     prefetchPreloadTags: true,
     early404: true,
+    // `@nuxt/image` server utils still import `useRuntimeConfig` from `#imports`
+    nitroAutoImports: true,
   },
 
   routeRules: {
