@@ -23,7 +23,8 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': {
-      headers: { 'cache-control': 'private, no-store' },
+      // Enables payload extraction for prefetching; `server/plugins/cache-control.ts` keeps responses private
+      cache: { maxAge: 120, headersOnly: true },
     },
   },
 
